@@ -1,0 +1,2190 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cee-Dougs | Customer Registration</title>
+
+<style>
+
+/* =====================================================
+   ROOT
+===================================================== */
+
+:root{
+    --green:#123c2a;
+    --green-light:#1d5b40;
+    --dark:#06130d;
+    --gold:#d7b34a;
+    --gold-light:#f0d77b;
+    --orange:#e58a2b;
+
+    --white:#ffffff;
+    --light:#f4f7f5;
+    --text:#17231c;
+    --muted:#718078;
+
+    --border:#dce5df;
+
+    --success:#16834c;
+    --danger:#c0392b;
+
+    --shadow:
+        0 25px 70px rgba(6,19,13,.16);
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    min-height:100vh;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(215,179,74,.12),
+            transparent 35%
+        ),
+        var(--light);
+
+    color:var(--text);
+
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.page{
+
+    min-height:100vh;
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+}
+
+
+/* =====================================================
+   BRAND SECTION
+===================================================== */
+
+.brand{
+
+    position:relative;
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:70px;
+
+    color:white;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(4,20,13,.97),
+            rgba(18,60,42,.91)
+        ),
+
+        url(
+        "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=1800&q=85"
+        );
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+
+
+/* =====================================================
+   DECORATIVE ORBS
+===================================================== */
+
+.orb{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    filter:blur(1px);
+
+    animation:
+        floatOrb 8s ease-in-out infinite;
+
+}
+
+
+.orb.one{
+
+    width:420px;
+    height:420px;
+
+    right:-190px;
+    top:-130px;
+
+    border:
+        1px solid
+        rgba(215,179,74,.22);
+
+}
+
+
+.orb.two{
+
+    width:280px;
+    height:280px;
+
+    left:-150px;
+    bottom:-100px;
+
+    border:
+        1px solid
+        rgba(215,179,74,.15);
+
+    animation-delay:2s;
+
+}
+
+
+.orb.three{
+
+    width:90px;
+    height:90px;
+
+    right:18%;
+    bottom:18%;
+
+    background:
+        rgba(215,179,74,.06);
+
+    border:
+        1px solid
+        rgba(215,179,74,.20);
+
+    animation-delay:4s;
+
+}
+
+
+@keyframes floatOrb{
+
+    0%,100%{
+        transform:translateY(0) rotate(0deg);
+    }
+
+    50%{
+        transform:translateY(-20px) rotate(6deg);
+    }
+
+}
+
+
+/* =====================================================
+   BRAND CONTENT
+===================================================== */
+
+.brand-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:620px;
+
+}
+
+
+.logo{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:55px;
+
+    font-size:30px;
+
+    font-weight:900;
+
+    letter-spacing:-1px;
+
+}
+
+
+.logo-mark{
+
+    width:43px;
+    height:43px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold),
+            var(--gold-light)
+        );
+
+    color:var(--dark);
+
+    font-size:20px;
+
+    box-shadow:
+        0 8px 30px
+        rgba(215,179,74,.20);
+
+}
+
+
+.logo span{
+    color:var(--gold);
+}
+
+
+.brand h1{
+
+    font-size:
+        clamp(44px,5vw,72px);
+
+    line-height:.98;
+
+    letter-spacing:-2.5px;
+
+    margin-bottom:28px;
+
+}
+
+
+.brand h1 span{
+
+    color:var(--gold);
+
+}
+
+
+.brand-description{
+
+    max-width:540px;
+
+    color:#d4ded8;
+
+    font-size:16px;
+
+    line-height:1.85;
+
+}
+
+
+/* =====================================================
+   BENEFITS
+===================================================== */
+
+.benefits{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:16px;
+
+    margin-top:42px;
+
+}
+
+
+.benefit{
+
+    padding:18px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.09);
+
+    background:
+        rgba(255,255,255,.045);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:14px;
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        border-color .3s ease;
+
+}
+
+
+.benefit:hover{
+
+    transform:
+        translateY(-5px);
+
+    background:
+        rgba(255,255,255,.08);
+
+    border-color:
+        rgba(215,179,74,.25);
+
+}
+
+
+.benefit-icon{
+
+    font-size:23px;
+
+    margin-bottom:12px;
+
+}
+
+
+.benefit strong{
+
+    display:block;
+
+    margin-bottom:5px;
+
+}
+
+
+.benefit small{
+
+    color:#aebbb3;
+
+    line-height:1.5;
+
+}
+
+
+/* =====================================================
+   FORM AREA
+===================================================== */
+
+.form-area{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:50px 30px;
+
+    background:#ffffff;
+
+}
+
+
+.form-card{
+
+    width:100%;
+
+    max-width:570px;
+
+}
+
+
+/* =====================================================
+   FORM HEADER
+===================================================== */
+
+.form-top{
+
+    margin-bottom:30px;
+
+}
+
+
+.form-top .mini-title{
+
+    display:inline-block;
+
+    color:var(--gold);
+
+    font-size:11px;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    margin-bottom:10px;
+
+}
+
+
+.form-top h2{
+
+    color:var(--green);
+
+    font-size:34px;
+
+    letter-spacing:-1px;
+
+    margin-bottom:9px;
+
+}
+
+
+.form-top p{
+
+    color:var(--muted);
+
+    line-height:1.6;
+
+    font-size:14px;
+
+}
+
+
+/* =====================================================
+   FORM ROW
+===================================================== */
+
+.form-row{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:15px;
+
+}
+
+
+/* =====================================================
+   FORM GROUP
+===================================================== */
+
+.form-group{
+
+    margin-bottom:18px;
+
+}
+
+
+.form-group label{
+
+    display:block;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    margin-bottom:8px;
+
+    color:#26342c;
+
+}
+
+
+.required{
+
+    color:var(--danger);
+
+}
+
+
+/* =====================================================
+   INPUT
+===================================================== */
+
+.input-box{
+
+    position:relative;
+
+}
+
+
+.input-box input{
+
+    width:100%;
+
+    height:53px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:11px;
+
+    padding:
+        0 45px 0 15px;
+
+    outline:none;
+
+    color:var(--text);
+
+    background:#fff;
+
+    font-size:14px;
+
+    transition:
+        border-color .25s ease,
+        box-shadow .25s ease,
+        transform .25s ease;
+
+}
+
+
+.input-box input::placeholder{
+
+    color:#a0aaa4;
+
+}
+
+
+.input-box input:focus{
+
+    border-color:var(--green);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(18,60,42,.07);
+
+}
+
+
+.input-icon{
+
+    position:absolute;
+
+    right:15px;
+
+    top:50%;
+
+    transform:
+        translateY(-50%);
+
+    color:#89958e;
+
+    font-size:17px;
+
+    pointer-events:none;
+
+}
+
+
+/* =====================================================
+   PASSWORD TOGGLE
+===================================================== */
+
+.password-toggle{
+
+    position:absolute;
+
+    right:12px;
+
+    top:50%;
+
+    transform:
+        translateY(-50%);
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+    color:#68756d;
+
+    font-size:17px;
+
+}
+
+
+/* =====================================================
+   PASSWORD STRENGTH
+===================================================== */
+
+.strength-container{
+
+    margin-top:9px;
+
+}
+
+
+.strength-track{
+
+    width:100%;
+
+    height:5px;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    background:#e8ede9;
+
+}
+
+
+.strength-bar{
+
+    height:100%;
+
+    width:0%;
+
+    border-radius:20px;
+
+    transition:
+        width .35s ease,
+        background .35s ease;
+
+}
+
+
+.strength-info{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:6px;
+
+    font-size:10px;
+
+    color:var(--muted);
+
+}
+
+
+#strengthText{
+
+    font-weight:700;
+
+}
+
+
+/* =====================================================
+   TERMS
+===================================================== */
+
+.terms{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:10px;
+
+    margin:
+        8px 0 22px;
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    line-height:1.7;
+
+}
+
+
+.terms input{
+
+    width:15px;
+    height:15px;
+
+    margin-top:3px;
+
+    accent-color:var(--green);
+
+}
+
+
+.terms a{
+
+    color:var(--green);
+
+    font-weight:800;
+
+    text-decoration:none;
+
+}
+
+
+.terms a:hover{
+
+    text-decoration:underline;
+
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.register-button{
+
+    position:relative;
+
+    width:100%;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:11px;
+
+    cursor:pointer;
+
+    overflow:hidden;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            120deg,
+            var(--green),
+            var(--green-light)
+        );
+
+    font-size:14px;
+
+    font-weight:800;
+
+    letter-spacing:.2px;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+
+}
+
+
+.register-button::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:70px;
+
+    height:180px;
+
+    top:-60px;
+
+    left:-100px;
+
+    transform:rotate(25deg);
+
+    background:
+        rgba(255,255,255,.15);
+
+    transition:
+        left .6s ease;
+
+}
+
+
+.register-button:hover{
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(18,60,42,.22);
+
+}
+
+
+.register-button:hover::before{
+
+    left:110%;
+
+}
+
+
+.register-button:disabled{
+
+    opacity:.65;
+
+    cursor:not-allowed;
+
+    transform:none;
+
+}
+
+
+/* =====================================================
+   SPINNER
+===================================================== */
+
+.spinner{
+
+    display:none;
+
+    width:18px;
+    height:18px;
+
+    border:
+        2px solid
+        rgba(255,255,255,.35);
+
+    border-top-color:white;
+
+    border-radius:50%;
+
+    animation:
+        spin .7s linear infinite;
+
+    margin:auto;
+
+}
+
+
+@keyframes spin{
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+.message{
+
+    display:none;
+
+    padding:13px 15px;
+
+    margin-bottom:18px;
+
+    border-radius:9px;
+
+    font-size:12px;
+
+    line-height:1.5;
+
+}
+
+
+.message.error{
+
+    display:block;
+
+    color:#8b2d23;
+
+    background:#fceceb;
+
+    border:1px solid #f2c5c1;
+
+}
+
+
+.message.success{
+
+    display:block;
+
+    color:#12643b;
+
+    background:#e9f7ef;
+
+    border:1px solid #bfe5cc;
+
+}
+
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+.login-text{
+
+    text-align:center;
+
+    margin-top:22px;
+
+    color:var(--muted);
+
+    font-size:12px;
+
+}
+
+
+.login-text a{
+
+    color:var(--green);
+
+    font-weight:800;
+
+    text-decoration:none;
+
+}
+
+
+.login-text a:hover{
+
+    color:var(--gold);
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer{
+
+    text-align:center;
+
+    margin-top:30px;
+
+    padding-top:18px;
+
+    border-top:
+        1px solid var(--border);
+
+    color:#9aa39e;
+
+    font-size:10px;
+
+}
+
+
+/* =====================================================
+   SUCCESS SCREEN
+===================================================== */
+
+.success-screen{
+
+    display:none;
+
+    text-align:center;
+
+    animation:
+        successIn .6s ease;
+
+}
+
+
+@keyframes successIn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(25px)
+            scale(.98);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+.success-circle{
+
+    width:82px;
+    height:82px;
+
+    margin:
+        0 auto 22px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    color:var(--success);
+
+    background:#e8f7ee;
+
+    font-size:38px;
+
+    box-shadow:
+        0 12px 35px
+        rgba(22,131,76,.12);
+
+}
+
+
+.success-screen h2{
+
+    color:var(--green);
+
+    font-size:30px;
+
+    margin-bottom:10px;
+
+}
+
+
+.success-screen p{
+
+    color:var(--muted);
+
+    line-height:1.7;
+
+    font-size:14px;
+
+    margin-bottom:25px;
+
+}
+
+
+.continue-button{
+
+    border:none;
+
+    padding:14px 25px;
+
+    border-radius:10px;
+
+    color:white;
+
+    background:var(--green);
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+
+.continue-button:hover{
+
+    background:var(--gold);
+
+    color:var(--dark);
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:950px){
+
+    .page{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .brand{
+
+        min-height:auto;
+
+        padding:55px 35px;
+
+    }
+
+
+    .form-area{
+
+        min-height:auto;
+
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .brand{
+
+        padding:42px 22px;
+
+    }
+
+
+    .logo{
+
+        margin-bottom:38px;
+
+    }
+
+
+    .brand h1{
+
+        font-size:44px;
+
+    }
+
+
+    .benefits{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .form-area{
+
+        padding:42px 20px;
+
+    }
+
+
+    .form-row{
+
+        grid-template-columns:1fr;
+
+        gap:0;
+
+    }
+
+
+    .form-top h2{
+
+        font-size:29px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+<!-- =================================================
+     BRAND PANEL
+================================================== -->
+
+<section class="brand">
+
+
+<div class="orb one"></div>
+<div class="orb two"></div>
+<div class="orb three"></div>
+
+
+<div class="brand-content">
+
+
+<div class="logo">
+
+<div class="logo-mark">
+C
+</div>
+
+CEE<span>-DOUGS</span>
+
+</div>
+
+
+<h1>
+
+Create Your
+<span>Account.</span>
+
+</h1>
+
+
+<p class="brand-description">
+
+Join the Cee-Dougs customer community and
+experience a smarter way to shop, manage
+orders, receive delivery updates and access
+our growing range of products and services.
+
+</p>
+
+
+<div class="benefits">
+
+
+<div class="benefit">
+
+<div class="benefit-icon">
+🛍️
+</div>
+
+<strong>
+Smart Shopping
+</strong>
+
+<small>
+Discover quality products and commodities.
+</small>
+
+</div>
+
+
+<div class="benefit">
+
+<div class="benefit-icon">
+📦
+</div>
+
+<strong>
+Order Management
+</strong>
+
+<small>
+Keep your purchases organized in one place.
+</small>
+
+</div>
+
+
+<div class="benefit">
+
+<div class="benefit-icon">
+🚚
+</div>
+
+<strong>
+Delivery Tracking
+</strong>
+
+<small>
+Follow your order from dispatch to delivery.
+</small>
+
+</div>
+
+
+<div class="benefit">
+
+<div class="benefit-icon">
+🤝
+</div>
+
+<strong>
+Customer Support
+</strong>
+
+<small>
+Get assistance when you need it.
+</small>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =================================================
+     FORM AREA
+================================================== -->
+
+<section class="form-area">
+
+
+<div class="form-card">
+
+
+<!-- =================================================
+     REGISTRATION
+================================================== -->
+
+<div id="registrationSection">
+
+
+<div class="form-top">
+
+<span class="mini-title">
+Cee-Dougs Customer Portal
+</span>
+
+<h2>
+Create Your Account
+</h2>
+
+<p>
+Register your customer account to access
+shopping, orders, delivery tracking and support.
+</p>
+
+</div>
+
+
+<div
+    id="message"
+    class="message"
+></div>
+
+
+<form
+    id="registrationForm"
+    onsubmit="registerCustomer(event)"
+>
+
+
+<!-- =================================================
+     FIRST + LAST NAME
+================================================== -->
+
+<div class="form-row">
+
+
+<div class="form-group">
+
+<label for="firstName">
+First Name <span class="required">*</span>
+</label>
+
+<div class="input-box">
+
+<input
+    type="text"
+    id="firstName"
+    name="first_name"
+    placeholder="Enter first name"
+    autocomplete="given-name"
+    required
+>
+
+<span class="input-icon">
+👤
+</span>
+
+</div>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="lastName">
+Last Name <span class="required">*</span>
+</label>
+
+<div class="input-box">
+
+<input
+    type="text"
+    id="lastName"
+    name="last_name"
+    placeholder="Enter last name"
+    autocomplete="family-name"
+    required
+>
+
+<span class="input-icon">
+👤
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- =================================================
+     EMAIL + PHONE
+================================================== -->
+
+<div class="form-row">
+
+
+<div class="form-group">
+
+<label for="email">
+Email Address <span class="required">*</span>
+</label>
+
+<div class="input-box">
+
+<input
+    type="email"
+    id="email"
+    name="email"
+    placeholder="you@example.com"
+    autocomplete="email"
+    required
+>
+
+<span class="input-icon">
+✉️
+</span>
+
+</div>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="phone">
+Phone Number <span class="required">*</span>
+</label>
+
+<div class="input-box">
+
+<input
+    type="tel"
+    id="phone"
+    name="phone"
+    placeholder="08012345678"
+    autocomplete="tel"
+    required
+>
+
+<span class="input-icon">
+📱
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- =================================================
+     PASSWORD
+================================================== -->
+
+<div class="form-group">
+
+<label for="password">
+Create Password <span class="required">*</span>
+</label>
+
+<div class="input-box">
+
+<input
+    type="password"
+    id="password"
+    name="password"
+    placeholder="Create a strong password"
+    autocomplete="new-password"
+    oninput="checkPassword()"
+    required
+>
+
+<button
+    type="button"
+    class="password-toggle"
+    onclick="togglePassword('password', this)"
+    aria-label="Show password"
+>
+👁
+</button>
+
+</div>
+
+
+<div class="strength-container">
+
+<div class="strength-track">
+
+<div
+    class="strength-bar"
+    id="strengthBar"
+></div>
+
+</div>
+
+
+<div class="strength-info">
+
+<span>
+Password strength
+</span>
+
+<span id="strengthText">
+Not entered
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- =================================================
+     CONFIRM PASSWORD
+================================================== -->
+
+<div class="form-group">
+
+<label for="confirmPassword">
+Confirm Password <span class="required">*</span>
+</label>
+
+<div class="input-box">
+
+<input
+    type="password"
+    id="confirmPassword"
+    placeholder="Confirm your password"
+    autocomplete="new-password"
+    required
+>
+
+<button
+    type="button"
+    class="password-toggle"
+    onclick="togglePassword('confirmPassword', this)"
+    aria-label="Show password"
+>
+👁
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =================================================
+     TERMS
+================================================== -->
+
+<div class="terms">
+
+<input
+    type="checkbox"
+    id="terms"
+    required
+>
+
+<label for="terms">
+
+I agree to the Cee-Dougs
+<a href="#">
+Terms & Conditions
+</a>
+and
+<a href="#">
+Privacy Policy
+</a>.
+
+</label>
+
+</div>
+
+
+
+<!-- =================================================
+     REGISTER BUTTON
+================================================== -->
+
+<button
+    type="submit"
+    class="register-button"
+    id="registerButton"
+>
+
+<span id="buttonText">
+Create Cee-Dougs Account
+</span>
+
+<div
+    class="spinner"
+    id="spinner"
+></div>
+
+</button>
+
+
+</form>
+
+
+<div class="login-text">
+
+Already have an account?
+
+<a href="customerlogin.html">
+Sign In
+</a>
+
+</div>
+
+
+<div class="footer">
+
+© 2026 Cee-Dougs Group Holdings Ltd.
+All rights reserved.
+
+</div>
+
+</div>
+
+
+
+<!-- =================================================
+     SUCCESS
+================================================== -->
+
+<div
+    class="success-screen"
+    id="successScreen"
+>
+
+
+<div class="success-circle">
+✓
+</div>
+
+
+<h2>
+Account Created
+</h2>
+
+
+<p>
+
+Welcome to Cee-Dougs,
+<strong id="customerName">
+Customer
+</strong>.
+
+Your customer account has been successfully
+created.
+
+</p>
+
+
+<button
+    class="continue-button"
+    onclick="goToLogin()"
+>
+
+Continue to Customer Login →
+
+</button>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+</div>
+
+
+
+<script>
+
+/* =====================================================
+   PASSWORD VISIBILITY
+===================================================== */
+
+function togglePassword(inputId, button){
+
+    const input =
+        document.getElementById(inputId);
+
+
+    if(input.type === "password"){
+
+        input.type = "text";
+
+        button.textContent = "🙈";
+
+    }
+
+    else{
+
+        input.type = "password";
+
+        button.textContent = "👁";
+
+    }
+
+}
+
+
+/* =====================================================
+   PASSWORD STRENGTH
+===================================================== */
+
+function checkPassword(){
+
+    const password =
+        document
+        .getElementById("password")
+        .value;
+
+
+    const bar =
+        document
+        .getElementById("strengthBar");
+
+
+    const text =
+        document
+        .getElementById("strengthText");
+
+
+    let score = 0;
+
+
+    if(password.length >= 8)
+        score++;
+
+
+    if(/[A-Z]/.test(password))
+        score++;
+
+
+    if(/[a-z]/.test(password))
+        score++;
+
+
+    if(/[0-9]/.test(password))
+        score++;
+
+
+    if(/[!@#$%^&*(),.?":{}|<>]/.test(password))
+        score++;
+
+
+    if(password.length === 0){
+
+        bar.style.width = "0%";
+
+        text.textContent =
+            "Not entered";
+
+        return;
+
+    }
+
+
+    if(score <= 2){
+
+        bar.style.width = "35%";
+
+        bar.style.background =
+            "#c0392b";
+
+        text.textContent =
+            "Weak";
+
+    }
+
+    else if(score === 3){
+
+        bar.style.width = "55%";
+
+        bar.style.background =
+            "#e58a2b";
+
+        text.textContent =
+            "Fair";
+
+    }
+
+    else if(score === 4){
+
+        bar.style.width = "78%";
+
+        bar.style.background =
+            "#d7b34a";
+
+        text.textContent =
+            "Good";
+
+    }
+
+    else{
+
+        bar.style.width = "100%";
+
+        bar.style.background =
+            "#16834c";
+
+        text.textContent =
+            "Strong";
+
+    }
+
+}
+
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+function showMessage(message, type){
+
+    const box =
+        document.getElementById("message");
+
+
+    box.textContent =
+        message;
+
+
+    box.className =
+        "message " + type;
+
+}
+
+
+/* =====================================================
+   REGISTER CUSTOMER
+===================================================== */
+
+async function registerCustomer(event){
+
+    event.preventDefault();
+
+
+    const firstName =
+        document
+        .getElementById("firstName")
+        .value
+        .trim();
+
+
+    const lastName =
+        document
+        .getElementById("lastName")
+        .value
+        .trim();
+
+
+    const email =
+        document
+        .getElementById("email")
+        .value
+        .trim()
+        .toLowerCase();
+
+
+    const phone =
+        document
+        .getElementById("phone")
+        .value
+        .trim();
+
+
+    const password =
+        document
+        .getElementById("password")
+        .value;
+
+
+    const confirmPassword =
+        document
+        .getElementById("confirmPassword")
+        .value;
+
+
+    const terms =
+        document
+        .getElementById("terms")
+        .checked;
+
+
+    /* VALIDATION */
+
+    if(!firstName || !lastName){
+
+        showMessage(
+            "Please enter your first and last name.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    if(!email){
+
+        showMessage(
+            "Please enter your email address.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    if(!phone){
+
+        showMessage(
+            "Please enter your phone number.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    if(password.length < 8){
+
+        showMessage(
+            "Your password must contain at least 8 characters.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    if(password !== confirmPassword){
+
+        showMessage(
+            "Your passwords do not match.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    if(!terms){
+
+        showMessage(
+            "Please accept the Terms & Conditions.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    /* BUTTON */
+
+    const button =
+        document.getElementById(
+            "registerButton"
+        );
+
+
+    const buttonText =
+        document.getElementById(
+            "buttonText"
+        );
+
+
+    const spinner =
+        document.getElementById(
+            "spinner"
+        );
+
+
+    button.disabled = true;
+
+    buttonText.style.display =
+        "none";
+
+    spinner.style.display =
+        "block";
+
+
+    try{
+
+
+        /*
+        =============================================
+        SEND CUSTOMER TO NODE.JS BACKEND
+        =============================================
+        */
+
+        const response =
+            await fetch(
+                "http://localhost:5000/api/register",
+                {
+
+                    method:"POST",
+
+                    headers:{
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body:JSON.stringify({
+
+                        firstName:firstName,
+
+                        lastName:lastName,
+
+                        email:email,
+
+                        phone:phone,
+
+                        password:password
+
+                    })
+
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if(!response.ok){
+
+            throw new Error(
+                data.message ||
+                "Registration failed."
+            );
+
+        }
+
+
+        /* SUCCESS */
+
+        document
+        .getElementById(
+            "registrationSection"
+        )
+        .style.display =
+            "none";
+
+
+        document
+        .getElementById(
+            "successScreen"
+        )
+        .style.display =
+            "block";
+
+
+        document
+        .getElementById(
+            "customerName"
+        )
+        .textContent =
+            firstName + " " + lastName;
+
+
+        console.log(
+            "Customer ID:",
+            data.customerId
+        );
+
+
+    }
+
+    catch(error){
+
+        console.error(
+            "Registration error:",
+            error
+        );
+
+
+        showMessage(
+            error.message ||
+            "Unable to create your account. Please try again.",
+            "error"
+        );
+
+
+        button.disabled = false;
+
+        buttonText.style.display =
+            "inline";
+
+
+        spinner.style.display =
+            "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   LOGIN REDIRECT
+===================================================== */
+
+function goToLogin(){
+
+    window.location.href =
+        "customerlogin.html";
+
+}
+
+</script>
+
+</body>
+</html>
+```

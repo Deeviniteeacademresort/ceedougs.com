@@ -1,0 +1,3455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cee-Doug's Group Holding Ltd | Delivery</title>
+
+<style>
+/* =========================================================
+   CEE-DOUG'S GROUP HOLDING LTD
+   SMART BUSINESS DELIVERY PLATFORM
+========================================================= */
+
+:root{
+    --military:#12351d;
+    --dark-green:#071d0d;
+    --green:#82b34f;
+    --light-green:#e1efd4;
+    --gold:#d8ad43;
+    --gold-light:#f2d47a;
+    --white:#ffffff;
+    --grey:#68766b;
+    --background:#f5f7f2;
+    --border:#dfe8da;
+    --shadow:0 20px 50px rgba(7,29,13,.15);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:var(--background);
+    color:var(--military);
+    overflow-x:hidden;
+}
+
+button,
+input,
+select{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+    height:72px;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:1000;
+
+    background:rgba(7,29,13,.97);
+    border-bottom:1px solid rgba(216,173,67,.4);
+
+    backdrop-filter:blur(15px);
+}
+
+.nav{
+    max-width:1450px;
+    height:100%;
+    margin:auto;
+
+    padding:0 30px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    color:white;
+}
+
+.logo-mark{
+    width:44px;
+    height:44px;
+
+    border:2px solid var(--gold);
+    border-radius:50%;
+
+    display:grid;
+    place-items:center;
+
+    color:var(--gold);
+    font-family:Georgia,serif;
+
+    position:relative;
+}
+
+.logo-mark:after{
+    content:"";
+
+    position:absolute;
+
+    width:23px;
+    height:23px;
+
+    border:1px solid var(--gold);
+    border-radius:50%;
+}
+
+.logo-text{
+    font-family:Georgia,serif;
+    font-size:18px;
+}
+
+.logo-text small{
+    display:block;
+
+    margin-top:4px;
+
+    font-family:Arial,sans-serif;
+
+    font-size:9px;
+    letter-spacing:1.5px;
+
+    color:var(--light-green);
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:27px;
+}
+
+.nav-links a{
+    color:white;
+    font-size:10px;
+    padding:28px 0;
+
+    position:relative;
+
+    transition:.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    color:var(--gold-light);
+}
+
+.nav-links a.active:after{
+    content:"";
+
+    position:absolute;
+
+    bottom:0;
+    left:0;
+    right:0;
+
+    height:2px;
+
+    background:var(--gold);
+}
+
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    color:var(--gold);
+}
+
+.avatar{
+    width:32px;
+    height:32px;
+
+    border:1px solid white;
+    border-radius:50%;
+
+    display:grid;
+    place-items:center;
+
+    color:white;
+
+    cursor:pointer;
+}
+
+.mobile-menu{
+    display:none;
+
+    background:none;
+    border:0;
+
+    color:var(--gold);
+
+    font-size:27px;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    margin-top:72px;
+
+    min-height:570px;
+
+    color:white;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+    radial-gradient(
+        circle at 78% 40%,
+        rgba(130,179,79,.25),
+        transparent 30%
+    ),
+    linear-gradient(
+        115deg,
+        var(--dark-green),
+        var(--military)
+    );
+}
+
+.hero:before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    opacity:.13;
+
+    background-image:
+    radial-gradient(
+        var(--gold) 1px,
+        transparent 1px
+    );
+
+    background-size:42px 42px;
+}
+
+.hero-inner{
+    max-width:1450px;
+
+    margin:auto;
+
+    min-height:570px;
+
+    padding:55px 30px 35px;
+
+    display:grid;
+
+    grid-template-columns:44% 56%;
+
+    align-items:center;
+
+    position:relative;
+
+    z-index:2;
+}
+
+.eyebrow{
+    color:var(--gold-light);
+
+    font-size:11px;
+
+    letter-spacing:2px;
+
+    font-weight:bold;
+
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-family:Georgia,serif;
+
+    font-size:clamp(44px,5vw,74px);
+
+    line-height:.98;
+
+    letter-spacing:-2px;
+}
+
+.hero h1 span{
+    color:var(--gold-light);
+}
+
+.hero p{
+    max-width:540px;
+
+    margin:25px 0;
+
+    color:var(--light-green);
+
+    font-size:14px;
+
+    line-height:1.8;
+}
+
+.actions{
+    display:flex;
+
+    gap:14px;
+
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 20px;
+
+    border-radius:5px;
+
+    font-size:11px;
+
+    font-weight:bold;
+
+    border:1px solid var(--gold);
+
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+}
+
+.btn-gold{
+    background:var(--gold);
+
+    color:var(--dark-green);
+}
+
+.btn-outline{
+    color:white;
+
+    background:transparent;
+
+    border-color:var(--green);
+}
+
+.hero-features{
+    display:flex;
+
+    margin-top:38px;
+}
+
+.hero-feature{
+    text-align:center;
+
+    padding:0 20px;
+
+    border-right:1px solid rgba(225,239,212,.2);
+}
+
+.hero-feature:first-child{
+    padding-left:0;
+}
+
+.hero-feature:last-child{
+    border:0;
+}
+
+.hero-feature strong{
+    display:block;
+
+    color:var(--gold);
+
+    font-size:20px;
+
+    margin-bottom:6px;
+}
+
+.hero-feature small{
+    color:var(--light-green);
+
+    font-size:9px;
+
+    white-space:nowrap;
+}
+
+/* =========================================================
+   DELIVERY VISUAL
+========================================================= */
+
+.delivery-visual{
+    height:470px;
+
+    position:relative;
+}
+
+.map{
+    position:absolute;
+    inset:0;
+
+    opacity:.18;
+
+    background-image:
+    radial-gradient(
+        var(--green) 1px,
+        transparent 1px
+    );
+
+    background-size:30px 30px;
+}
+
+.pin{
+    position:absolute;
+
+    width:14px;
+    height:14px;
+
+    background:var(--gold);
+
+    border-radius:50%;
+
+    box-shadow:
+    0 0 0 9px rgba(216,173,67,.12);
+
+    animation:pulse 2s infinite;
+}
+
+.pin1{
+    left:22%;
+    top:30%;
+}
+
+.pin2{
+    left:47%;
+    top:23%;
+}
+
+.pin3{
+    left:64%;
+    top:34%;
+}
+
+.pin4{
+    right:8%;
+    top:10%;
+}
+
+.route{
+    position:absolute;
+
+    height:1px;
+
+    background:
+    repeating-linear-gradient(
+        90deg,
+        var(--gold) 0 5px,
+        transparent 5px 11px
+    );
+
+    opacity:.75;
+
+    transform-origin:left;
+}
+
+.route1{
+    width:370px;
+
+    left:25%;
+    top:31%;
+
+    transform:rotate(-16deg);
+}
+
+.route2{
+    width:300px;
+
+    left:47%;
+    top:28%;
+
+    transform:rotate(18deg);
+}
+
+/* =========================================================
+   TRUCK
+========================================================= */
+
+.truck{
+    position:absolute;
+
+    right:2%;
+    bottom:65px;
+
+    width:570px;
+    height:270px;
+
+    animation:truckFloat 4s ease-in-out infinite;
+}
+
+.truck-cab{
+    position:absolute;
+
+    left:8px;
+    bottom:42px;
+
+    width:145px;
+    height:128px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #587b45,
+        #17371f
+    );
+
+    border:2px solid rgba(216,173,67,.65);
+
+    border-radius:
+    26px 8px 7px 5px;
+}
+
+.truck-window{
+    position:absolute;
+
+    left:20px;
+    top:16px;
+
+    width:98px;
+    height:45px;
+
+    background:#07150b;
+
+    border:1px solid var(--gold);
+
+    transform:skew(-8deg);
+
+    border-radius:5px;
+}
+
+.truck-body{
+    position:absolute;
+
+    right:58px;
+    bottom:42px;
+
+    width:395px;
+    height:153px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #365e37,
+        #102d18
+    );
+
+    border:2px solid rgba(216,173,67,.6);
+
+    border-radius:
+    7px 17px 5px 5px;
+
+    box-shadow:
+    0 25px 40px rgba(0,0,0,.45);
+}
+
+.truck-body:after{
+    content:"CEE-DOUG'S\A GROUP HOLDING LTD";
+
+    white-space:pre;
+
+    position:absolute;
+
+    inset:0;
+
+    display:grid;
+
+    place-items:center;
+
+    text-align:center;
+
+    color:var(--gold-light);
+
+    font-family:Georgia,serif;
+
+    font-size:18px;
+}
+
+.wheel{
+    position:absolute;
+
+    bottom:7px;
+
+    width:60px;
+    height:60px;
+
+    border-radius:50%;
+
+    background:#101510;
+
+    border:5px solid #59635b;
+
+    box-shadow:
+    inset 0 0 0 8px #111;
+}
+
+.wheel:after{
+    content:"";
+
+    position:absolute;
+
+    width:14px;
+    height:14px;
+
+    background:var(--gold);
+
+    border-radius:50%;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+}
+
+.wheel1{
+    left:37px;
+}
+
+.wheel2{
+    left:340px;
+}
+
+.wheel3{
+    right:43px;
+}
+
+.road{
+    position:absolute;
+
+    bottom:45px;
+
+    left:0;
+    right:0;
+
+    height:30px;
+
+    background:
+    linear-gradient(
+        180deg,
+        transparent 35%,
+        rgba(216,173,67,.7) 38%,
+        transparent 45%
+    );
+
+    transform:skewX(-20deg);
+}
+
+/* =========================================================
+   LIVE DELIVERY PROGRESS
+========================================================= */
+
+.progress-box{
+    position:absolute;
+
+    right:0;
+    bottom:0;
+
+    width:60%;
+
+    padding:16px 20px;
+
+    background:rgba(18,53,29,.96);
+
+    border:1px solid rgba(216,173,67,.55);
+
+    border-radius:7px;
+}
+
+.progress-title{
+    font-size:11px;
+
+    font-weight:bold;
+
+    margin-bottom:10px;
+}
+
+.locations{
+    display:flex;
+
+    justify-content:space-between;
+
+    color:var(--light-green);
+
+    font-size:10px;
+}
+
+.progress-bar{
+    height:4px;
+
+    background:rgba(255,255,255,.16);
+
+    margin:12px 0;
+
+    position:relative;
+}
+
+.progress-bar span{
+    display:block;
+
+    width:75%;
+
+    height:100%;
+
+    background:var(--green);
+}
+
+.progress-truck{
+    position:absolute;
+
+    left:70%;
+
+    top:-18px;
+
+    animation:drive 2s ease-in-out infinite alternate;
+}
+
+.progress-footer{
+    display:flex;
+
+    justify-content:space-between;
+
+    color:var(--light-green);
+
+    font-size:9px;
+}
+
+/* =========================================================
+   BOOKING
+========================================================= */
+
+.booking{
+    max-width:1280px;
+
+    margin:-52px auto 0;
+
+    position:relative;
+
+    z-index:10;
+
+    background:white;
+
+    border-radius:13px;
+
+    padding:20px 24px;
+
+    box-shadow:var(--shadow);
+}
+
+.booking h2{
+    font:18px Georgia,serif;
+}
+
+.booking p{
+    color:var(--grey);
+
+    font-size:10px;
+
+    margin:4px 0 15px;
+}
+
+.booking-form{
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr 1fr 1fr 125px;
+
+    gap:12px;
+}
+
+.field{
+    border:1px solid var(--border);
+
+    border-radius:7px;
+
+    padding:9px 11px;
+}
+
+.field label{
+    display:block;
+
+    font-size:9px;
+
+    margin-bottom:5px;
+
+    color:var(--military);
+}
+
+.field input,
+.field select{
+    width:100%;
+
+    border:0;
+
+    outline:0;
+
+    background:white;
+
+    color:var(--military);
+
+    font-size:11px;
+}
+
+.book-now{
+    border:0;
+
+    border-radius:7px;
+
+    background:var(--military);
+
+    color:white;
+
+    font-size:11px;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.book-now:hover{
+    background:var(--gold);
+
+    color:var(--dark-green);
+}
+
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
+
+.section{
+    max-width:1280px;
+
+    margin:auto;
+
+    padding:75px 25px;
+}
+
+.section-label{
+    text-align:center;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    font-weight:bold;
+
+    color:var(--military);
+}
+
+.section-title{
+    text-align:center;
+
+    font:34px Georgia,serif;
+
+    margin:9px 0 40px;
+}
+
+.section-title:after{
+    content:"";
+
+    display:block;
+
+    width:42px;
+
+    height:2px;
+
+    background:var(--gold);
+
+    margin:12px auto 0;
+}
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.service-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(5,1fr);
+
+    gap:14px;
+}
+
+.service-card{
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:13px;
+
+    padding:28px 17px;
+
+    min-height:195px;
+
+    text-align:center;
+
+    transition:.4s;
+}
+
+.service-card:hover{
+    transform:translateY(-10px);
+
+    border-color:var(--gold);
+
+    box-shadow:var(--shadow);
+}
+
+.service-icon{
+    font-size:34px;
+
+    margin-bottom:14px;
+}
+
+.service-card h3{
+    font:15px Georgia,serif;
+
+    margin-bottom:10px;
+}
+
+.service-card p{
+    font-size:10px;
+
+    color:var(--grey);
+
+    line-height:1.65;
+}
+
+/* =========================================================
+   HOW IT WORKS
+========================================================= */
+
+.dark-section{
+    background:var(--dark-green);
+
+    color:white;
+
+    padding:68px 25px 90px;
+}
+
+.dark-section .section-label{
+    color:var(--gold-light);
+}
+
+.dark-section .section-title{
+    color:white;
+}
+
+.process{
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    position:relative;
+}
+
+.process:before{
+    content:"";
+
+    position:absolute;
+
+    left:12%;
+    right:12%;
+
+    top:34px;
+
+    border-top:1px dashed var(--gold);
+}
+
+.step{
+    text-align:center;
+
+    position:relative;
+
+    z-index:2;
+}
+
+.step-circle{
+    width:68px;
+    height:68px;
+
+    margin:auto;
+
+    border:1px solid var(--gold);
+
+    border-radius:50%;
+
+    background:var(--dark-green);
+
+    color:var(--gold);
+
+    display:grid;
+
+    place-items:center;
+
+    font-size:23px;
+
+    transition:.3s;
+}
+
+.step:hover .step-circle{
+    transform:
+    scale(1.1)
+    rotate(8deg);
+}
+
+.step strong{
+    display:block;
+
+    color:var(--gold);
+
+    font:16px Georgia,serif;
+
+    margin:10px 0 5px;
+}
+
+.step h3{
+    font:15px Georgia,serif;
+}
+
+.step p{
+    max-width:180px;
+
+    margin:6px auto;
+
+    color:var(--light-green);
+
+    font-size:10px;
+
+    line-height:1.6;
+}
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.stats{
+    max-width:1180px;
+
+    margin:-36px auto 0;
+
+    position:relative;
+
+    z-index:5;
+
+    background:white;
+
+    border-radius:13px;
+
+    box-shadow:var(--shadow);
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    padding:23px;
+}
+
+.stat{
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:13px;
+
+    border-right:1px solid var(--border);
+}
+
+.stat:last-child{
+    border:0;
+}
+
+.stat-icon{
+    width:54px;
+    height:54px;
+
+    background:var(--light-green);
+
+    border-radius:50%;
+
+    display:grid;
+
+    place-items:center;
+
+    font-size:22px;
+}
+
+.stat strong{
+    display:block;
+
+    font:25px Georgia,serif;
+}
+
+.stat span{
+    color:var(--grey);
+
+    font-size:10px;
+}
+
+/* =========================================================
+   MANAGEMENT
+========================================================= */
+
+.management{
+    max-width:1280px;
+
+    margin:auto;
+
+    padding:70px 25px;
+}
+
+.dashboard{
+    display:grid;
+
+    grid-template-columns:
+    1.6fr 1fr;
+
+    gap:18px;
+}
+
+.panel{
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:13px;
+
+    padding:22px;
+
+    box-shadow:
+    0 8px 25px rgba(7,29,13,.05);
+}
+
+.panel h3{
+    font:20px Georgia,serif;
+
+    margin-bottom:5px;
+}
+
+.panel>small{
+    color:var(--grey);
+
+    font-size:10px;
+}
+
+.orders{
+    margin-top:18px;
+
+    display:grid;
+
+    gap:10px;
+}
+
+.order{
+    border:1px solid var(--border);
+
+    border-radius:8px;
+
+    padding:13px;
+
+    display:grid;
+
+    grid-template-columns:
+    1.2fr 1fr 1fr auto;
+
+    gap:10px;
+
+    align-items:center;
+}
+
+.order b{
+    font-size:11px;
+}
+
+.order span{
+    color:var(--grey);
+
+    font-size:10px;
+}
+
+.status{
+    font-size:9px;
+
+    padding:5px 8px;
+
+    border-radius:20px;
+
+    background:var(--light-green);
+
+    color:var(--military);
+
+    font-weight:bold;
+}
+
+/* =========================================================
+   TRACKING
+========================================================= */
+
+.track-box{
+    display:flex;
+
+    margin-top:18px;
+}
+
+.track-box input{
+    flex:1;
+
+    padding:13px;
+
+    border:1px solid var(--border);
+
+    outline:0;
+
+    border-radius:
+    6px 0 0 6px;
+}
+
+.track-box button{
+    width:52px;
+
+    border:0;
+
+    background:var(--gold);
+
+    color:var(--dark-green);
+
+    border-radius:
+    0 6px 6px 0;
+
+    font-weight:bold;
+}
+
+.timeline{
+    margin-top:22px;
+
+    border-left:2px solid var(--gold);
+
+    padding-left:18px;
+
+    display:grid;
+
+    gap:18px;
+}
+
+.event{
+    position:relative;
+}
+
+.event:before{
+    content:"";
+
+    position:absolute;
+
+    left:-25px;
+
+    top:2px;
+
+    width:9px;
+    height:9px;
+
+    border-radius:50%;
+
+    background:var(--gold);
+}
+
+.event b{
+    font-size:11px;
+}
+
+.event p{
+    color:var(--grey);
+
+    font-size:10px;
+
+    margin-top:3px;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    background:var(--dark-green);
+
+    color:white;
+
+    padding:60px 30px 0;
+}
+
+.footer-grid{
+    max-width:1280px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    2fr 1fr 1fr 1fr 1.4fr;
+
+    gap:30px;
+}
+
+footer h4{
+    color:var(--gold);
+
+    font-size:10px;
+
+    letter-spacing:1px;
+
+    margin-bottom:15px;
+}
+
+footer p,
+footer a{
+    color:var(--light-green);
+
+    font-size:10px;
+
+    line-height:1.8;
+}
+
+footer a{
+    display:block;
+
+    transition:.3s;
+}
+
+footer a:hover{
+    color:var(--gold-light);
+}
+
+.footer-track{
+    display:flex;
+
+    margin-top:5px;
+}
+
+.footer-track input{
+    width:100%;
+
+    padding:11px;
+
+    border:0;
+
+    outline:0;
+}
+
+.footer-track button{
+    width:45px;
+
+    border:0;
+
+    background:var(--gold);
+}
+
+.copyright{
+    max-width:1280px;
+
+    margin:30px auto 0;
+
+    padding:16px 0;
+
+    border-top:
+    1px solid rgba(255,255,255,.12);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    color:var(--light-green);
+
+    font-size:9px;
+}
+
+/* =========================================================
+   LOGIN MODAL
+========================================================= */
+
+.modal{
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.7);
+
+    display:none;
+
+    place-items:center;
+
+    z-index:3000;
+
+    padding:20px;
+}
+
+.modal.show{
+    display:grid;
+}
+
+.modal-box{
+    background:white;
+
+    max-width:470px;
+
+    width:100%;
+
+    border-radius:14px;
+
+    padding:30px;
+
+    position:relative;
+}
+
+.close{
+    position:absolute;
+
+    right:16px;
+    top:12px;
+
+    background:none;
+
+    border:0;
+
+    font-size:25px;
+
+    color:var(--military);
+}
+
+.modal-box h2{
+    font:27px Georgia,serif;
+
+    margin-bottom:8px;
+}
+
+.modal-box p{
+    color:var(--grey);
+
+    font-size:11px;
+
+    line-height:1.6;
+}
+
+.login-form{
+    display:grid;
+
+    gap:12px;
+
+    margin-top:20px;
+}
+
+.login-form input{
+    padding:13px;
+
+    border:1px solid var(--border);
+
+    border-radius:6px;
+
+    outline:0;
+}
+
+.login-form button{
+    padding:13px;
+
+    border:0;
+
+    border-radius:6px;
+
+    background:var(--military);
+
+    color:white;
+
+    font-weight:bold;
+}
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+.toast{
+    position:fixed;
+
+    right:20px;
+    bottom:20px;
+
+    background:var(--military);
+
+    color:white;
+
+    border:1px solid var(--gold);
+
+    padding:14px 18px;
+
+    border-radius:7px;
+
+    font-size:11px;
+
+    z-index:4000;
+
+    transform:translateY(100px);
+
+    opacity:0;
+
+    transition:.35s;
+}
+
+.toast.show{
+    transform:none;
+
+    opacity:1;
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes pulse{
+
+    50%{
+        box-shadow:
+        0 0 0 16px
+        rgba(216,173,67,0);
+    }
+
+}
+
+@keyframes truckFloat{
+
+    50%{
+        transform:
+        translateY(-7px)
+        translateX(6px);
+    }
+
+}
+
+@keyframes drive{
+
+    to{
+        transform:translateX(10px);
+    }
+
+}
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.reveal{
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:
+    .8s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+
+    transform:none;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1100px){
+
+    .nav-links{
+        gap:13px;
+    }
+
+    .service-grid{
+        grid-template-columns:
+        repeat(3,1fr);
+    }
+
+    .booking-form{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .book-now{
+        min-height:45px;
+    }
+
+    .hero-inner{
+        grid-template-columns:1fr;
+    }
+
+    .hero-content{
+        text-align:center;
+    }
+
+    .hero p{
+        margin:25px auto;
+    }
+
+    .actions,
+    .hero-features{
+        justify-content:center;
+    }
+
+    .delivery-visual{
+        height:390px;
+    }
+
+}
+
+@media(max-width:800px){
+
+    .nav-links,
+    .nav-right{
+        display:none;
+    }
+
+    .mobile-menu{
+        display:block;
+    }
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .process{
+        grid-template-columns:
+        1fr 1fr;
+
+        gap:35px;
+    }
+
+    .process:before{
+        display:none;
+    }
+
+    .stats{
+        grid-template-columns:
+        1fr 1fr;
+
+        margin:0 15px;
+    }
+
+    .stat:nth-child(2){
+        border:0;
+    }
+
+    .dashboard{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:
+        1fr 1fr;
+    }
+
+}
+
+@media(max-width:560px){
+
+    .logo-text{
+        font-size:14px;
+    }
+
+    .hero{
+        min-height:700px;
+    }
+
+    .hero-inner{
+        padding:
+        45px 18px 25px;
+    }
+
+    .delivery-visual{
+        height:350px;
+    }
+
+    .truck{
+        transform:scale(.62);
+
+        right:-105px;
+
+        bottom:65px;
+    }
+
+    .progress-box{
+        width:95%;
+    }
+
+    .booking{
+        margin:
+        -25px 12px 0;
+    }
+
+    .service-grid,
+    .process,
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .stat{
+        border-right:0;
+
+        border-bottom:
+        1px solid var(--border);
+
+        padding:15px;
+    }
+
+    .stat:last-child{
+        border:0;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .copyright{
+        display:block;
+    }
+
+    .copyright span{
+        display:block;
+
+        margin-top:7px;
+    }
+
+    .order{
+        grid-template-columns:
+        1fr 1fr;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+<div class="nav">
+
+<a href="#home" class="logo">
+
+<div class="logo-mark">
+CD
+</div>
+
+<div class="logo-text">
+CEE-DOUG'S
+<small>GROUP HOLDING LTD</small>
+</div>
+
+</a>
+
+<nav class="nav-links">
+
+<a href="#home" class="active">
+DASHBOARD
+</a>
+
+<a href="#booking">
+BOOK DELIVERY
+</a>
+
+<a href="#deliveries">
+MY DELIVERIES
+</a>
+
+<a href="#services">
+SERVICES
+</a>
+
+<a href="#suppliers">
+SUPPLIERS
+</a>
+
+<a href="#reports">
+REPORTS
+</a>
+
+<a href="#profile">
+PROFILE
+</a>
+
+</nav>
+
+<div class="nav-right">
+
+<span>♧</span>
+
+<div class="avatar" id="avatar">
+●
+</div>
+
+</div>
+
+<button
+class="mobile-menu"
+onclick="mobileMenu()">
+☰
+</button>
+
+</div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+<div class="hero-inner">
+
+<div class="hero-content reveal">
+
+<div class="eyebrow">
+DELIVERING TRUST. DELIVERING VALUE.
+</div>
+
+<h1>
+All Business Delivery.<br>
+Everywhere.
+<span>On Time.</span>
+</h1>
+
+<p>
+Cee-Doug's Group Holding Ltd provides seamless
+delivery solutions for all your business needs
+including food &amp; commodities.
+</p>
+
+<div class="actions">
+
+<a href="#booking"
+class="btn btn-gold">
+BOOK A DELIVERY　›
+</a>
+
+<a href="#services"
+class="btn btn-outline">
+EXPLORE SERVICES　›
+</a>
+
+</div>
+
+<div class="hero-features">
+
+<div class="hero-feature">
+<strong>◷</strong>
+<small>FAST &amp; RELIABLE</small>
+</div>
+
+<div class="hero-feature">
+<strong>♢</strong>
+<small>SECURE DELIVERY</small>
+</div>
+
+<div class="hero-feature">
+<strong>◎</strong>
+<small>NATIONWIDE REACH</small>
+</div>
+
+<div class="hero-feature">
+<strong>♧</strong>
+<small>24/7 SUPPORT</small>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- DELIVERY ANIMATION -->
+
+<div class="delivery-visual">
+
+<div class="map"></div>
+
+<div class="route route1"></div>
+<div class="route route2"></div>
+
+<div class="pin pin1"></div>
+<div class="pin pin2"></div>
+<div class="pin pin3"></div>
+<div class="pin pin4"></div>
+
+
+<div class="road"></div>
+
+<div class="truck">
+
+<div class="truck-cab">
+
+<div class="truck-window"></div>
+
+</div>
+
+<div class="truck-body"></div>
+
+<div class="wheel wheel1"></div>
+<div class="wheel wheel2"></div>
+<div class="wheel wheel3"></div>
+
+</div>
+
+
+<div class="progress-box">
+
+<div class="progress-title">
+DELIVERY IN PROGRESS
+</div>
+
+<div class="locations">
+
+<span>
+From Lagos
+</span>
+
+<span>
+To Abuja
+</span>
+
+</div>
+
+<div class="progress-bar">
+
+<span></span>
+
+<div class="progress-truck">
+🚚
+</div>
+
+</div>
+
+<div class="progress-footer">
+
+<span>
+75% COMPLETED
+</span>
+
+<span>
+ETA: 2H 15M
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     BOOK DELIVERY
+===================================================== -->
+
+<section class="booking reveal" id="booking">
+
+<h2>
+BOOK A DELIVERY
+</h2>
+
+<p>
+Book and track your delivery in real-time
+</p>
+
+<form class="booking-form" id="bookingForm">
+
+<div class="field">
+
+<label>
+⌖ Pickup Location
+</label>
+
+<input
+id="pickup"
+required
+placeholder="Enter pickup location">
+
+</div>
+
+
+<div class="field">
+
+<label>
+⌖ Drop-off Location
+</label>
+
+<input
+id="dropoff"
+required
+placeholder="Enter drop-off location">
+
+</div>
+
+
+<div class="field">
+
+<label>
+▣ Select Service Type
+</label>
+
+<select id="service">
+
+<option>
+Select service
+</option>
+
+<option>
+Business Documents
+</option>
+
+<option>
+Food Delivery
+</option>
+
+<option>
+Commodities
+</option>
+
+<option>
+E-commerce Delivery
+</option>
+
+<option>
+Bulk & Freight
+</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label>
+◇ Cargo Type
+</label>
+
+<select id="cargo">
+
+<option>
+Select cargo type
+</option>
+
+<option>
+General Cargo
+</option>
+
+<option>
+Food & Meals
+</option>
+
+<option>
+Raw Commodities
+</option>
+
+<option>
+Finished Goods
+</option>
+
+<option>
+Documents & Parcels
+</option>
+
+</select>
+
+</div>
+
+
+<button
+class="book-now"
+type="submit">
+
+BOOK NOW　›
+
+</button>
+
+</form>
+
+</section>
+
+
+<!-- =====================================================
+     SERVICES
+===================================================== -->
+
+<section
+class="section reveal"
+id="services">
+
+<div class="section-label">
+WHAT WE DELIVER
+</div>
+
+<h2 class="section-title">
+Comprehensive Delivery Solutions
+</h2>
+
+
+<div class="service-grid">
+
+<div class="service-card">
+
+<div class="service-icon">
+▣
+</div>
+
+<h3>
+Business Documents
+</h3>
+
+<p>
+Secure and timely delivery of
+documents and parcels.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">
+◒
+</div>
+
+<h3>
+Food Delivery
+</h3>
+
+<p>
+Hygienic and safe delivery
+of all kinds of food.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">
+◇
+</div>
+
+<h3>
+Commodities
+</h3>
+
+<p>
+Reliable delivery of raw and
+finished commodities.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">
+🛒
+</div>
+
+<h3>
+E-commerce Delivery
+</h3>
+
+<p>
+Efficient last-mile delivery
+for e-commerce businesses.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">
+▰
+</div>
+
+<h3>
+Bulk &amp; Freight
+</h3>
+
+<p>
+Large cargo? We move it
+safely and efficiently.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     HOW IT WORKS
+===================================================== -->
+
+<section
+class="dark-section reveal"
+id="deliveries">
+
+<div class="section-label">
+HOW IT WORKS
+</div>
+
+<h2 class="section-title">
+Simple Steps. Powerful Delivery.
+</h2>
+
+
+<div class="process">
+
+<div class="step">
+
+<div class="step-circle">
+✎
+</div>
+
+<strong>
+01
+</strong>
+
+<h3>
+Book
+</h3>
+
+<p>
+Provide pickup, drop-off
+and cargo details.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-circle">
+◇
+</div>
+
+<strong>
+02
+</strong>
+
+<h3>
+We Pick Up
+</h3>
+
+<p>
+Our team picks up your item
+safely and securely.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-circle">
+▣
+</div>
+
+<strong>
+03
+</strong>
+
+<h3>
+In Transit
+</h3>
+
+<p>
+Real-time tracking of your
+delivery in progress.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-circle">
+✓
+</div>
+
+<strong>
+04
+</strong>
+
+<h3>
+Delivered
+</h3>
+
+<p>
+We deliver on time,
+every time.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     STATISTICS
+===================================================== -->
+
+<section
+class="stats reveal"
+id="reports">
+
+<div class="stat">
+
+<div class="stat-icon">
+◇
+</div>
+
+<div>
+
+<strong
+data-target="10000">
+0+
+</strong>
+
+<span>
+Deliveries Completed
+</span>
+
+</div>
+
+</div>
+
+
+<div class="stat">
+
+<div class="stat-icon">
+●
+</div>
+
+<div>
+
+<strong
+data-target="500">
+0+
+</strong>
+
+<span>
+Business Clients
+</span>
+
+</div>
+
+</div>
+
+
+<div class="stat">
+
+<div class="stat-icon">
+⌖
+</div>
+
+<div>
+
+<strong
+data-target="200">
+0+
+</strong>
+
+<span>
+Cities Covered
+</span>
+
+</div>
+
+</div>
+
+
+<div class="stat">
+
+<div class="stat-icon">
+♢
+</div>
+
+<div>
+
+<strong>
+99.8%
+</strong>
+
+<span>
+On-Time Delivery Rate
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SMART MANAGEMENT
+===================================================== -->
+
+<section
+class="management reveal">
+
+<div class="section-label">
+BUSINESS CONTROL CENTER
+</div>
+
+<h2 class="section-title">
+Smart Delivery Management
+</h2>
+
+
+<div class="dashboard">
+
+<!-- RECENT DELIVERIES -->
+
+<div class="panel">
+
+<h3>
+Recent Deliveries
+</h3>
+
+<small>
+Monitor active and completed business deliveries.
+</small>
+
+
+<div class="orders">
+
+<div class="order">
+
+<b>
+CDG-2026-104821
+</b>
+
+<span>
+Lagos → Abuja
+</span>
+
+<span>
+Food Delivery
+</span>
+
+<em class="status">
+IN TRANSIT
+</em>
+
+</div>
+
+
+<div class="order">
+
+<b>
+CDG-2026-104693
+</b>
+
+<span>
+Enugu → Lagos
+</span>
+
+<span>
+Commodities
+</span>
+
+<em class="status">
+DELIVERED
+</em>
+
+</div>
+
+
+<div class="order">
+
+<b>
+CDG-2026-104512
+</b>
+
+<span>
+Abuja → Kano
+</span>
+
+<span>
+Documents
+</span>
+
+<em class="status">
+DELIVERED
+</em>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- TRACKING -->
+
+<div class="panel">
+
+<h3>
+Track Delivery
+</h3>
+
+<small>
+Enter your Cee-Doug's tracking reference.
+</small>
+
+
+<div class="track-box">
+
+<input
+id="trackingId"
+placeholder="e.g. CDG-2026-104821">
+
+<button onclick="trackDelivery()">
+→
+</button>
+
+</div>
+
+
+<div class="timeline">
+
+<div class="event">
+
+<b>
+Order Received
+</b>
+
+<p>
+Your delivery request has been registered.
+</p>
+
+</div>
+
+
+<div class="event">
+
+<b>
+Pickup Confirmed
+</b>
+
+<p>
+Package collected and secured.
+</p>
+
+</div>
+
+
+<div class="event">
+
+<b>
+In Transit
+</b>
+
+<p>
+Driver is currently moving toward destination.
+</p>
+
+</div>
+
+
+<div class="event">
+
+<b>
+Delivery Complete
+</b>
+
+<p>
+Confirmation will be recorded on arrival.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     BUSINESS NETWORK
+===================================================== -->
+
+<section
+class="section reveal"
+id="suppliers">
+
+<div class="section-label">
+SUPPLIER &amp; BUSINESS NETWORK
+</div>
+
+<h2 class="section-title">
+One Platform. Multiple Operations.
+</h2>
+
+
+<div class="service-grid">
+
+<div class="service-card">
+
+<div class="service-icon">
+🏢
+</div>
+
+<h3>
+Business Clients
+</h3>
+
+<p>
+Manage business orders,
+destinations and delivery history.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">
+📦
+</div>
+
+<h3>
+Suppliers
+</h3>
+
+<p>
+Coordinate commodities,
+stock movement and dispatch.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">
+🚚
+</div>
+
+<h3>
+Drivers
+</h3>
+
+<p>
+Assign jobs, monitor routes
+and update delivery status.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">
+💳
+</div>
+
+<h3>
+Payments
+</h3>
+
+<p>
+Prepare orders for secure
+online payment and invoicing.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">
+📊
+</div>
+
+<h3>
+Reports
+</h3>
+
+<p>
+Review delivery activity,
+clients and performance.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer id="profile">
+
+<div class="footer-grid">
+
+
+<div>
+
+<a href="#home" class="logo">
+
+<div class="logo-mark">
+CD
+</div>
+
+<div class="logo-text">
+CEE-DOUG'S
+<small>GROUP HOLDING LTD</small>
+</div>
+
+</a>
+
+<p style="max-width:290px;margin-top:15px">
+
+Your trusted partner for all business
+deliveries including food &amp; commodities.
+
+<br>
+
+We deliver trust.
+We deliver value.
+
+</p>
+
+</div>
+
+
+<div>
+
+<h4>
+QUICK LINKS
+</h4>
+
+<a href="#home">
+Dashboard
+</a>
+
+<a href="#booking">
+Book Delivery
+</a>
+
+<a href="#deliveries">
+My Deliveries
+</a>
+
+<a href="#services">
+Services
+</a>
+
+<a href="#suppliers">
+Suppliers
+</a>
+
+</div>
+
+
+<div>
+
+<h4>
+COMPANY
+</h4>
+
+<a href="#home">
+About Us
+</a>
+
+<a href="#suppliers">
+Our Network
+</a>
+
+<a href="#profile">
+Careers
+</a>
+
+<a href="#reports">
+News &amp; Updates
+</a>
+
+<a href="#profile">
+Contact Us
+</a>
+
+</div>
+
+
+<div>
+
+<h4>
+SUPPORT
+</h4>
+
+<a href="#profile">
+Help Center
+</a>
+
+<a href="#profile">
+Terms &amp; Conditions
+</a>
+
+<a href="#profile">
+Privacy Policy
+</a>
+
+<a href="#profile">
+FAQs
+</a>
+
+<a href="#profile">
+24/7 Support
+</a>
+
+</div>
+
+
+<div>
+
+<h4>
+TRACK DELIVERY
+</h4>
+
+<div class="footer-track">
+
+<input
+id="footerTracking"
+placeholder="Enter Tracking ID">
+
+<button onclick="footerTrack()">
+→
+</button>
+
+</div>
+
+<p style="margin-top:18px;color:var(--gold)">
+24/7 CUSTOMER SUPPORT
+</p>
+
+<p>
+☎ +234 700 123 4567
+<br>
+✉ support@ceedougs.com
+</p>
+
+</div>
+
+</div>
+
+
+<div class="copyright">
+
+<span>
+© 2024 Cee-Doug's Group Holding Ltd.
+All Rights Reserved.
+</span>
+
+<span>
+Delivering Trust. Delivering Value.
+</span>
+
+</div>
+
+</footer>
+
+
+<!-- =====================================================
+     LOGIN MODAL
+===================================================== -->
+
+<div
+class="modal"
+id="loginModal">
+
+<div class="modal-box">
+
+<button
+class="close"
+onclick="closeLogin()">
+×
+</button>
+
+<h2>
+Secure Business Login
+</h2>
+
+<p>
+
+Access the Cee-Doug's business portal.
+This demo interface can later be connected
+to a real authentication system.
+
+</p>
+
+
+<form
+class="login-form"
+onsubmit="login(event)">
+
+<input
+type="email"
+placeholder="Business email"
+required>
+
+<input
+type="password"
+placeholder="Password"
+required>
+
+<button>
+LOGIN TO PORTAL
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div
+class="toast"
+id="toast">
+</div>
+
+
+<script>
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+const toastBox =
+document.getElementById("toast");
+
+function showToast(message){
+
+    toastBox.textContent = message;
+
+    toastBox.classList.add("show");
+
+    clearTimeout(window.toastTimer);
+
+    window.toastTimer =
+    setTimeout(function(){
+
+        toastBox.classList.remove("show");
+
+    },3500);
+
+}
+
+
+/* =====================================================
+   BOOK DELIVERY
+===================================================== */
+
+document
+.getElementById("bookingForm")
+.addEventListener("submit",function(event){
+
+    event.preventDefault();
+
+    const pickup =
+    document.getElementById("pickup").value;
+
+    const dropoff =
+    document.getElementById("dropoff").value;
+
+    const service =
+    document.getElementById("service").value;
+
+    const cargo =
+    document.getElementById("cargo").value;
+
+
+    const tracking =
+    "CDG-" +
+    new Date().getFullYear() +
+    "-" +
+    Math.floor(
+        100000 +
+        Math.random()*900000
+    );
+
+
+    const booking = {
+
+        tracking,
+        pickup,
+        dropoff,
+        service,
+        cargo,
+
+        date:
+        new Date().toLocaleString()
+
+    };
+
+
+    localStorage.setItem(
+        "ceeDougsBooking",
+        JSON.stringify(booking)
+    );
+
+
+    showToast(
+        "Booking confirmed! Tracking ID: "
+        + tracking
+    );
+
+
+    this.reset();
+
+});
+
+
+/* =====================================================
+   TRACK DELIVERY
+===================================================== */
+
+function trackDelivery(){
+
+    const id =
+    document
+    .getElementById("trackingId")
+    .value
+    .trim();
+
+
+    if(!id){
+
+        showToast(
+            "Please enter a Tracking ID."
+        );
+
+        return;
+    }
+
+
+    const saved =
+    JSON.parse(
+        localStorage.getItem(
+            "ceeDougsBooking"
+        ) || "null"
+    );
+
+
+    if(
+        saved &&
+        saved.tracking === id
+    ){
+
+        showToast(
+            id +
+            " — Delivery is currently IN TRANSIT."
+        );
+
+    }else{
+
+        showToast(
+            id +
+            " — Tracking request received."
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   FOOTER TRACKING
+===================================================== */
+
+function footerTrack(){
+
+    const id =
+    document
+    .getElementById("footerTracking")
+    .value;
+
+
+    document
+    .getElementById("trackingId")
+    .value = id;
+
+
+    trackDelivery();
+
+}
+
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+const avatar =
+document.getElementById("avatar");
+
+const loginModal =
+document.getElementById("loginModal");
+
+
+avatar.addEventListener(
+"click",
+function(){
+
+    loginModal.classList.add("show");
+
+});
+
+
+function closeLogin(){
+
+    loginModal.classList.remove(
+        "show"
+    );
+
+}
+
+
+function login(event){
+
+    event.preventDefault();
+
+    closeLogin();
+
+    showToast(
+        "Demo login successful."
+    );
+
+}
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+function mobileMenu(){
+
+    const nav =
+    document.querySelector(
+        ".nav-links"
+    );
+
+
+    if(nav.style.display === "flex"){
+
+        nav.style.display = "none";
+
+    }else{
+
+        nav.style.display = "flex";
+
+        nav.style.position = "absolute";
+
+        nav.style.top = "72px";
+
+        nav.style.left = "0";
+
+        nav.style.right = "0";
+
+        nav.style.background =
+        "#071d0d";
+
+        nav.style.padding =
+        "20px";
+
+        nav.style.flexDirection =
+        "column";
+
+        nav.style.gap =
+        "15px";
+
+    }
+
+}
+
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+const observer =
+new IntersectionObserver(
+
+function(entries){
+
+    entries.forEach(
+    function(entry){
+
+        if(entry.isIntersecting){
+
+            entry.target
+            .classList
+            .add("visible");
+
+            observer.unobserve(
+                entry.target
+            );
+
+        }
+
+    });
+
+},
+{
+    threshold:.12
+});
+
+
+document
+.querySelectorAll(".reveal")
+.forEach(function(element){
+
+    observer.observe(element);
+
+});
+
+
+/* =====================================================
+   ANIMATED STATISTICS
+===================================================== */
+
+let statisticsAnimated = false;
+
+
+const statsSection =
+document.querySelector(".stats");
+
+
+const statsObserver =
+new IntersectionObserver(
+
+function(entries){
+
+    if(
+        entries[0].isIntersecting &&
+        !statisticsAnimated
+    ){
+
+        statisticsAnimated = true;
+
+
+        document
+        .querySelectorAll(
+            "[data-target]"
+        )
+        .forEach(function(element){
+
+            const target =
+            Number(
+                element.dataset.target
+            );
+
+            const start =
+            performance.now();
+
+            const duration =
+            1400;
+
+
+            function animate(now){
+
+                const progress =
+                Math.min(
+                    (now-start)/duration,
+                    1
+                );
+
+
+                const value =
+                Math.floor(
+                    target *
+                    (
+                        1 -
+                        Math.pow(
+                            1-progress,
+                            3
+                        )
+                    )
+                );
+
+
+                element.textContent =
+                value.toLocaleString()
+                + "+";
+
+
+                if(progress < 1){
+
+                    requestAnimationFrame(
+                        animate
+                    );
+
+                }
+
+            }
+
+
+            requestAnimationFrame(
+                animate
+            );
+
+        });
+
+    }
+
+},
+{
+    threshold:.2
+});
+
+
+statsObserver.observe(
+    statsSection
+);
+
+
+/* =====================================================
+   NAVIGATION ACTIVE STATE
+===================================================== */
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(function(link){
+
+    link.addEventListener(
+    "click",
+    function(){
+
+        document
+        .querySelectorAll(
+            ".nav-links a"
+        )
+        .forEach(function(item){
+
+            item.classList.remove(
+                "active"
+            );
+
+        });
+
+
+        link.classList.add(
+            "active"
+        );
+
+    });
+
+});
+
+
+/* =====================================================
+   PROFILE LOGIN
+===================================================== */
+
+document
+.querySelectorAll(
+    'a[href="#profile"]'
+)
+.forEach(function(link){
+
+    link.addEventListener(
+    "click",
+    function(event){
+
+        if(
+            link.textContent
+            .trim()
+            ===
+            "PROFILE"
+        ){
+
+            event.preventDefault();
+
+            loginModal
+            .classList
+            .add("show");
+
+        }
+
+    });
+
+});
+
+
+/* =====================================================
+   CLOSE MODAL WHEN CLICKING OUTSIDE
+===================================================== */
+
+loginModal.addEventListener(
+"click",
+function(event){
+
+    if(event.target === loginModal){
+
+        closeLogin();
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>

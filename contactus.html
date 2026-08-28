@@ -1,0 +1,3243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cee-Doug's Group Holding Ltd | Contact & Customer Care</title>
+
+<style>
+
+/* =========================================================
+   CEE-DOUG'S GROUP HOLDING LTD
+   CONTACT • BUSINESS ENQUIRIES • CUSTOMER CARE
+   COLOUR SYSTEM:
+   MILITARY GREEN • WHITE • LIGHT GREEN • GOLD
+========================================================= */
+
+:root{
+    --military-green:#17351f;
+    --deep-green:#092014;
+    --green:#6f9f45;
+    --light-green:#e7f2dc;
+    --soft-green:#f3f8ee;
+    --gold:#d5af45;
+    --light-gold:#efd77d;
+    --white:#ffffff;
+    --text:#17301e;
+    --muted:#6d7c6d;
+    --border:#dce7d7;
+    --shadow:0 18px 50px rgba(9,32,20,.12);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+    background:
+    linear-gradient(
+        180deg,
+        var(--soft-green),
+        var(--white)
+    );
+
+    color:var(--text);
+
+    overflow-x:hidden;
+}
+
+button,
+input,
+textarea,
+select{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+/* =========================================================
+   ANIMATED BACKGROUND
+========================================================= */
+
+.background-orb{
+    position:fixed;
+    width:350px;
+    height:350px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(111,159,69,.12),
+        transparent 70%
+    );
+
+    pointer-events:none;
+
+    z-index:-1;
+
+    animation:
+    floatingOrb 10s ease-in-out infinite;
+}
+
+.orb-one{
+    top:100px;
+    right:-150px;
+}
+
+.orb-two{
+    bottom:-150px;
+    left:-120px;
+
+    animation-delay:3s;
+}
+
+@keyframes floatingOrb{
+
+    0%,100%{
+        transform:translate(0,0);
+    }
+
+    50%{
+        transform:translate(30px,-35px);
+    }
+
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navbar{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+    right:0;
+
+    height:74px;
+
+    z-index:1000;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:
+    0 5%;
+
+    background:
+    rgba(9,32,20,.97);
+
+    border-bottom:
+    1px solid
+    rgba(213,175,69,.45);
+
+    box-shadow:
+    0 5px 30px
+    rgba(0,0,0,.12);
+}
+
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:white;
+}
+
+.logo{
+
+    width:45px;
+    height:45px;
+
+    border:
+    2px solid var(--gold);
+
+    border-radius:50%;
+
+    display:grid;
+
+    place-items:center;
+
+    color:var(--gold);
+
+    font-family:Georgia,serif;
+
+    font-weight:bold;
+
+    position:relative;
+}
+
+.logo::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:28px;
+    height:28px;
+
+    border:
+    1px solid
+    var(--gold);
+
+    border-radius:50%;
+}
+
+.brand-name{
+
+    font-family:Georgia,serif;
+
+    font-size:17px;
+
+    letter-spacing:.4px;
+}
+
+.brand-name span{
+
+    display:block;
+
+    font-family:Arial,sans-serif;
+
+    color:#dbeacc;
+
+    font-size:8px;
+
+    letter-spacing:2px;
+
+    margin-top:3px;
+}
+
+.nav-links{
+
+    display:flex;
+
+    gap:28px;
+
+    align-items:center;
+}
+
+.nav-links a{
+
+    color:#dcebd5;
+
+    text-decoration:none;
+
+    font-size:10px;
+
+    transition:.3s;
+}
+
+.nav-links a:hover{
+
+    color:var(--gold-light);
+
+    transform:translateY(-2px);
+}
+
+.nav-contact{
+
+    padding:
+    10px 17px;
+
+    border:
+    1px solid
+    var(--gold);
+
+    color:var(--gold-light)!important;
+
+    border-radius:20px;
+}
+
+.mobile-menu{
+
+    display:none;
+
+    border:0;
+
+    background:none;
+
+    color:var(--gold);
+
+    font-size:25px;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    min-height:550px;
+
+    padding:
+    155px 7% 80px;
+
+    background:
+
+    linear-gradient(
+        120deg,
+        rgba(9,32,20,.98),
+        rgba(23,53,31,.96)
+    );
+
+    color:white;
+
+    position:relative;
+
+    overflow:hidden;
+
+    display:flex;
+
+    align-items:center;
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    border-radius:50%;
+
+    border:
+    1px solid
+    rgba(213,175,69,.18);
+
+    right:-170px;
+    top:-150px;
+
+    animation:
+    rotateCircle 20s linear infinite;
+}
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    border-radius:50%;
+
+    border:
+    1px solid
+    rgba(111,159,69,.18);
+
+    left:-150px;
+    bottom:-150px;
+
+    animation:
+    rotateCircle 16s linear infinite reverse;
+}
+
+@keyframes rotateCircle{
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+.hero-content{
+
+    max-width:800px;
+
+    position:relative;
+
+    z-index:2;
+
+    animation:
+    heroIn 1s ease;
+}
+
+@keyframes heroIn{
+
+    from{
+        opacity:0;
+        transform:translateY(35px);
+    }
+
+    to{
+        opacity:1;
+        transform:none;
+    }
+
+}
+
+.hero-label{
+
+    color:var(--gold-light);
+
+    font-size:10px;
+
+    letter-spacing:4px;
+
+    margin-bottom:18px;
+}
+
+.hero h1{
+
+    font-family:Georgia,serif;
+
+    font-size:
+    clamp(40px,6vw,70px);
+
+    line-height:1.05;
+
+    font-weight:normal;
+}
+
+.hero h1 span{
+
+    color:var(--gold);
+}
+
+.hero p{
+
+    max-width:670px;
+
+    margin-top:20px;
+
+    color:#d7e6d0;
+
+    font-size:13px;
+
+    line-height:1.9;
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:28px;
+
+    flex-wrap:wrap;
+}
+
+.hero-button{
+
+    padding:
+    13px 20px;
+
+    border-radius:7px;
+
+    border:
+    1px solid
+    var(--gold);
+
+    text-decoration:none;
+
+    font-size:10px;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.hero-button.primary{
+
+    background:var(--gold);
+
+    color:var(--deep-green);
+}
+
+.hero-button.secondary{
+
+    background:transparent;
+
+    color:white;
+}
+
+.hero-button:hover{
+
+    transform:
+    translateY(-4px);
+
+    box-shadow:
+    0 10px 25px
+    rgba(213,175,69,.2);
+}
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.container{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+}
+
+.section{
+
+    padding:
+    85px 0;
+}
+
+.section-heading{
+
+    text-align:center;
+
+    margin-bottom:45px;
+}
+
+.section-heading small{
+
+    color:var(--green);
+
+    font-size:9px;
+
+    letter-spacing:3px;
+
+    font-weight:bold;
+}
+
+.section-heading h2{
+
+    font-family:Georgia,serif;
+
+    color:var(--military-green);
+
+    font-size:
+    clamp(28px,4vw,43px);
+
+    font-weight:normal;
+
+    margin-top:8px;
+}
+
+.section-heading p{
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    max-width:600px;
+
+    margin:
+    10px auto 0;
+
+    line-height:1.7;
+}
+
+/* =========================================================
+   CONTACT CARDS
+========================================================= */
+
+.contact-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:18px;
+}
+
+.contact-card{
+
+    background:white;
+
+    border:
+    1px solid
+    var(--border);
+
+    border-radius:14px;
+
+    padding:27px 20px;
+
+    text-align:center;
+
+    box-shadow:
+    0 10px 30px
+    rgba(9,32,20,.06);
+
+    transition:
+    transform .35s,
+    box-shadow .35s,
+    border-color .35s;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.contact-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    right:0;
+    top:0;
+
+    height:3px;
+
+    background:
+    linear-gradient(
+        90deg,
+        var(--military-green),
+        var(--gold),
+        var(--green)
+    );
+
+    transform:scaleX(0);
+
+    transform-origin:left;
+
+    transition:.4s;
+}
+
+.contact-card:hover{
+
+    transform:
+    translateY(-9px);
+
+    box-shadow:var(--shadow);
+
+    border-color:var(--gold);
+}
+
+.contact-card:hover::before{
+
+    transform:scaleX(1);
+}
+
+.contact-icon{
+
+    width:58px;
+    height:58px;
+
+    margin:
+    0 auto 15px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:50%;
+
+    background:var(--light-green);
+
+    color:var(--military-green);
+
+    border:
+    1px solid
+    rgba(213,175,69,.5);
+
+    font-size:23px;
+
+    transition:.4s;
+}
+
+.contact-card:hover
+.contact-icon{
+
+    transform:
+    rotateY(360deg);
+}
+
+.contact-card h3{
+
+    font-family:Georgia,serif;
+
+    font-size:17px;
+
+    color:var(--military-green);
+}
+
+.contact-card p{
+
+    font-size:9px;
+
+    color:var(--muted);
+
+    line-height:1.6;
+
+    margin:
+    8px 0 15px;
+}
+
+.contact-card a{
+
+    display:inline-block;
+
+    padding:
+    9px 13px;
+
+    border-radius:5px;
+
+    background:var(--military-green);
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:9px;
+
+    transition:.3s;
+}
+
+.contact-card a:hover{
+
+    background:var(--gold);
+
+    color:var(--deep-green);
+}
+
+/* =========================================================
+   SERVICE TEAM
+========================================================= */
+
+.team-section{
+
+    background:
+    var(--light-green);
+
+    border-top:
+    1px solid var(--border);
+
+    border-bottom:
+    1px solid var(--border);
+}
+
+.service-dashboard{
+
+    background:white;
+
+    border-radius:17px;
+
+    box-shadow:var(--shadow);
+
+    overflow:hidden;
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1.4fr;
+}
+
+.service-status{
+
+    background:
+    var(--military-green);
+
+    color:white;
+
+    padding:40px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+}
+
+.service-status-label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#dcebd5;
+
+    font-size:9px;
+
+    letter-spacing:1px;
+}
+
+.online-dot{
+
+    width:10px;
+    height:10px;
+
+    border-radius:50%;
+
+    background:#83c955;
+
+    box-shadow:
+    0 0 0 7px
+    rgba(131,201,85,.1);
+
+    animation:
+    onlinePulse 2s infinite;
+}
+
+@keyframes onlinePulse{
+
+    50%{
+        box-shadow:
+        0 0 0 12px
+        rgba(131,201,85,0);
+    }
+
+}
+
+.service-status h3{
+
+    font-family:Georgia,serif;
+
+    color:var(--gold-light);
+
+    font-size:31px;
+
+    font-weight:normal;
+
+    margin:
+    20px 0 12px;
+}
+
+.service-status p{
+
+    color:#cfe0c8;
+
+    font-size:10px;
+
+    line-height:1.8;
+}
+
+.service-team-info{
+
+    padding:40px;
+}
+
+.team-title{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    border-bottom:
+    1px solid var(--border);
+
+    padding-bottom:15px;
+
+    margin-bottom:20px;
+}
+
+.team-title h3{
+
+    font-family:Georgia,serif;
+
+    color:var(--military-green);
+}
+
+.team-title span{
+
+    font-size:8px;
+
+    background:var(--light-green);
+
+    color:var(--green);
+
+    padding:
+    7px 10px;
+
+    border-radius:15px;
+
+    font-weight:bold;
+}
+
+.staff{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:13px;
+}
+
+.staff-card{
+
+    border:
+    1px solid var(--border);
+
+    border-radius:10px;
+
+    padding:15px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    transition:.3s;
+}
+
+.staff-card:hover{
+
+    transform:
+    translateX(5px);
+
+    border-color:var(--gold);
+}
+
+.staff-avatar{
+
+    width:43px;
+    height:43px;
+
+    border-radius:50%;
+
+    display:grid;
+
+    place-items:center;
+
+    background:
+    var(--military-green);
+
+    color:var(--gold);
+
+    font-family:Georgia,serif;
+
+    font-weight:bold;
+}
+
+.staff-info h4{
+
+    font-size:11px;
+
+    color:var(--military-green);
+}
+
+.staff-info p{
+
+    color:var(--muted);
+
+    font-size:8px;
+
+    margin-top:3px;
+}
+
+.staff-online{
+
+    margin-left:auto;
+
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    background:#7dbb50;
+
+}
+
+/* =========================================================
+   BUSINESS ENQUIRY / FEEDBACK
+========================================================= */
+
+.forms-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:25px;
+}
+
+.form-card{
+
+    background:white;
+
+    border:
+    1px solid var(--border);
+
+    border-radius:14px;
+
+    padding:30px;
+
+    box-shadow:
+    0 10px 35px
+    rgba(9,32,20,.06);
+}
+
+.form-card h3{
+
+    font-family:Georgia,serif;
+
+    color:var(--military-green);
+
+    font-size:22px;
+
+    font-weight:normal;
+
+    margin-bottom:7px;
+}
+
+.form-card>p{
+
+    color:var(--muted);
+
+    font-size:9px;
+
+    line-height:1.7;
+
+    margin-bottom:20px;
+}
+
+.form-group{
+
+    margin-bottom:13px;
+}
+
+.form-group label{
+
+    display:block;
+
+    font-size:9px;
+
+    color:var(--military-green);
+
+    font-weight:bold;
+
+    margin-bottom:6px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+
+    width:100%;
+
+    border:
+    1px solid var(--border);
+
+    background:#fbfdf9;
+
+    border-radius:6px;
+
+    padding:11px;
+
+    outline:none;
+
+    color:var(--text);
+
+    font-size:10px;
+
+    transition:.3s;
+}
+
+.form-group textarea{
+
+    resize:vertical;
+
+    min-height:105px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus{
+
+    border-color:var(--gold);
+
+    box-shadow:
+    0 0 0 3px
+    rgba(213,175,69,.1);
+}
+
+.submit-btn{
+
+    width:100%;
+
+    padding:12px;
+
+    border:0;
+
+    border-radius:6px;
+
+    background:var(--military-green);
+
+    color:white;
+
+    font-size:9px;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.submit-btn:hover{
+
+    background:var(--gold);
+
+    color:var(--deep-green);
+
+    transform:
+    translateY(-2px);
+}
+
+/* =========================================================
+   RATING
+========================================================= */
+
+.rating{
+
+    display:flex;
+
+    gap:7px;
+
+    margin:
+    8px 0 15px;
+}
+
+.star{
+
+    width:30px;
+    height:30px;
+
+    border:
+    1px solid var(--gold);
+
+    background:white;
+
+    color:var(--gold);
+
+    border-radius:5px;
+
+    transition:.2s;
+}
+
+.star.active,
+.star:hover{
+
+    background:var(--gold);
+
+    color:var(--deep-green);
+
+    transform:
+    translateY(-3px);
+}
+
+/* =========================================================
+   CUSTOMER CARE GUIDELINES
+========================================================= */
+
+.guidelines{
+
+    background:
+    var(--military-green);
+
+    color:white;
+
+    border-radius:16px;
+
+    padding:45px;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.guidelines::after{
+
+    content:"CD";
+
+    position:absolute;
+
+    right:30px;
+
+    bottom:-60px;
+
+    font-size:220px;
+
+    font-family:Georgia,serif;
+
+    color:
+    rgba(213,175,69,.05);
+}
+
+.guidelines h2{
+
+    font-family:Georgia,serif;
+
+    color:var(--gold-light);
+
+    font-size:30px;
+
+    font-weight:normal;
+
+    margin-bottom:10px;
+}
+
+.guidelines-intro{
+
+    color:#cfe0c8;
+
+    font-size:10px;
+
+    line-height:1.8;
+
+    max-width:700px;
+
+    margin-bottom:28px;
+}
+
+.guideline-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:15px;
+
+    position:relative;
+
+    z-index:2;
+}
+
+.guideline{
+
+    padding:20px;
+
+    border:
+    1px solid
+    rgba(213,175,69,.25);
+
+    background:
+    rgba(255,255,255,.035);
+
+    border-radius:10px;
+
+    transition:.3s;
+}
+
+.guideline:hover{
+
+    transform:
+    translateY(-6px);
+
+    background:
+    rgba(213,175,69,.08);
+
+    border-color:var(--gold);
+}
+
+.guideline-number{
+
+    color:var(--gold);
+
+    font-family:Georgia,serif;
+
+    font-size:24px;
+
+    margin-bottom:10px;
+}
+
+.guideline h4{
+
+    color:white;
+
+    font-size:11px;
+
+    margin-bottom:6px;
+}
+
+.guideline p{
+
+    color:#c4d5be;
+
+    font-size:9px;
+
+    line-height:1.7;
+}
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.faq{
+
+    max-width:800px;
+
+    margin:auto;
+}
+
+.faq-item{
+
+    background:white;
+
+    border:
+    1px solid var(--border);
+
+    border-radius:9px;
+
+    margin-bottom:8px;
+
+    overflow:hidden;
+}
+
+.faq-question{
+
+    width:100%;
+
+    padding:17px;
+
+    border:0;
+
+    background:white;
+
+    color:var(--military-green);
+
+    text-align:left;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    font-size:10px;
+
+    font-weight:bold;
+}
+
+.faq-answer{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:max-height .4s ease;
+
+    padding:0 17px;
+
+    color:var(--muted);
+
+    font-size:9px;
+
+    line-height:1.7;
+}
+
+.faq-item.open
+.faq-answer{
+
+    max-height:150px;
+
+    padding:
+    0 17px 17px;
+}
+
+.faq-symbol{
+
+    color:var(--gold);
+
+    font-size:16px;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+
+    background:var(--deep-green);
+
+    color:white;
+
+    padding:
+    45px 7% 25px;
+
+    border-top:
+    1px solid
+    rgba(213,175,69,.4);
+}
+
+.footer-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    1.5fr 1fr 1fr 1fr;
+
+    gap:35px;
+
+    max-width:1200px;
+
+    margin:auto;
+}
+
+.footer h3{
+
+    font-family:Georgia,serif;
+
+    color:var(--gold);
+
+    font-weight:normal;
+
+    margin-bottom:12px;
+}
+
+.footer p,
+.footer a{
+
+    color:#bdceb8;
+
+    font-size:9px;
+
+    line-height:1.8;
+
+    text-decoration:none;
+}
+
+.footer a{
+
+    display:block;
+
+    transition:.2s;
+}
+
+.footer a:hover{
+
+    color:var(--gold-light);
+
+    transform:translateX(4px);
+}
+
+.footer-bottom{
+
+    max-width:1200px;
+
+    margin:
+    35px auto 0;
+
+    padding-top:18px;
+
+    border-top:
+    1px solid
+    rgba(255,255,255,.08);
+
+    text-align:center;
+
+    color:#82917f;
+
+    font-size:8px;
+}
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+.toast{
+
+    position:fixed;
+
+    bottom:25px;
+    right:25px;
+
+    z-index:3000;
+
+    background:var(--military-green);
+
+    border:
+    1px solid var(--gold);
+
+    color:white;
+
+    padding:
+    13px 18px;
+
+    border-radius:7px;
+
+    font-size:9px;
+
+    transform:
+    translateY(100px);
+
+    opacity:0;
+
+    transition:.4s;
+}
+
+.toast.show{
+
+    transform:none;
+
+    opacity:1;
+}
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:
+    opacity .8s ease,
+    transform .8s ease;
+}
+
+.reveal.visible{
+
+    opacity:1;
+
+    transform:none;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1000px){
+
+    .contact-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .service-dashboard{
+
+        grid-template-columns:1fr;
+    }
+
+    .guideline-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .footer-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:750px){
+
+    .nav-links{
+
+        position:absolute;
+
+        top:74px;
+        left:0;
+        right:0;
+
+        background:
+        var(--deep-green);
+
+        padding:15px;
+
+        display:none;
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:4px;
+
+        border-bottom:
+        1px solid var(--gold);
+    }
+
+    .nav-links.open{
+
+        display:flex;
+    }
+
+    .nav-links a{
+
+        padding:12px;
+    }
+
+    .mobile-menu{
+
+        display:block;
+    }
+
+    .hero{
+
+        padding:
+        130px 6% 70px;
+    }
+
+    .hero h1{
+
+        font-size:42px;
+    }
+
+    .contact-grid,
+    .forms-grid,
+    .guideline-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .service-status,
+    .service-team-info,
+    .form-card,
+    .guidelines{
+
+        padding:25px;
+    }
+
+    .staff{
+
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- BACKGROUND -->
+
+<div class="background-orb orb-one"></div>
+<div class="background-orb orb-two"></div>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="navbar">
+
+<div class="brand">
+
+<div class="logo">
+CD
+</div>
+
+<div class="brand-name">
+
+CEE-DOUG'S
+
+<span>
+GROUP HOLDING LTD
+</span>
+
+</div>
+
+</div>
+
+
+<div class="nav-links" id="navLinks">
+
+<a href="#contact">
+Contact
+</a>
+
+<a href="#team">
+Service Team
+</a>
+
+<a href="#business">
+Business Enquiries
+</a>
+
+<a href="#feedback">
+Feedback
+</a>
+
+<a href="#guidelines">
+Customer Care
+</a>
+
+<a
+href="#contact"
+class="nav-contact">
+
+CONTACT US
+
+</a>
+
+</div>
+
+
+<button
+class="mobile-menu"
+onclick="toggleMenu()">
+
+☰
+
+</button>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="hero-label">
+CEE-DOUG'S CUSTOMER RELATIONS
+</div>
+
+<h1>
+
+We're here to
+<span>listen.</span>
+
+</h1>
+
+<p>
+
+Whether you need business assistance,
+delivery information, customer support,
+a service enquiry, feedback or direct
+communication with our team, Cee-Doug's
+Group Holding Ltd is committed to making
+every customer interaction professional,
+respectful and convenient.
+
+Our digital assistance remains available
+24/7, even when the human service team is
+offline.
+
+</p>
+
+
+<div class="hero-buttons">
+
+<a
+href="#contact"
+class="hero-button primary">
+
+CONTACT US
+
+</a>
+
+<a
+href="#team"
+class="hero-button secondary">
+
+VIEW SERVICE TEAM
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT SECTION
+===================================================== -->
+
+<section
+class="section reveal"
+id="contact">
+
+<div class="container">
+
+<div class="section-heading">
+
+<small>
+DIRECT COMMUNICATION
+</small>
+
+<h2>
+Contact Cee-Doug's
+</h2>
+
+<p>
+
+Reach us through your preferred
+communication channel.
+
+</p>
+
+</div>
+
+
+<div class="contact-grid">
+
+
+<!-- WHATSAPP -->
+
+<div class="contact-card">
+
+<div class="contact-icon">
+☏
+</div>
+
+<h3>
+WhatsApp
+</h3>
+
+<p>
+
+Chat directly with Cee-Doug's
+customer assistance team.
+
+</p>
+
+<a
+href="https://wa.me/2348000000000"
+target="_blank">
+
+CHAT ON WHATSAPP
+
+</a>
+
+</div>
+
+
+<!-- EMAIL -->
+
+<div class="contact-card">
+
+<div class="contact-icon">
+✉
+</div>
+
+<h3>
+Gmail
+</h3>
+
+<p>
+
+Send us an enquiry, complaint,
+request or business proposal.
+
+</p>
+
+<a
+href="mailto:info@ceedougs.com">
+
+SEND EMAIL
+
+</a>
+
+</div>
+
+
+<!-- FACEBOOK -->
+
+<div class="contact-card">
+
+<div class="contact-icon">
+f
+</div>
+
+<h3>
+Facebook
+</h3>
+
+<p>
+
+Connect with Cee-Doug's through
+our social community.
+
+</p>
+
+<a
+href="#"
+onclick="socialMessage('Facebook')">
+
+VISIT PAGE
+
+</a>
+
+</div>
+
+
+<!-- INSTAGRAM -->
+
+<div class="contact-card">
+
+<div class="contact-icon">
+◎
+</div>
+
+<h3>
+Instagram
+</h3>
+
+<p>
+
+Follow our updates, services
+and business activities.
+
+</p>
+
+<a
+href="#"
+onclick="socialMessage('Instagram')">
+
+VISIT PAGE
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SERVICE TEAM
+===================================================== -->
+
+<section
+class="section team-section reveal"
+id="team">
+
+<div class="container">
+
+<div class="section-heading">
+
+<small>
+REAL-TIME SUPPORT STATUS
+</small>
+
+<h2>
+Who is available?
+</h2>
+
+<p>
+
+See whether your request is being
+handled by our AI assistance or
+a member of the human service team.
+
+</p>
+
+</div>
+
+
+<div class="service-dashboard">
+
+
+<!-- STATUS -->
+
+<div class="service-status">
+
+<div class="service-status-label">
+
+<span class="online-dot"></span>
+
+CURRENT SERVICE STATUS
+
+</div>
+
+<h3 id="serviceTitle">
+
+AI Assistance Online
+
+</h3>
+
+<p id="serviceDescription">
+
+Our intelligent AI customer assistance
+is currently available to respond to
+customers 24 hours a day.
+
+If a human service representative is
+available, their name will appear on
+the service team panel.
+
+</p>
+
+</div>
+
+
+<!-- STAFF -->
+
+<div class="service-team-info">
+
+<div class="team-title">
+
+<h3>
+Service Team
+</h3>
+
+<span id="teamCount">
+1 SERVICE ACTIVE
+</span>
+
+</div>
+
+
+<div class="staff">
+
+
+<!-- AI -->
+
+<div class="staff-card">
+
+<div class="staff-avatar">
+AI
+</div>
+
+<div class="staff-info">
+
+<h4>
+Cee-Doug's AI Assistant
+</h4>
+
+<p>
+Artificial Intelligence • 24/7
+</p>
+
+</div>
+
+<span class="staff-online"></span>
+
+</div>
+
+
+<!-- HUMAN STAFF -->
+
+<div class="staff-card">
+
+<div class="staff-avatar">
+SC
+</div>
+
+<div class="staff-info">
+
+<h4>
+Sarah — Customer Care
+</h4>
+
+<p id="staffSarah">
+Currently offline
+</p>
+
+</div>
+
+<span
+class="staff-online"
+id="sarahDot"
+style="background:#9a514b;">
+</span>
+
+</div>
+
+
+<div class="staff-card">
+
+<div class="staff-avatar">
+DM
+</div>
+
+<div class="staff-info">
+
+<h4>
+David — Business Relations
+</h4>
+
+<p id="staffDavid">
+Currently offline
+</p>
+
+</div>
+
+<span
+class="staff-online"
+id="davidDot"
+style="background:#9a514b;">
+</span>
+
+</div>
+
+
+<div class="staff-card">
+
+<div class="staff-avatar">
+LA
+</div>
+
+<div class="staff-info">
+
+<h4>
+Linda — Delivery Support
+</h4>
+
+<p id="staffLinda">
+Currently offline
+</p>
+
+</div>
+
+<span
+class="staff-online"
+id="lindaDot"
+style="background:#9a514b;">
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FEEDBACK
+===================================================== -->
+
+<section
+class="section team-section reveal"
+id="feedback">
+
+<div class="container">
+
+<div class="section-heading">
+
+<small>
+YOUR VOICE MATTERS
+</small>
+
+<h2>
+Client Feedback
+</h2>
+
+<p>
+
+Your experience helps us improve
+our services and customer care.
+
+</p>
+
+</div>
+
+
+<div class="form-card"
+style="max-width:750px;margin:auto;">
+
+<form id="feedbackForm">
+
+<div class="form-group">
+
+<label>
+YOUR NAME
+</label>
+
+<input
+type="text"
+id="feedbackName"
+placeholder="Optional">
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+ORDER / REFERENCE NUMBER
+</label>
+
+<input
+type="text"
+id="reference"
+placeholder="Optional">
+
+</div>
+
+
+<label
+style="font-size:9px;
+font-weight:bold;
+color:#17351f;">
+
+RATE YOUR EXPERIENCE
+
+</label>
+
+
+<div
+class="rating"
+id="rating">
+
+<button
+type="button"
+class="star"
+data-rating="1">
+★
+</button>
+
+<button
+type="button"
+class="star"
+data-rating="2">
+★
+</button>
+
+<button
+type="button"
+class="star"
+data-rating="3">
+★
+</button>
+
+<button
+type="button"
+class="star"
+data-rating="4">
+★
+</button>
+
+<button
+type="button"
+class="star"
+data-rating="5">
+★
+</button>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+FEEDBACK
+</label>
+
+<textarea
+id="feedbackMessage"
+placeholder="Tell us about your experience..."
+required>
+</textarea>
+
+</div>
+
+
+<button
+class="submit-btn">
+
+SEND FEEDBACK
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CUSTOMER CARE GUIDELINES
+===================================================== -->
+
+<section
+class="section reveal"
+id="guidelines">
+
+<div class="container">
+
+<div class="guidelines">
+
+<h2>
+Cee-Doug's Customer Care Guidelines
+</h2>
+
+<p class="guidelines-intro">
+
+We are committed to providing a respectful,
+professional, transparent and customer-focused
+experience. Please follow these guidelines
+when communicating with our AI or human
+service representatives.
+
+</p>
+
+
+<div class="guideline-grid">
+
+
+<div class="guideline">
+
+<div class="guideline-number">
+01
+</div>
+
+<h4>
+Provide Accurate Information
+</h4>
+
+<p>
+
+Always provide correct contact,
+delivery, order and destination
+information so our team can assist
+you efficiently.
+
+</p>
+
+</div>
+
+
+<div class="guideline">
+
+<div class="guideline-number">
+02
+</div>
+
+<h4>
+Protect Your Personal Information
+</h4>
+
+<p>
+
+Never share passwords, PINs, card
+security codes or other sensitive
+security credentials through chat.
+
+</p>
+
+</div>
+
+
+<div class="guideline">
+
+<div class="guideline-number">
+03
+</div>
+
+<h4>
+Treat Everyone With Respect
+</h4>
+
+<p>
+
+Our AI and human representatives
+are here to help. Please maintain
+respectful communication.
+
+</p>
+
+</div>
+
+
+<div class="guideline">
+
+<div class="guideline-number">
+04
+</div>
+
+<h4>
+Keep Your Tracking Number Safe
+</h4>
+
+<p>
+
+Your tracking or order reference
+helps us locate your delivery and
+provide accurate assistance.
+
+</p>
+
+</div>
+
+
+<div class="guideline">
+
+<div class="guideline-number">
+05
+</div>
+
+<h4>
+Allow Service Verification
+</h4>
+
+<p>
+
+For sensitive requests, Cee-Doug's
+may need to verify appropriate
+information before proceeding.
+
+</p>
+
+</div>
+
+
+<div class="guideline">
+
+<div class="guideline-number">
+06
+</div>
+
+<h4>
+Escalate When Necessary
+</h4>
+
+<p>
+
+If AI assistance cannot resolve your
+request, ask for human support and
+your request can be placed in the
+service queue.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FAQ
+===================================================== -->
+
+<section
+class="section reveal">
+
+<div class="container">
+
+<div class="section-heading">
+
+<small>
+CUSTOMER ASSISTANCE
+</small>
+
+<h2>
+Frequently Asked Questions
+</h2>
+
+</div>
+
+
+<div class="faq">
+
+
+<div class="faq-item">
+
+<button
+class="faq-question">
+
+What happens when the human team is offline?
+
+<span class="faq-symbol">
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+Our AI assistance can continue responding
+to general enquiries, delivery questions,
+service information and other supported
+customer requests 24/7.
+
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button
+class="faq-question">
+
+Can I request a human representative?
+
+<span class="faq-symbol">
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+Yes. You can submit a human-support
+request. Your request can be recorded
+for follow-up when an appropriate
+service representative becomes available.
+
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button
+class="faq-question">
+
+Can I send feedback about a delivery?
+
+<span class="faq-symbol">
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+Yes. Use the Client Feedback section
+and provide your order or reference
+number if available.
+
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button
+class="faq-question">
+
+Can businesses contact Cee-Doug's?
+
+<span class="faq-symbol">
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+Yes. The Business Enquiries section
+is designed for partnerships,
+corporate delivery, commodities,
+logistics, suppliers and other
+commercial enquiries.
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+<div class="footer-grid">
+
+
+<div>
+
+<h3>
+CEE-DOUG'S
+</h3>
+
+<p>
+
+Group Holding Ltd.
+
+Connecting people, businesses,
+products and delivery services
+through professional customer
+experience and intelligent assistance.
+
+</p>
+
+</div>
+
+
+<div>
+
+<h3>
+Contact
+</h3>
+
+<a href="#contact">
+WhatsApp
+</a>
+
+<a href="mailto:info@ceedougs.com">
+Gmail
+</a>
+
+<a href="#contact">
+Social Platforms
+</a>
+
+</div>
+
+
+<div>
+
+<h3>
+Business
+</h3>
+
+<a href="#business">
+Business Enquiries
+</a>
+
+<a href="#feedback">
+Client Feedback
+</a>
+
+<a href="#team">
+Service Team
+</a>
+
+</div>
+
+
+<div>
+
+<h3>
+Support
+</h3>
+
+<a href="#guidelines">
+Customer Care Guidelines
+</a>
+
+<a href="#">
+Privacy
+</a>
+
+<a href="#">
+Terms
+</a>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+© 2026 Cee-Doug's Group Holding Ltd.
+All Rights Reserved.
+
+</div>
+
+</footer>
+
+
+<!-- =====================================================
+     TOAST
+===================================================== -->
+
+<div
+class="toast"
+id="toast">
+</div>
+
+
+<script>
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+function toggleMenu(){
+
+    document
+    .getElementById("navLinks")
+    .classList
+    .toggle("open");
+
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+function showToast(message){
+
+    const toast =
+    document.getElementById("toast");
+
+    toast.textContent = message;
+
+    toast.classList.add("show");
+
+    clearTimeout(
+        window.toastTimer
+    );
+
+    window.toastTimer =
+    setTimeout(
+        function(){
+
+            toast.classList.remove(
+                "show"
+            );
+
+        },
+        3500
+    );
+
+}
+
+
+/* =========================================================
+   SOCIAL PLATFORM
+========================================================= */
+
+function socialMessage(platform){
+
+    event.preventDefault();
+
+    showToast(
+        platform +
+        " social link is ready to be connected."
+    );
+
+}
+
+
+/* =========================================================
+   BUSINESS ENQUIRY
+========================================================= */
+
+document
+.getElementById("businessForm")
+.addEventListener(
+"submit",
+function(e){
+
+    e.preventDefault();
+
+
+    const enquiry = {
+
+        name:
+        document.getElementById(
+            "businessName"
+        ).value,
+
+        email:
+        document.getElementById(
+            "businessEmail"
+        ).value,
+
+        type:
+        document.getElementById(
+            "businessType"
+        ).value,
+
+        message:
+        document.getElementById(
+            "businessMessage"
+        ).value,
+
+        date:
+        new Date().toISOString()
+
+    };
+
+
+    /*
+       DEMO STORAGE
+
+       In production this should be sent
+       securely to your backend/database.
+    */
+
+    localStorage.setItem(
+        "ceeDougsBusinessEnquiry",
+        JSON.stringify(enquiry)
+    );
+
+
+    showToast(
+        "Business enquiry received successfully."
+    );
+
+
+    this.reset();
+
+});
+
+
+/* =========================================================
+   FEEDBACK RATING
+========================================================= */
+
+let selectedRating = 0;
+
+
+document
+.querySelectorAll(".star")
+.forEach(
+function(star){
+
+    star.addEventListener(
+        "click",
+        function(){
+
+            selectedRating =
+            Number(
+                this.dataset.rating
+            );
+
+
+            document
+            .querySelectorAll(".star")
+            .forEach(
+            function(item){
+
+                item.classList.toggle(
+                    "active",
+                    Number(
+                        item.dataset.rating
+                    )
+                    <= selectedRating
+                );
+
+            });
+
+        }
+    );
+
+});
+
+
+/* =========================================================
+   FEEDBACK FORM
+========================================================= */
+
+document
+.getElementById("feedbackForm")
+.addEventListener(
+"submit",
+function(e){
+
+    e.preventDefault();
+
+
+    if(selectedRating === 0){
+
+        showToast(
+            "Please select a rating first."
+        );
+
+        return;
+
+    }
+
+
+    const feedback = {
+
+        name:
+        document.getElementById(
+            "feedbackName"
+        ).value,
+
+        reference:
+        document.getElementById(
+            "reference"
+        ).value,
+
+        rating:
+        selectedRating,
+
+        message:
+        document.getElementById(
+            "feedbackMessage"
+        ).value,
+
+        date:
+        new Date().toISOString()
+
+    };
+
+
+    localStorage.setItem(
+        "ceeDougsFeedback",
+        JSON.stringify(feedback)
+    );
+
+
+    showToast(
+        "Thank you for your valuable feedback."
+    );
+
+
+    this.reset();
+
+
+    selectedRating = 0;
+
+
+    document
+    .querySelectorAll(".star")
+    .forEach(
+    function(star){
+
+        star.classList.remove(
+            "active"
+        );
+
+    });
+
+});
+
+
+/* =========================================================
+   FAQ ACCORDION
+========================================================= */
+
+document
+.querySelectorAll(".faq-question")
+.forEach(
+function(question){
+
+    question.addEventListener(
+        "click",
+        function(){
+
+            const item =
+            this.parentElement;
+
+
+            document
+            .querySelectorAll(".faq-item")
+            .forEach(
+            function(other){
+
+                if(other !== item){
+
+                    other.classList.remove(
+                        "open"
+                    );
+
+                }
+
+            });
+
+
+            item.classList.toggle(
+                "open"
+            );
+
+
+            const symbol =
+            this.querySelector(
+                ".faq-symbol"
+            );
+
+
+            symbol.textContent =
+            item.classList.contains(
+                "open"
+            )
+            ? "−"
+            : "+";
+
+        }
+    );
+
+});
+
+
+/* =========================================================
+   SERVICE TEAM STATUS
+========================================================= */
+
+function updateServiceTeam(){
+
+    /*
+       DEMO STATUS
+
+       Replace this section with a
+       database/API when the real
+       staff-login system is connected.
+    */
+
+    const hour =
+    new Date().getHours();
+
+
+    const humanTeamOnline =
+    hour >= 9 && hour < 17;
+
+
+    const serviceTitle =
+    document.getElementById(
+        "serviceTitle"
+    );
+
+    const description =
+    document.getElementById(
+        "serviceDescription"
+    );
+
+    const teamCount =
+    document.getElementById(
+        "teamCount"
+    );
+
+
+    if(humanTeamOnline){
+
+        serviceTitle.textContent =
+        "Human Service Team Online";
+
+
+        description.textContent =
+
+        "Our human customer service team "
+        +
+        "is currently available. You can "
+        +
+        "contact a representative for "
+        +
+        "personalized assistance. AI "
+        +
+        "assistance also remains active.";
+
+
+        document.getElementById(
+            "staffSarah"
+        ).textContent =
+        "Online • Customer Care";
+
+
+        document.getElementById(
+            "staffDavid"
+        ).textContent =
+        "Online • Business Relations";
+
+
+        document.getElementById(
+            "staffLinda"
+        ).textContent =
+        "Online • Delivery Support";
+
+
+        document.getElementById(
+            "sarahDot"
+        ).style.background =
+        "#83c955";
+
+
+        document.getElementById(
+            "davidDot"
+        ).style.background =
+        "#83c955";
+
+
+        document.getElementById(
+            "lindaDot"
+        ).style.background =
+        "#83c955";
+
+
+        teamCount.textContent =
+        "4 SERVICES ACTIVE";
+
+    }
+
+    else{
+
+        serviceTitle.textContent =
+        "AI Assistance Online";
+
+
+        description.textContent =
+
+        "Our intelligent AI customer "
+        +
+        "assistance is currently available "
+        +
+        "24/7. The human service team is "
+        +
+        "currently offline. You can still "
+        +
+        "receive immediate assistance from "
+        +
+        "our AI system.";
+
+
+        document.getElementById(
+            "staffSarah"
+        ).textContent =
+        "Currently offline";
+
+
+        document.getElementById(
+            "staffDavid"
+        ).textContent =
+        "Currently offline";
+
+
+        document.getElementById(
+            "staffLinda"
+        ).textContent =
+        "Currently offline";
+
+
+        document.getElementById(
+            "sarahDot"
+        ).style.background =
+        "#9a514b";
+
+
+        document.getElementById(
+            "davidDot"
+        ).style.background =
+        "#9a514b";
+
+
+        document.getElementById(
+            "lindaDot"
+        ).style.background =
+        "#9a514b";
+
+
+        teamCount.textContent =
+        "1 SERVICE ACTIVE";
+
+    }
+
+}
+
+
+updateServiceTeam();
+
+
+setInterval(
+updateServiceTeam,
+60000
+);
+
+
+/* =========================================================
+   SCROLL REVEAL ANIMATION
+========================================================= */
+
+const observer =
+new IntersectionObserver(
+function(entries){
+
+    entries.forEach(
+    function(entry){
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add(
+                "visible"
+            );
+
+            observer.unobserve(
+                entry.target
+            );
+
+        }
+
+    });
+
+},
+{
+    threshold:.12
+});
+
+
+document
+.querySelectorAll(".reveal")
+.forEach(
+function(element){
+
+    observer.observe(element);
+
+});
+
+
+/* =========================================================
+   CLOSE MOBILE MENU AFTER CLICK
+========================================================= */
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(
+function(link){
+
+    link.addEventListener(
+        "click",
+        function(){
+
+            document
+            .getElementById("navLinks")
+            .classList.remove("open");
+
+        }
+    );
+
+});
+
+
+</script>
+
+</body>
+</html>

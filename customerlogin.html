@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cee-Dougs | Customer Dashboard</title>
+
+<style>
+:root{
+    --green:#173d2a;
+    --dark:#0b1f15;
+    --gold:#d5ad38;
+    --light:#f4f7f3;
+    --white:#fff;
+    --gray:#68736b;
+    --border:#e2e7e2;
+    --orange:#e98a25;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--light);
+    color:#172219;
+}
+
+/* LOGIN */
+
+.login-page{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:30px;
+    background:
+        linear-gradient(
+            rgba(11,31,21,.92),
+            rgba(23,61,42,.9)
+        ),
+        url("https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=1800&q=85");
+    background-size:cover;
+    background-position:center;
+}
+
+.login-card{
+    width:100%;
+    max-width:430px;
+    background:white;
+    padding:40px;
+    border-radius:18px;
+    box-shadow:0 30px 70px rgba(0,0,0,.3);
+}
+
+.logo{
+    text-align:center;
+    font-size:28px;
+    font-weight:900;
+    color:var(--green);
+    margin-bottom:8px;
+}
+
+.logo span{
+    color:var(--gold);
+}
+
+.login-card h2{
+    text-align:center;
+    margin:20px 0 8px;
+}
+
+.login-card .subtitle{
+    text-align:center;
+    color:var(--gray);
+    margin-bottom:28px;
+}
+
+.form-group{
+    margin-bottom:17px;
+}
+
+.form-group label{
+    display:block;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:7px;
+}
+
+.form-group input{
+    width:100%;
+    padding:14px;
+    border:1px solid var(--border);
+    border-radius:8px;
+    outline:none;
+}
+
+.form-group input:focus{
+    border-color:var(--green);
+}
+
+.login-btn{
+    width:100%;
+    padding:15px;
+    border:0;
+    border-radius:8px;
+    background:var(--green);
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:5px;
+}
+
+.login-btn:hover{
+    background:var(--gold);
+    color:var(--dark);
+}
+
+.demo-info{
+    margin-top:18px;
+    padding:12px;
+    background:var(--light);
+    border-radius:8px;
+    font-size:12px;
+    color:var(--gray);
+}
+
+/* DASHBOARD */
+
+.dashboard{
+    display:none;
+    min-height:100vh;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
+    width:255px;
+    background:var(--dark);
+    color:white;
+    padding:25px 15px;
+    z-index:1000;
+}
+
+.sidebar-logo{
+    font-size:22px;
+    font-weight:900;
+    padding:10px 15px 30px;
+}
+
+.sidebar-logo span{
+    color:var(--gold);
+}
+
+.menu-title{
+    font-size:10px;
+    color:#829087;
+    padding:15px;
+    letter-spacing:1.5px;
+}
+
+.sidebar a{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:13px 15px;
+    color:#d8e0da;
+    text-decoration:none;
+    border-radius:8px;
+    margin-bottom:5px;
+    cursor:pointer;
+}
+
+.sidebar a:hover,
+.sidebar a.active{
+    background:rgba(213,173,56,.15);
+    color:var(--gold);
+}
+
+.logout{
+    position:absolute;
+    bottom:25px;
+    left:15px;
+    right:15px;
+}
+
+/* MAIN */
+
+.main{
+    margin-left:255px;
+}
+
+.topbar{
+    height:75px;
+    background:white;
+    border-bottom:1px solid var(--border);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 35px;
+}
+
+.topbar h2{
+    color:var(--green);
+}
+
+.customer{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.avatar{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:var(--gold);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    color:var(--dark);
+}
+
+.content{
+    padding:35px;
+}
+
+/* WELCOME */
+
+.welcome{
+    background:
+        linear-gradient(
+            100deg,
+            var(--green),
+            #24563b
+        );
+    color:white;
+    padding:32px;
+    border-radius:15px;
+    margin-bottom:25px;
+}
+
+.welcome h1{
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+.welcome p{
+    color:#dbe6de;
+}
+
+/* CARDS */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+    margin-bottom:30px;
+}
+
+.stat-card{
+    background:white;
+    border:1px solid var(--border);
+    padding:22px;
+    border-radius:12px;
+}
+
+.stat-icon{
+    font-size:25px;
+    margin-bottom:12px;
+}
+
+.stat-card small{
+    color:var(--gray);
+}
+
+.stat-card h2{
+    margin-top:8px;
+    color:var(--green);
+}
+
+/* SECTIONS */
+
+.dashboard-section{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:13px;
+    margin-bottom:25px;
+    overflow:hidden;
+}
+
+.section-head{
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    border-bottom:1px solid var(--border);
+}
+
+.section-head h3{
+    color:var(--green);
+}
+
+.section-head button{
+    border:0;
+    background:none;
+    color:var(--green);
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.order-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.order-table th,
+.order-table td{
+    padding:16px 20px;
+    text-align:left;
+    border-bottom:1px solid var(--border);
+    font-size:14px;
+}
+
+.order-table th{
+    background:#fafbf9;
+    color:var(--gray);
+}
+
+.status{
+    padding:6px 10px;
+    border-radius:30px;
+    font-size:11px;
+    font-weight:bold;
+}
+
+.delivered{
+    background:#dff1e4;
+    color:#17652e;
+}
+
+.processing{
+    background:#fff0d8;
+    color:#996000;
+}
+
+.shipped{
+    background:#dfeaf8;
+    color:#24578c;
+}
+
+/* QUICK ACTIONS */
+
+.quick-actions{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.quick-action{
+    border:1px solid var(--border);
+    padding:22px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.quick-action:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 25px rgba(0,0,0,.08);
+}
+
+.quick-action strong{
+    display:block;
+    color:var(--green);
+    margin-bottom:7px;
+}
+
+.quick-action span{
+    color:var(--gray);
+    font-size:13px;
+}
+
+/* MOBILE */
+
+.mobile-menu{
+    display:none;
+}
+
+@media(max-width:1000px){
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:750px){
+
+    .sidebar{
+        transform:translateX(-100%);
+        transition:.3s;
+    }
+
+    .sidebar.open{
+        transform:translateX(0);
+    }
+
+    .main{
+        margin-left:0;
+    }
+
+    .mobile-menu{
+        display:block;
+        border:0;
+        background:none;
+        font-size:25px;
+        cursor:pointer;
+        margin-right:15px;
+    }
+
+    .topbar{
+        padding:0 18px;
+    }
+
+    .content{
+        padding:20px;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .quick-actions{
+        grid-template-columns:1fr;
+    }
+
+    .order-table{
+        min-width:700px;
+    }
+
+    .dashboard-section{
+        overflow-x:auto;
+    }
+
+}
+
+@media(max-width:500px){
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .login-card{
+        padding:25px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- ==========================================
+     LOGIN PAGE
+=========================================== -->
+
+<section class="login-page" id="loginPage">
+
+    <div class="login-card">
+
+        <div class="logo">
+            CEE<span>-DOUGS</span>
+        </div>
+
+        <h2>Customer Login</h2>
+
+        <p class="subtitle">
+            Welcome back to your Cee-Dougs account.
+        </p>
+
+        <form onsubmit="login(event)">
+
+            <div class="form-group">
+
+                <label>Email Address</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Password</label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                    required
+                >
+
+            </div>
+
+            <button class="login-btn">
+                Sign In
+            </button>
+
+        </form>
+
+        <div class="demo-info">
+            Demo mode: any valid email and password will
+            open the customer dashboard.
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     CUSTOMER DASHBOARD
+=========================================== -->
+
+<section class="dashboard" id="dashboard">
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-logo">
+            CEE<span>-DOUGS</span>
+        </div>
+
+        <div class="menu-title">
+            CUSTOMER MENU
+        </div>
+
+        <a class="active">
+            🏠 Dashboard
+        </a>
+
+        <a onclick="showMessage('My Orders')">
+            📦 My Orders
+        </a>
+
+        <a onclick="showMessage('Shopping Cart')">
+            🛒 Shopping Cart
+        </a>
+
+        <a onclick="showMessage('Track Delivery')">
+            🚚 Track Delivery
+        </a>
+
+        <a onclick="showMessage('Wishlist')">
+            ❤️ Wishlist
+        </a>
+
+        <div class="menu-title">
+            ACCOUNT
+        </div>
+
+        <a onclick="showMessage('Profile')">
+            👤 My Profile
+        </a>
+
+        <a onclick="showMessage('Addresses')">
+            📍 Delivery Addresses
+        </a>
+
+        <a onclick="showMessage('Settings')">
+            ⚙️ Account Settings
+        </a>
+
+        <a class="logout" onclick="logout()">
+            🚪 Logout
+        </a>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+        <div class="topbar">
+
+            <div style="display:flex;align-items:center">
+
+                <button
+                    class="mobile-menu"
+                    onclick="toggleSidebar()"
+                >
+                    ☰
+                </button>
+
+                <h2>
+                    Customer Dashboard
+                </h2>
+
+            </div>
+
+            <div class="customer">
+
+                <div>
+                    <strong id="customerName">
+                        Customer
+                    </strong>
+
+                    <small
+                        style="display:block;color:#777"
+                        id="customerEmail"
+                    >
+                    </small>
+                </div>
+
+                <div class="avatar" id="avatar">
+                    C
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="content">
+
+
+            <!-- WELCOME -->
+
+            <div class="welcome">
+
+                <h1>
+                    Welcome back, <span id="welcomeName">
+                        Customer
+                    </span> 👋
+                </h1>
+
+                <p>
+                    Manage your orders, track deliveries,
+                    shop products and manage your account.
+                </p>
+
+            </div>
+
+
+            <!-- STATISTICS -->
+
+            <div class="stats">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        📦
+                    </div>
+
+                    <small>
+                        Total Orders
+                    </small>
+
+                    <h2>
+                        12
+                    </h2>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🚚
+                    </div>
+
+                    <small>
+                        Active Orders
+                    </small>
+
+                    <h2>
+                        2
+                    </h2>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🛒
+                    </div>
+
+                    <small>
+                        Cart Items
+                    </small>
+
+                    <h2 id="cartCount">
+                        0
+                    </h2>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ❤️
+                    </div>
+
+                    <small>
+                        Wishlist
+                    </small>
+
+                    <h2>
+                        7
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <!-- ORDERS -->
+
+            <div class="dashboard-section">
+
+                <div class="section-head">
+
+                    <h3>
+                        Recent Orders
+                    </h3>
+
+                    <button onclick="showMessage('All Orders')">
+                        View All →
+                    </button>
+
+                </div>
+
+                <table class="order-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Order ID
+                            </th>
+
+                            <th>
+                                Date
+                            </th>
+
+                            <th>
+                                Items
+                            </th>
+
+                            <th>
+                                Amount
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>
+                                #CD-10245
+                            </td>
+
+                            <td>
+                                26 Aug 2026
+                            </td>
+
+                            <td>
+                                Premium Rice
+                            </td>
+
+                            <td>
+                                ₦65,000
+                            </td>
+
+                            <td>
+                                <span class="status shipped">
+                                    Shipped
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                #CD-10231
+                            </td>
+
+                            <td>
+                                22 Aug 2026
+                            </td>
+
+                            <td>
+                                Beans + Maize
+                            </td>
+
+                            <td>
+                                ₦46,000
+                            </td>
+
+                            <td>
+                                <span class="status processing">
+                                    Processing
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                #CD-10187
+                            </td>
+
+                            <td>
+                                15 Aug 2026
+                            </td>
+
+                            <td>
+                                Rice + Flour
+                            </td>
+
+                            <td>
+                                ₦87,000
+                            </td>
+
+                            <td>
+                                <span class="status delivered">
+                                    Delivered
+                                </span>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- QUICK ACTIONS -->
+
+            <div class="dashboard-section">
+
+                <div class="section-head">
+
+                    <h3>
+                        Quick Actions
+                    </h3>
+
+                </div>
+
+
+                <div style="padding:20px">
+
+                    <div class="quick-actions">
+
+                        <div
+                            class="quick-action"
+                            onclick="goShopping()"
+                        >
+
+                            <strong>
+                                🛍️ Continue Shopping
+                            </strong>
+
+                            <span>
+                                Browse Cee-Dougs products
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            class="quick-action"
+                            onclick="showMessage('Delivery Tracking')"
+                        >
+
+                            <strong>
+                                🚚 Track My Order
+                            </strong>
+
+                            <span>
+                                See your delivery progress
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            class="quick-action"
+                            onclick="showMessage('Profile Settings')"
+                        >
+
+                            <strong>
+                                👤 Manage Profile
+                            </strong>
+
+                            <span>
+                                Update your account details
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DELIVERY -->
+
+            <div class="dashboard-section">
+
+                <div class="section-head">
+
+                    <h3>
+                        Current Delivery
+                    </h3>
+
+                    <button
+                        onclick="showMessage('Full Tracking')"
+                    >
+                        Track →
+                    </button>
+
+                </div>
+
+                <div style="padding:25px">
+
+                    <strong>
+                        Order #CD-10245
+                    </strong>
+
+                    <p
+                        style="color:#68736b;margin-top:7px"
+                    >
+                        Premium Nigerian Rice
+                    </p>
+
+                    <div
+                        style="
+                        margin-top:20px;
+                        height:8px;
+                        background:#e5e9e5;
+                        border-radius:20px;
+                        overflow:hidden;
+                        "
+                    >
+
+                        <div
+                            style="
+                            width:72%;
+                            height:100%;
+                            background:#d5ad38;
+                            "
+                        ></div>
+
+                    </div>
+
+                    <div
+                        style="
+                        display:flex;
+                        justify-content:space-between;
+                        margin-top:10px;
+                        font-size:12px;
+                        color:#68736b;
+                        "
+                    >
+
+                        <span>
+                            Order Confirmed
+                        </span>
+
+                        <span>
+                            Processing
+                        </span>
+
+                        <span>
+                            Shipped
+                        </span>
+
+                        <span>
+                            Delivered
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</section>
+
+<script>
+
+/* ==========================================
+   LOGIN
+=========================================== */
+
+async function login(event){
+
+    event.preventDefault();
+
+    const email =
+        document.getElementById("email")
+            .value
+            .trim();
+
+    const password =
+        document.getElementById("password")
+            .value
+            .trim();
+
+    if(!email || !password){
+
+        alert(
+            "Please enter your email and password."
+        );
+
+        return;
+    }
+
+    try {
+
+        /* ======================================
+           LOGIN TO CEE-DOUGS BACKEND
+        ====================================== */
+
+        const response =
+            await fetch(
+                "http://localhost:5000/api/login",
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        email: email,
+                        password: password
+                    })
+                }
+            );
+
+        const data =
+            await response.json();
+
+        /* ======================================
+           CHECK LOGIN
+        ====================================== */
+
+        if(!response.ok){
+
+            throw new Error(
+                data.message ||
+                "Login failed."
+            );
+        }
+
+        /* ======================================
+           GET CUSTOMER INFORMATION
+        ====================================== */
+
+        const customer =
+            data.customer;
+
+        if(!customer || !customer.id){
+
+            throw new Error(
+                "Customer information was not returned by the server."
+            );
+        }
+
+        console.log(
+            "Cee-Dougs login successful."
+        );
+
+        console.log(
+            "Customer ID:",
+            customer.id
+        );
+
+        /* ======================================
+           LOAD CUSTOMER DASHBOARD
+        ====================================== */
+
+        const dashboardResponse =
+            await fetch(
+                "http://localhost:5000/api/customer/dashboard/" +
+                customer.id
+            );
+
+        const dashboardData =
+            await dashboardResponse.json();
+
+        if(!dashboardResponse.ok){
+
+            throw new Error(
+                dashboardData.message ||
+                "Unable to load customer dashboard."
+            );
+        }
+
+        /* ======================================
+           CUSTOMER INFORMATION
+        ====================================== */
+
+        const dashboardCustomer =
+            dashboardData.customer;
+
+        if(!dashboardCustomer){
+
+            throw new Error(
+                "Customer dashboard information was not returned."
+            );
+        }
+
+        const name =
+            dashboardCustomer.firstName +
+            " " +
+            dashboardCustomer.lastName;
+
+        const customerName =
+            document.getElementById(
+                "customerName"
+            );
+
+        if(customerName){
+
+            customerName.textContent =
+                name;
+
+        }
+
+        const welcomeName =
+            document.getElementById(
+                "welcomeName"
+            );
+
+        if(welcomeName){
+
+            welcomeName.textContent =
+                dashboardCustomer.firstName;
+
+        }
+
+        const customerEmail =
+            document.getElementById(
+                "customerEmail"
+            );
+
+        if(customerEmail){
+
+            customerEmail.textContent =
+                dashboardCustomer.email;
+
+        }
+
+        const avatar =
+            document.getElementById(
+                "avatar"
+            );
+
+        if(avatar){
+
+            avatar.textContent =
+                dashboardCustomer.firstName
+                    .charAt(0)
+                    .toUpperCase();
+
+        }
+
+        /* ======================================
+           DASHBOARD STATISTICS
+        ====================================== */
+
+        const statCards =
+            document.querySelectorAll(
+                ".stat-card"
+            );
+
+        if(statCards.length >= 2){
+
+            const totalOrdersElement =
+                statCards[0]
+                    .querySelector("h2");
+
+            const activeOrdersElement =
+                statCards[1]
+                    .querySelector("h2");
+
+            if(totalOrdersElement){
+
+                totalOrdersElement.textContent =
+                    dashboardData.statistics
+                        .totalOrders;
+
+            }
+
+            if(activeOrdersElement){
+
+                activeOrdersElement.textContent =
+                    dashboardData.statistics
+                        .activeOrders;
+
+            }
+
+        }
+
+        /* ======================================
+           RECENT ORDERS
+        ====================================== */
+
+        const orderTableBody =
+            document.querySelector(
+                ".order-table tbody"
+            );
+
+        if(orderTableBody){
+
+            orderTableBody.innerHTML = "";
+
+            if(
+                dashboardData.orders &&
+                dashboardData.orders.length > 0
+            ){
+
+                dashboardData.orders.forEach(
+                    order => {
+
+                        /* ==================================
+                           STATUS CLASS
+                        ================================== */
+
+                        let statusClass =
+                            String(
+                                order.status || ""
+                            )
+                            .toLowerCase()
+                            .replace(
+                                /\s+/g,
+                                "-"
+                            );
+
+                        /* ==================================
+                           DATE
+                        ================================== */
+
+                        let formattedDate =
+                            "N/A";
+
+                        if(order.created_at){
+
+                            formattedDate =
+                                new Date(
+                                    order.created_at
+                                ).toLocaleDateString(
+                                    "en-GB",
+                                    {
+                                        day: "2-digit",
+                                        month: "short",
+                                        year: "numeric"
+                                    }
+                                );
+
+                        }
+
+                        /* ==================================
+                           AMOUNT
+                        ================================== */
+
+                        let formattedAmount =
+                            "₦0";
+
+                        if(
+                            order.total_amount !==
+                            undefined &&
+                            order.total_amount !==
+                            null
+                        ){
+
+                            formattedAmount =
+                                Number(
+                                    order.total_amount
+                                ).toLocaleString(
+                                    "en-NG",
+                                    {
+                                        style: "currency",
+                                        currency: "NGN",
+                                        minimumFractionDigits: 0
+                                    }
+                                );
+
+                        }
+
+                        /* ==================================
+                           CREATE TABLE ROW
+                        ================================== */
+
+                        const row =
+                            document.createElement(
+                                "tr"
+                            );
+
+                        row.innerHTML = `
+
+                            <td>
+                                #${order.order_number}
+                            </td>
+
+                            <td>
+                                ${formattedDate}
+                            </td>
+
+                            <td>
+                                ${order.items || "No items"}
+                            </td>
+
+                            <td>
+                                ${formattedAmount}
+                            </td>
+
+                            <td>
+                                <span class="status ${statusClass}">
+                                    ${order.status || "Unknown"}
+                                </span>
+                            </td>
+
+                        `;
+
+                        orderTableBody.appendChild(
+                            row
+                        );
+
+                    }
+                );
+
+            }
+
+            else {
+
+                orderTableBody.innerHTML = `
+
+                    <tr>
+
+                        <td
+                            colspan="5"
+                            style="
+                                text-align:center;
+                                padding:25px;
+                            "
+                        >
+                            No orders found.
+                        </td>
+
+                    </tr>
+
+                `;
+
+            }
+
+        }
+
+        /* ======================================
+           SHOW DASHBOARD
+        ====================================== */
+
+        const loginPage =
+            document.getElementById(
+                "loginPage"
+            );
+
+        const dashboard =
+            document.getElementById(
+                "dashboard"
+            );
+
+        if(loginPage){
+
+            loginPage.style.display =
+                "none";
+
+        }
+
+        if(dashboard){
+
+            dashboard.style.display =
+                "block";
+
+        }
+
+        /* ======================================
+           LOAD CART COUNT
+        ====================================== */
+
+        await loadCartCount(
+            customer.id
+        );
+
+        /* ======================================
+           DEBUG INFORMATION
+        ====================================== */
+
+        console.log(
+            "Dashboard data:",
+            dashboardData
+        );
+
+        console.log(
+            "Customer ID:",
+            customer.id
+        );
+
+    }
+
+    catch(error){
+
+        console.error(
+            "Login error:",
+            error
+        );
+
+        alert(
+            error.message ||
+            "Unable to login. Please try again."
+        );
+
+    }
+
+}
+
+
+/* ==========================================
+   LOAD CART COUNT
+=========================================== */
+
+async function loadCartCount(customerId){
+
+    try {
+
+        const response =
+            await fetch(
+                "http://localhost:5000/api/cart/" +
+                customerId
+            );
+
+        const data =
+            await response.json();
+
+        if(!response.ok){
+
+            throw new Error(
+                data.message ||
+                "Unable to load cart."
+            );
+
+        }
+
+        const cartCount =
+            document.getElementById(
+                "cartCount"
+            );
+
+        if(cartCount){
+
+            cartCount.textContent =
+                data.itemCount || 0;
+
+        }
+
+        console.log(
+            "Cee-Dougs cart:",
+            data
+        );
+
+    }
+
+    catch(error){
+
+        console.error(
+            "Cart loading error:",
+            error
+        );
+
+        const cartCount =
+            document.getElementById(
+                "cartCount"
+            );
+
+        if(cartCount){
+
+            cartCount.textContent =
+                "0";
+
+        }
+
+    }
+
+}
+
+
+/* ==========================================
+   LOGOUT
+=========================================== */
+
+function logout(){
+
+    const dashboard =
+        document.getElementById(
+            "dashboard"
+        );
+
+    const loginPage =
+        document.getElementById(
+            "loginPage"
+        );
+
+    if(dashboard){
+
+        dashboard.style.display =
+            "none";
+
+    }
+
+    if(loginPage){
+
+        loginPage.style.display =
+            "flex";
+
+    }
+
+    const email =
+        document.getElementById(
+            "email"
+        );
+
+    const password =
+        document.getElementById(
+            "password"
+        );
+
+    if(email){
+
+        email.value = "";
+
+    }
+
+    if(password){
+
+        password.value = "";
+
+    }
+
+}
+
+
+/* ==========================================
+   SIDEBAR MOBILE
+=========================================== */
+
+function toggleSidebar(){
+
+    const sidebar =
+        document.getElementById(
+            "sidebar"
+        );
+
+    if(sidebar){
+
+        sidebar.classList.toggle(
+            "open"
+        );
+
+    }
+
+}
+
+
+/* ==========================================
+   BUTTON ACTION
+=========================================== */
+
+function showMessage(section){
+
+    alert(
+        section +
+        " will open here when connected to the Cee-Dougs backend."
+    );
+
+}
+
+
+/* ==========================================
+   SHOPPING
+=========================================== */
+
+function goShopping(){
+
+    alert(
+        "Opening Cee-Dougs Shop..."
+    );
+
+}
+
+</script>
+
+
+</body>
+</html>

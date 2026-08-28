@@ -1,0 +1,2575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cee-Dougs | Customer Portal</title>
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+    --green:#123b28;
+    --deep-green:#071c12;
+    --gold:#d6b04c;
+    --light-gold:#f2d98b;
+    --orange:#e98b2a;
+    --white:#ffffff;
+    --cream:#f7f8f4;
+    --text:#18241d;
+    --muted:#69746d;
+    --border:rgba(18,59,40,.12);
+    --shadow:0 20px 60px rgba(0,0,0,.10);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:
+    Inter,
+    Arial,
+    Helvetica,
+    sans-serif;
+
+    background:var(--cream);
+
+    color:var(--text);
+
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-14px);
+    }
+
+}
+
+@keyframes pulse{
+
+    0%{
+        box-shadow:0 0 0 0 rgba(214,176,76,.5);
+    }
+
+    70%{
+        box-shadow:0 0 0 18px rgba(214,176,76,0);
+    }
+
+    100%{
+        box-shadow:0 0 0 0 rgba(214,176,76,0);
+    }
+
+}
+
+@keyframes rotate{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    height:78px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 6%;
+
+    z-index:1000;
+
+    background:
+    rgba(7,28,18,.88);
+
+    backdrop-filter:blur(16px);
+
+    border-bottom:
+    1px solid
+    rgba(255,255,255,.08);
+
+}
+
+
+.logo{
+
+    font-size:25px;
+
+    font-weight:900;
+
+    letter-spacing:-1px;
+
+    color:white;
+
+}
+
+.logo span{
+
+    color:var(--gold);
+
+}
+
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:27px;
+
+}
+
+.nav-links a{
+
+    color:#dce7df;
+
+    font-size:13px;
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+    color:var(--gold);
+
+}
+
+
+.login-btn{
+
+    padding:11px 20px;
+
+    border:1px solid
+    var(--gold);
+
+    border-radius:30px;
+
+    color:white !important;
+
+}
+
+
+.login-btn:hover{
+
+    background:var(--gold);
+
+    color:var(--deep-green) !important;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    min-height:100vh;
+
+    padding:
+    150px 7% 100px;
+
+    display:grid;
+
+    grid-template-columns:
+    1.05fr .95fr;
+
+    align-items:center;
+
+    gap:70px;
+
+    color:white;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+
+    linear-gradient(
+        120deg,
+        rgba(7,28,18,.98),
+        rgba(18,59,40,.90)
+    ),
+
+    url(
+    "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1800&q=85"
+    );
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:600px;
+
+    height:600px;
+
+    border:
+    1px solid
+    rgba(214,176,76,.18);
+
+    border-radius:50%;
+
+    right:-220px;
+
+    top:-200px;
+
+}
+
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+
+    height:350px;
+
+    border:
+    1px solid
+    rgba(214,176,76,.12);
+
+    border-radius:50%;
+
+    left:-170px;
+
+    bottom:-170px;
+
+}
+
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    animation:fadeUp 1s ease;
+
+}
+
+
+.eyebrow{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    padding:8px 15px;
+
+    border-radius:30px;
+
+    background:
+    rgba(214,176,76,.12);
+
+    border:
+    1px solid
+    rgba(214,176,76,.3);
+
+    color:var(--light-gold);
+
+    font-size:12px;
+
+    margin-bottom:25px;
+
+}
+
+
+.status-dot{
+
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    background:#51c878;
+
+    animation:pulse 2s infinite;
+
+}
+
+
+.hero h1{
+
+    font-size:
+    clamp(48px,6vw,78px);
+
+    line-height:1;
+
+    letter-spacing:-3px;
+
+    margin-bottom:25px;
+
+}
+
+
+.hero h1 span{
+
+    color:var(--gold);
+
+}
+
+
+.hero p{
+
+    max-width:620px;
+
+    color:#c9d5cd;
+
+    font-size:17px;
+
+    line-height:1.8;
+
+}
+
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:14px;
+
+    margin-top:35px;
+
+    flex-wrap:wrap;
+
+}
+
+
+.primary-btn{
+
+    padding:15px 25px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:var(--gold);
+
+    color:var(--deep-green);
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.primary-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 15px 30px rgba(0,0,0,.25);
+
+}
+
+
+.secondary-btn{
+
+    padding:15px 25px;
+
+    border:
+    1px solid
+    rgba(255,255,255,.25);
+
+    border-radius:8px;
+
+    color:white;
+
+    transition:.3s;
+
+}
+
+
+.secondary-btn:hover{
+
+    background:white;
+
+    color:var(--green);
+
+}
+
+
+/* =========================================================
+   HERO VISUAL
+========================================================= */
+
+.hero-visual{
+
+    position:relative;
+
+    min-height:500px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:2;
+
+    animation:
+    fadeUp 1.2s ease;
+
+}
+
+
+.portal-card{
+
+    width:430px;
+
+    max-width:90%;
+
+    padding:28px;
+
+    border-radius:22px;
+
+    background:
+    rgba(255,255,255,.10);
+
+    border:
+    1px solid
+    rgba(255,255,255,.18);
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+    0 30px 80px rgba(0,0,0,.35);
+
+    animation:float 5s ease-in-out infinite;
+
+}
+
+
+.portal-top{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:25px;
+
+}
+
+
+.portal-title{
+
+    font-weight:800;
+
+}
+
+
+.live{
+
+    font-size:11px;
+
+    padding:6px 10px;
+
+    border-radius:20px;
+
+    background:
+    rgba(81,200,120,.15);
+
+    color:#75df98;
+
+}
+
+
+.balance{
+
+    padding:25px;
+
+    border-radius:15px;
+
+    background:
+    rgba(0,0,0,.18);
+
+    margin-bottom:18px;
+
+}
+
+
+.balance small{
+
+    color:#b5c2ba;
+
+}
+
+
+.balance h2{
+
+    font-size:32px;
+
+    margin-top:8px;
+
+    color:white;
+
+}
+
+
+.dashboard-items{
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:12px;
+
+}
+
+
+.dashboard-item{
+
+    padding:18px;
+
+    border-radius:13px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    border:
+    1px solid
+    rgba(255,255,255,.08);
+
+}
+
+
+.dashboard-item span{
+
+    font-size:22px;
+
+}
+
+
+.dashboard-item strong{
+
+    display:block;
+
+    margin-top:10px;
+
+    font-size:13px;
+
+}
+
+
+.dashboard-item small{
+
+    display:block;
+
+    margin-top:5px;
+
+    color:#aebbb2;
+
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section{
+
+    padding:100px 7%;
+
+}
+
+
+.section-heading{
+
+    max-width:700px;
+
+    margin-bottom:55px;
+
+}
+
+
+.section-heading span{
+
+    color:var(--gold);
+
+    font-weight:bold;
+
+    font-size:13px;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+}
+
+
+.section-heading h2{
+
+    font-size:
+    clamp(35px,4vw,52px);
+
+    line-height:1.1;
+
+    margin:12px 0 15px;
+
+    color:var(--green);
+
+}
+
+
+.section-heading p{
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:20px;
+
+}
+
+
+.service-card{
+
+    padding:30px 25px;
+
+    background:white;
+
+    border:
+    1px solid
+    var(--border);
+
+    border-radius:18px;
+
+    box-shadow:0 8px 35px rgba(0,0,0,.04);
+
+    transition:.4s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+.service-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:50%;
+
+    background:
+    rgba(214,176,76,.08);
+
+    right:-30px;
+
+    top:-30px;
+
+}
+
+
+.service-card:hover{
+
+    transform:
+    translateY(-10px);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.service-icon{
+
+    width:58px;
+
+    height:58px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:15px;
+
+    background:
+    rgba(18,59,40,.08);
+
+    font-size:26px;
+
+    margin-bottom:20px;
+
+}
+
+
+.service-card h3{
+
+    color:var(--green);
+
+    margin-bottom:10px;
+
+}
+
+
+.service-card p{
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.7;
+
+    margin-bottom:20px;
+
+}
+
+
+.service-link{
+
+    color:var(--green);
+
+    font-weight:bold;
+
+    font-size:12px;
+
+}
+
+
+/* =========================================================
+   HOW IT WORKS
+========================================================= */
+
+.how{
+
+    background:#071c12;
+
+    color:white;
+
+}
+
+
+.how .section-heading h2{
+
+    color:white;
+
+}
+
+
+.how .section-heading p{
+
+    color:#aebbb2;
+
+}
+
+
+.steps{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+
+.step{
+
+    position:relative;
+
+    padding:30px;
+
+    border:
+    1px solid
+    rgba(255,255,255,.1);
+
+    border-radius:18px;
+
+    background:
+    rgba(255,255,255,.04);
+
+    transition:.4s;
+
+}
+
+
+.step:hover{
+
+    transform:translateY(-7px);
+
+    border-color:
+    rgba(214,176,76,.5);
+
+}
+
+
+.step-number{
+
+    width:45px;
+
+    height:45px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:var(--gold);
+
+    color:var(--deep-green);
+
+    font-weight:900;
+
+    margin-bottom:25px;
+
+}
+
+
+.step h3{
+
+    margin-bottom:10px;
+
+}
+
+
+.step p{
+
+    color:#aebbb2;
+
+    font-size:13px;
+
+    line-height:1.7;
+
+}
+
+
+/* =========================================================
+   SUPPORT
+========================================================= */
+
+.support-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:25px;
+
+}
+
+
+.support-card{
+
+    padding:40px;
+
+    border-radius:22px;
+
+    min-height:300px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    transition:.4s;
+
+}
+
+
+.support-card:hover{
+
+    transform:scale(1.02);
+
+}
+
+
+.ai-support{
+
+    color:white;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #123b28,
+        #071c12
+    );
+
+}
+
+
+.human-support{
+
+    background:white;
+
+    border:
+    1px solid
+    var(--border);
+
+}
+
+
+.support-icon{
+
+    font-size:40px;
+
+}
+
+
+.support-card h3{
+
+    font-size:28px;
+
+    margin:20px 0 10px;
+
+}
+
+
+.support-card p{
+
+    line-height:1.7;
+
+    opacity:.75;
+
+}
+
+
+.support-btn{
+
+    align-self:flex-start;
+
+    margin-top:25px;
+
+    padding:12px 20px;
+
+    border-radius:8px;
+
+    border:none;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+}
+
+
+.ai-support .support-btn{
+
+    background:var(--gold);
+
+    color:var(--deep-green);
+
+}
+
+
+.human-support .support-btn{
+
+    background:var(--green);
+
+    color:white;
+
+}
+
+
+/* =========================================================
+   TRACKING
+========================================================= */
+
+.tracking{
+
+    background:
+    linear-gradient(
+        135deg,
+        #f1f4ef,
+        #ffffff
+    );
+
+}
+
+
+.tracking-box{
+
+    max-width:850px;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.tracking-form{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+
+.tracking-form input{
+
+    flex:1;
+
+    padding:15px;
+
+    border:
+    1px solid
+    var(--border);
+
+    border-radius:8px;
+
+    outline:none;
+
+}
+
+
+.track-result{
+
+    display:none;
+
+    margin-top:30px;
+
+}
+
+
+.progress{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    position:relative;
+
+    margin-top:30px;
+
+}
+
+
+.progress::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:15px;
+
+    left:0;
+
+    right:0;
+
+    height:3px;
+
+    background:#e4e9e4;
+
+}
+
+
+.progress-line{
+
+    position:absolute;
+
+    top:15px;
+
+    left:0;
+
+    width:70%;
+
+    height:3px;
+
+    background:var(--gold);
+
+}
+
+
+.progress-step{
+
+    position:relative;
+
+    z-index:2;
+
+    text-align:center;
+
+    font-size:11px;
+
+    color:var(--muted);
+
+}
+
+
+.progress-circle{
+
+    width:30px;
+
+    height:30px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:white;
+
+    border:3px solid #dfe5df;
+
+    margin:auto auto 8px;
+
+}
+
+
+.progress-step.active .progress-circle{
+
+    background:var(--green);
+
+    border-color:var(--green);
+
+    color:white;
+
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta{
+
+    padding:100px 7%;
+
+    text-align:center;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #d6b04c,
+        #f1d989
+    );
+
+}
+
+
+.cta h2{
+
+    font-size:
+    clamp(38px,5vw,60px);
+
+    color:var(--deep-green);
+
+    margin-bottom:15px;
+
+}
+
+
+.cta p{
+
+    color:#304638;
+
+    max-width:600px;
+
+    margin:auto;
+
+    line-height:1.7;
+
+}
+
+
+.cta-btn{
+
+    display:inline-block;
+
+    margin-top:30px;
+
+    padding:15px 30px;
+
+    background:var(--deep-green);
+
+    color:white;
+
+    border-radius:8px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+
+.cta-btn:hover{
+
+    transform:translateY(-4px);
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    background:#06150d;
+
+    color:#9daaa1;
+
+    padding:60px 7% 30px;
+
+}
+
+
+.footer-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    2fr 1fr 1fr 1fr;
+
+    gap:40px;
+
+    padding-bottom:45px;
+
+}
+
+
+.footer-brand{
+
+    max-width:350px;
+
+}
+
+
+.footer-brand h2{
+
+    color:white;
+
+    margin-bottom:15px;
+
+}
+
+
+.footer-brand span{
+
+    color:var(--gold);
+
+}
+
+
+.footer-brand p{
+
+    font-size:13px;
+
+    line-height:1.8;
+
+}
+
+
+footer h4{
+
+    color:white;
+
+    margin-bottom:18px;
+
+}
+
+
+footer a{
+
+    display:block;
+
+    font-size:13px;
+
+    margin-bottom:10px;
+
+    transition:.3s;
+
+}
+
+
+footer a:hover{
+
+    color:var(--gold);
+
+}
+
+
+.copyright{
+
+    padding-top:25px;
+
+    border-top:
+    1px solid
+    rgba(255,255,255,.08);
+
+    text-align:center;
+
+    font-size:11px;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:1000px){
+
+    .hero{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .hero-visual{
+
+        min-height:400px;
+
+    }
+
+    .services-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
+    .steps{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
+    .footer-grid{
+
+        grid-template-columns:
+        1fr 1fr;
+
+    }
+
+}
+
+
+@media(max-width:700px){
+
+    .navbar{
+
+        padding:0 20px;
+
+    }
+
+    .nav-links{
+
+        display:none;
+
+    }
+
+    .hero{
+
+        padding:
+        130px 25px 70px;
+
+    }
+
+    .hero h1{
+
+        letter-spacing:-2px;
+
+    }
+
+    .section{
+
+        padding:
+        70px 25px;
+
+    }
+
+    .services-grid,
+    .steps,
+    .support-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .tracking-form{
+
+        flex-direction:column;
+
+    }
+
+    .footer-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .portal-card{
+
+        padding:20px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<nav class="navbar">
+
+<a href="#" class="logo">
+
+CEE<span>-DOUGS</span>
+
+</a>
+
+
+<div class="nav-links">
+
+<a href="file:///C:/Users/USER/Documents/Cee-Doug's/company2.html">
+Home
+</a>
+
+<a href="CatShop.html">
+Store
+</a>
+
+<a href="check4.html">
+Delivery
+</a>
+
+<a href="#support">
+Support
+</a>
+
+<a href="#services">
+Services
+</a>
+
+<a
+href="file:///C:/Users/USER/Documents/Cee-Doug's/customerlogin.html"
+class="login-btn"
+>
+Customer Login
+</a>
+
+</div>
+
+</nav>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+
+<div class="hero-content">
+
+
+<div class="eyebrow">
+
+<div class="status-dot"></div>
+
+Customer Services Portal
+
+</div>
+
+
+<h1>
+
+Everything You Need.
+
+<span>
+One Portal.
+</span>
+
+</h1>
+
+
+<p>
+
+Welcome to the Cee-Dougs Customer Portal —
+your central destination to shop, place orders,
+track deliveries, connect with our AI assistant,
+speak with human support and discover our
+business services.
+
+</p>
+
+
+<div class="hero-buttons">
+
+<a
+href="CatShop.html"
+class="primary-btn"
+>
+Start Shopping →
+</a>
+
+
+<a
+href="#services"
+class="secondary-btn"
+>
+Explore Services
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     PORTAL VISUAL
+===================================================== -->
+
+<div class="hero-visual">
+
+
+<div class="portal-card">
+
+
+<div class="portal-top">
+
+<div class="portal-title">
+
+Cee-Dougs Portal
+
+</div>
+
+<div class="live">
+
+● ONLINE
+
+</div>
+
+</div>
+
+
+<div class="balance">
+
+<small>
+Customer Account
+</small>
+
+<h2>
+Welcome Back
+</h2>
+
+</div>
+
+
+<div class="dashboard-items">
+
+
+<div class="dashboard-item">
+
+<span>
+🛒
+</span>
+
+<strong>
+Shop
+</strong>
+
+<small>
+Browse products
+</small>
+
+</div>
+
+
+<div class="dashboard-item">
+
+<span>
+📦
+</span>
+
+<strong>
+My Orders
+</strong>
+
+<small>
+Manage purchases
+</small>
+
+</div>
+
+
+<div class="dashboard-item">
+
+<span>
+🚚
+</span>
+
+<strong>
+Track
+</strong>
+
+<small>
+Live delivery
+</small>
+
+</div>
+
+
+<div class="dashboard-item">
+
+<span>
+🤖
+</span>
+
+<strong>
+AI Assistant
+</strong>
+
+<small>
+Get instant help
+</small>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+
+<section
+class="section"
+id="services"
+>
+
+
+<div class="section-heading">
+
+<span>
+Customer Services
+</span>
+
+<h2>
+Your Cee-Dougs Experience,
+Simplified.
+</h2>
+
+<p>
+
+The Customer Portal brings the most important
+Cee-Dougs services together in one convenient
+digital environment.
+
+</p>
+
+</div>
+
+
+
+<div class="services-grid">
+
+
+<div class="service-card">
+
+<div class="service-icon">
+🛍️
+</div>
+
+<h3>
+Shop & Order
+</h3>
+
+<p>
+
+Browse available products, compare prices,
+add items to your cart and place your order
+securely.
+
+</p>
+
+<a
+href="CatShop.html"
+class="service-link"
+>
+Visit Store →
+</a>
+
+</div>
+
+
+
+<div class="service-card">
+
+<div class="service-icon">
+📦
+</div>
+
+<h3>
+My Orders
+</h3>
+
+<p>
+
+View your order history, order details,
+payment status and previous purchases.
+
+</p>
+
+<a
+href="login.html"
+class="service-link"
+>
+View Orders →
+</a>
+
+</div>
+
+
+
+<div class="service-card">
+
+<div class="service-icon">
+🚚
+</div>
+
+<h3>
+Track Delivery
+</h3>
+
+<p>
+
+Know where your order is and follow its
+progress from processing to delivery.
+
+</p>
+
+<a
+href="#tracking"
+class="service-link"
+>
+Track Order →
+</a>
+
+</div>
+
+
+
+<div class="service-card">
+
+<div class="service-icon">
+💬
+</div>
+
+<h3>
+Get Support
+</h3>
+
+<p>
+
+Need assistance? Connect with our AI assistant
+or request help from the Cee-Dougs support team.
+
+</p>
+
+<a
+href="#support"
+class="service-link"
+>
+Get Help →
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     HOW IT WORKS
+========================================================= -->
+
+<section class="section how">
+
+
+<div class="section-heading">
+
+<span>
+Simple Process
+</span>
+
+<h2>
+From Shopping to Delivery.
+</h2>
+
+<p>
+
+Cee-Dougs is designed to make your customer
+journey straightforward and transparent.
+
+</p>
+
+</div>
+
+
+<div class="steps">
+
+
+<div class="step">
+
+<div class="step-number">
+01
+</div>
+
+<h3>
+Choose
+</h3>
+
+<p>
+
+Explore our products and select what you need.
+
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+02
+</div>
+
+<h3>
+Order
+</h3>
+
+<p>
+
+Add your products to your cart and complete
+your order.
+
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+03
+</div>
+
+<h3>
+Process
+</h3>
+
+<p>
+
+Your order is confirmed, prepared and
+processed for dispatch.
+
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+04
+</div>
+
+<h3>
+Deliver
+</h3>
+
+<p>
+
+Track your order while it moves toward
+your delivery destination.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SUPPORT
+========================================================= -->
+
+<section
+class="section"
+id="support"
+>
+
+
+<div class="section-heading">
+
+<span>
+Customer Support
+</span>
+
+<h2>
+We're Here When You Need Us.
+</h2>
+
+<p>
+
+Choose instant assistance from our AI assistant
+or connect with a human member of the support team.
+
+</p>
+
+</div>
+
+
+<div class="support-grid">
+
+
+<div class="support-card ai-support">
+
+
+<div>
+
+<div class="support-icon">
+🤖
+</div>
+
+<h3>
+Cee-Dougs AI Assistant
+</h3>
+
+<p>
+
+Get instant answers about products,
+orders, delivery, services and frequently
+asked questions.
+
+</p>
+
+</div>
+
+
+<button
+class="support-btn"
+onclick="openAI()"
+>
+Chat With AI →
+</button>
+
+</div>
+
+
+
+<div class="support-card human-support">
+
+
+<div>
+
+<div class="support-icon">
+👨‍💼
+</div>
+
+<h3>
+Human Support
+</h3>
+
+<p>
+
+Need personal assistance? Connect with
+a member of the Cee-Dougs customer
+support team.
+
+</p>
+
+</div>
+
+
+<button
+class="support-btn"
+onclick="openHumanSupport()"
+>
+Contact Support →
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     ORDER TRACKING
+========================================================= -->
+
+<section
+class="section tracking"
+id="tracking"
+>
+
+
+<div class="section-heading">
+
+<span>
+Order Tracking
+</span>
+
+<h2>
+Where Is Your Order?
+</h2>
+
+<p>
+
+Enter your order number to check the current
+status of your Cee-Dougs delivery.
+
+</p>
+
+</div>
+
+
+<div class="tracking-box">
+
+
+<div class="tracking-form">
+
+<input
+type="text"
+id="orderNumber"
+placeholder="Enter order number e.g. CDG-2026-001"
+>
+
+<button
+class="primary-btn"
+onclick="trackOrder()"
+>
+Track Order
+</button>
+
+</div>
+
+
+<div
+class="track-result"
+id="trackResult"
+>
+
+<strong>
+Order Status: In Transit
+</strong>
+
+<p style="margin-top:8px;color:#69746d;">
+Your order is currently moving toward
+your delivery destination.
+</p>
+
+
+<div class="progress">
+
+
+<div class="progress-line"></div>
+
+
+<div class="progress-step active">
+
+<div class="progress-circle">
+✓
+</div>
+
+Order Placed
+
+</div>
+
+
+<div class="progress-step active">
+
+<div class="progress-circle">
+✓
+</div>
+
+Processing
+
+</div>
+
+
+<div class="progress-step active">
+
+<div class="progress-circle">
+✓
+</div>
+
+Dispatched
+
+</div>
+
+
+<div class="progress-step active">
+
+<div class="progress-circle">
+→
+</div>
+
+In Transit
+
+</div>
+
+
+<div class="progress-step">
+
+<div class="progress-circle">
+5
+</div>
+
+Delivered
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section class="cta">
+
+
+<h2>
+Ready to Get Started?
+</h2>
+
+
+<p>
+
+Create your Cee-Dougs customer account and
+experience a smarter way to shop, order,
+track and connect.
+
+</p>
+
+
+<a
+href="register.html"
+class="cta-btn"
+>
+Create Customer Account →
+</a>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+
+<div class="footer-grid">
+
+
+<div class="footer-brand">
+
+<h2>
+CEE<span>-DOUGS</span>
+</h2>
+
+<p>
+
+Cee-Dougs Group Holdings Ltd —
+Building Businesses. Creating Value.
+Shaping Tomorrow.
+
+</p>
+
+</div>
+
+
+<div>
+
+<h4>
+Customer
+</h4>
+
+<a href="file:///C:/Users/USER/Documents/Cee-Doug's/customerreg.html">
+Register
+</a>
+
+<a href="file:///C:/Users/USER/Documents/Cee-Doug's/customerlogin.html">
+Login
+</a>
+
+<a href="#">
+My Account
+</a>
+
+<a href="#">
+My Orders
+</a>
+
+</div>
+
+
+<div>
+
+<h4>
+Services
+</h4>
+
+<a href="CatShop.html">
+Store
+</a>
+
+<a href="check4.html">
+Delivery
+</a>
+
+<a href="#support">
+Support
+</a>
+
+<a href="#tracking">
+Track Order
+</a>
+
+</div>
+
+
+<div>
+
+<h4>
+Company
+</h4>
+
+<a href="AboutUs.html">
+Who We Are
+</a>
+
+<a href="business.html">
+Our Business
+</a>
+
+<a href="vision.html">
+Vision & Mission
+</a>
+
+<a href="#">
+Contact
+</a>
+
+</div>
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 Cee-Dougs Group Holdings Ltd.
+All Rights Reserved.
+
+</div>
+
+</footer>
+
+
+
+<script>
+
+/* =========================================================
+   ORDER TRACKING
+========================================================= */
+
+function trackOrder(){
+
+    const order =
+        document
+        .getElementById("orderNumber")
+        .value
+        .trim();
+
+
+    if(order === ""){
+
+        alert(
+            "Please enter your order number."
+        );
+
+        return;
+
+    }
+
+
+    document
+    .getElementById("trackResult")
+    .style.display = "block";
+
+
+    document
+    .getElementById("trackResult")
+    .scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
+
+}
+
+
+/* =========================================================
+   AI ASSISTANT
+========================================================= */
+
+function openAI(){
+
+    alert(
+        "Cee-Dougs AI Assistant will open here. This will later connect to your AI backend."
+    );
+
+}
+
+
+/* =========================================================
+   HUMAN SUPPORT
+========================================================= */
+
+function openHumanSupport(){
+
+    alert(
+        "Human Support will open here. This can later connect to your support ticket or live chat system."
+    );
+
+}
+
+
+/* =========================================================
+   SCROLL ANIMATION
+========================================================= */
+
+const observer =
+new IntersectionObserver(
+
+    entries => {
+
+        entries.forEach(entry => {
+
+            if(entry.isIntersecting){
+
+                entry.target.style.opacity = "1";
+
+                entry.target.style.transform =
+                    "translateY(0)";
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold:.12
+    }
+
+);
+
+
+document
+.querySelectorAll(
+    ".service-card, .step, .support-card, .section-heading"
+)
+.forEach(element => {
+
+    element.style.opacity = "0";
+
+    element.style.transform =
+        "translateY(30px)";
+
+    element.style.transition =
+        "opacity .7s ease, transform .7s ease";
+
+    observer.observe(element);
+
+});
+
+
+/* =========================================================
+   NAVBAR SCROLL EFFECT
+========================================================= */
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+        const nav =
+            document.querySelector(".navbar");
+
+
+        if(window.scrollY > 50){
+
+            nav.style.background =
+                "rgba(7,28,18,.96)";
+
+        }
+
+        else{
+
+            nav.style.background =
+                "rgba(7,28,18,.88)";
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>

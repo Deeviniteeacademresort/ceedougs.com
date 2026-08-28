@@ -1,0 +1,2116 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="Cee-Dougs Group Holdings Ltd — Building Businesses. Creating Value. Shaping Tomorrow.">
+
+<meta name="theme-color" content="#102f1c">
+
+<title>
+Cee-Dougs Group Holdings Ltd | Building Businesses. Creating Value. Shaping Tomorrow.
+</title>
+
+<style>
+
+/* =========================================================
+   CEE-DOUG'S GROUP HOLDINGS LTD
+   CORPORATE FUTURISTIC WEBSITE
+   ========================================================= */
+
+:root{
+
+    --military:#12351f;
+    --military-dark:#071c11;
+    --military-deep:#05150d;
+
+    --light-green:#8fba63;
+    --light-green-soft:#dcebc9;
+
+    --gold:#d4af37;
+    --gold-light:#f0d675;
+
+    --white:#ffffff;
+    --off-white:#f6f8f3;
+
+    --text:#25352a;
+    --muted:#68756b;
+
+    --shadow:0 20px 60px rgba(0,0,0,.12);
+
+    --transition:all .4s cubic-bezier(.2,.8,.2,1);
+
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+    background:var(--off-white);
+
+    color:var(--text);
+
+    overflow-x:hidden;
+
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar{
+    width:9px;
+}
+
+::-webkit-scrollbar-track{
+    background:var(--military-dark);
+}
+
+::-webkit-scrollbar-thumb{
+    background:var(--gold);
+    border-radius:20px;
+}
+
+
+/* =========================================================
+   PRELOADER
+   ========================================================= */
+
+.loader{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:99999;
+
+    background:
+    radial-gradient(
+        circle at center,
+        #1b4b2b 0%,
+        #071c11 55%,
+        #030c07 100%
+    );
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transition:
+    opacity .8s ease,
+    visibility .8s ease;
+
+}
+
+.loader.hide{
+
+    opacity:0;
+
+    visibility:hidden;
+
+}
+
+.loader-content{
+
+    text-align:center;
+
+}
+
+.loader-logo{
+
+    width:75px;
+
+    height:75px;
+
+    border:2px solid var(--gold);
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:var(--gold);
+
+    font-size:28px;
+
+    font-weight:800;
+
+    margin:auto;
+
+    animation:
+    logoPulse 1.8s infinite,
+    logoRotate 8s linear infinite;
+
+}
+
+.loader-content h2{
+
+    margin-top:20px;
+
+    color:white;
+
+    letter-spacing:4px;
+
+    font-size:14px;
+
+}
+
+.loader-line{
+
+    width:180px;
+
+    height:2px;
+
+    background:rgba(255,255,255,.15);
+
+    margin:18px auto;
+
+    overflow:hidden;
+
+}
+
+.loader-line::after{
+
+    content:"";
+
+    display:block;
+
+    height:100%;
+
+    width:50%;
+
+    background:var(--gold);
+
+    animation:loaderMove 1.2s infinite;
+
+}
+
+
+@keyframes logoPulse{
+
+    0%,100%{
+        box-shadow:0 0 0 rgba(212,175,55,0);
+    }
+
+    50%{
+        box-shadow:0 0 40px rgba(212,175,55,.35);
+    }
+
+}
+
+@keyframes logoRotate{
+
+    from{
+        transform:rotate(0);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+@keyframes loaderMove{
+
+    from{
+        transform:translateX(-120%);
+    }
+
+    to{
+        transform:translateX(300%);
+    }
+
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.navbar{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    z-index:5000;
+
+    padding:18px 6%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    background:rgba(5,21,13,.72);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:
+    1px solid rgba(212,175,55,.15);
+
+    transition:var(--transition);
+
+}
+
+.navbar.scrolled{
+
+    padding:12px 6%;
+
+    background:rgba(5,21,13,.94);
+
+    box-shadow:
+    0 10px 40px rgba(0,0,0,.25);
+
+}
+
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.brand-symbol{
+
+    width:44px;
+
+    height:44px;
+
+    border:1.5px solid var(--gold);
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:var(--gold);
+
+    font-weight:800;
+
+    font-size:18px;
+
+    box-shadow:
+    0 0 20px rgba(212,175,55,.12);
+
+}
+
+.brand-text strong{
+
+    display:block;
+
+    color:white;
+
+    font-family:Georgia,serif;
+
+    font-size:17px;
+
+    letter-spacing:1px;
+
+}
+
+.brand-text span{
+
+    color:var(--gold-light);
+
+    font-size:9px;
+
+    letter-spacing:2px;
+
+}
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:30px;
+
+}
+
+.nav-links a{
+
+    position:relative;
+
+    color:#e7eee9;
+
+    font-size:12px;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+    transition:var(--transition);
+
+}
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--gold);
+
+    transition:var(--transition);
+
+}
+
+.nav-links a:hover{
+
+    color:var(--gold-light);
+
+}
+
+.nav-links a:hover::after{
+
+    width:100%;
+
+}
+
+.nav-cta{
+
+    padding:11px 18px;
+
+    border:1px solid var(--gold);
+
+    border-radius:30px;
+
+    color:white !important;
+
+}
+
+.nav-cta:hover{
+
+    background:var(--gold);
+
+    color:var(--military-dark) !important;
+
+}
+
+.menu-btn{
+
+    display:none;
+
+    width:42px;
+
+    height:42px;
+
+    border:1px solid rgba(212,175,55,.5);
+
+    background:transparent;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+
+.menu-btn span{
+
+    display:block;
+
+    width:22px;
+
+    height:2px;
+
+    margin:5px auto;
+
+    background:white;
+
+}
+
+
+/* =========================================================
+   BUSINESS HERO
+   ========================================================= */
+
+.hero{
+
+    min-height:100vh;
+
+    position:relative;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        rgba(5,21,13,.98) 0%,
+        rgba(8,32,19,.93) 42%,
+        rgba(8,32,19,.55) 70%,
+        rgba(8,32,19,.9) 100%
+    ),
+
+    url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2200&q=90");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    align-items:center;
+
+    overflow:hidden;
+
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(
+        circle at 75% 40%,
+        rgba(143,186,99,.16),
+        transparent 35%
+    );
+
+}
+
+.hero-grid{
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:.12;
+
+    background-image:
+
+    linear-gradient(
+        rgba(212,175,55,.4) 1px,
+        transparent 1px
+    ),
+
+    linear-gradient(
+        90deg,
+        rgba(212,175,55,.4) 1px,
+        transparent 1px
+    );
+
+    background-size:70px 70px;
+
+    mask-image:
+    linear-gradient(
+        to right,
+        transparent,
+        black 45%,
+        transparent
+    );
+
+    animation:gridMove 20s linear infinite;
+
+}
+
+@keyframes gridMove{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(70px);
+    }
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:3;
+
+    width:min(1200px,90%);
+
+    margin:auto;
+
+    padding-top:80px;
+
+}
+
+.hero-label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:var(--gold-light);
+
+    text-transform:uppercase;
+
+    letter-spacing:4px;
+
+    font-size:11px;
+
+    margin-bottom:24px;
+
+}
+
+.hero-label::before{
+
+    content:"";
+
+    width:42px;
+
+    height:1px;
+
+    background:var(--gold);
+
+}
+
+.hero h1{
+
+    max-width:850px;
+
+    color:white;
+
+    font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+    font-size:
+    clamp(45px,7vw,90px);
+
+    line-height:.98;
+
+    font-weight:500;
+
+    letter-spacing:-3px;
+
+}
+
+.hero h1 span{
+
+    color:var(--gold);
+
+}
+
+.hero-description{
+
+    max-width:650px;
+
+    color:#d8e1da;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    margin:30px 0;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:15px 25px;
+
+    border-radius:5px;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+    transition:var(--transition);
+
+}
+
+.btn-primary{
+
+    background:var(--gold);
+
+    color:var(--military-dark);
+
+    box-shadow:
+    0 10px 35px rgba(212,175,55,.2);
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-4px);
+
+    background:var(--gold-light);
+
+}
+
+.btn-outline{
+
+    border:1px solid rgba(255,255,255,.35);
+
+    color:white;
+
+}
+
+.btn-outline:hover{
+
+    background:white;
+
+    color:var(--military-dark);
+
+    transform:translateY(-4px);
+
+}
+
+
+/* =========================================================
+   ORBIT
+   ========================================================= */
+
+.hero-orbit{
+
+    position:absolute;
+
+    right:5%;
+
+    top:24%;
+
+    width:430px;
+
+    height:430px;
+
+    border:1px solid rgba(212,175,55,.22);
+
+    border-radius:50%;
+
+    animation:orbitRotate 20s linear infinite;
+
+}
+
+.hero-orbit::before,
+.hero-orbit::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:50px;
+
+    border:1px solid rgba(143,186,99,.18);
+
+    border-radius:50%;
+
+}
+
+.hero-orbit::after{
+
+    inset:110px;
+
+    border-color:rgba(212,175,55,.15);
+
+}
+
+.orbit-dot{
+
+    position:absolute;
+
+    width:9px;
+
+    height:9px;
+
+    background:var(--gold);
+
+    border-radius:50%;
+
+    box-shadow:0 0 20px var(--gold);
+
+}
+
+.orbit-dot:nth-child(1){
+
+    top:20px;
+
+    left:50%;
+
+}
+
+.orbit-dot:nth-child(2){
+
+    bottom:60px;
+
+    left:15px;
+
+}
+
+.orbit-dot:nth-child(3){
+
+    right:15px;
+
+    top:110px;
+
+}
+
+@keyframes orbitRotate{
+
+    from{
+        transform:rotate(0);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   BUSINESS SECTION
+   ========================================================= */
+
+.business{
+
+    background:#f6f8f3;
+
+}
+
+.section{
+
+    padding:110px 6%;
+
+}
+
+.business-header{
+
+    text-align:center;
+
+    max-width:800px;
+
+    margin:auto;
+
+}
+
+.section-label{
+
+    color:#6e963f;
+
+    font-size:11px;
+
+    letter-spacing:4px;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    margin-bottom:15px;
+
+}
+
+.section-title{
+
+    font-family:Georgia,serif;
+
+    font-size:clamp(34px,5vw,58px);
+
+    color:var(--military);
+
+    font-weight:500;
+
+    line-height:1.1;
+
+}
+
+.section-title span{
+
+    color:#8b7020;
+
+}
+
+.section-intro{
+
+    max-width:700px;
+
+    margin:20px auto 0;
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+}
+
+
+/* =========================================================
+   BUSINESS CARD
+   ========================================================= */
+
+.business-card{
+
+    width:min(1200px,90%);
+
+    margin:60px auto 0;
+
+    display:grid;
+
+    grid-template-columns:1.05fr 1fr;
+
+    background:white;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+}
+
+.business-image{
+
+    min-height:530px;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.business-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:transform 1s ease;
+
+}
+
+.business-card:hover
+.business-image img{
+
+    transform:scale(1.08);
+
+}
+
+.business-image::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(18,53,31,.45)
+    );
+
+}
+
+.business-content{
+
+    padding:60px;
+
+}
+
+.business-content h3{
+
+    font-family:Georgia,serif;
+
+    font-size:42px;
+
+    color:var(--military);
+
+    margin-bottom:10px;
+
+}
+
+.business-subtitle{
+
+    color:#78984f;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    margin-bottom:25px;
+
+}
+
+.business-content p{
+
+    color:var(--muted);
+
+    line-height:1.9;
+
+    margin-bottom:18px;
+
+}
+
+.business-list{
+
+    list-style:none;
+
+    margin:25px 0;
+
+}
+
+.business-list li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin:13px 0;
+
+    color:var(--military);
+
+    font-weight:600;
+
+    font-size:14px;
+
+}
+
+.business-list li::before{
+
+    content:"✓";
+
+    width:23px;
+
+    height:23px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:var(--light-green-soft);
+
+    color:var(--military);
+
+    border-radius:50%;
+
+    font-size:12px;
+
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer{
+
+    background:#06170d;
+
+    color:white;
+
+    padding:70px 6% 25px;
+
+}
+
+.footer-grid{
+
+    width:min(1200px,90%);
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    1.5fr
+    1fr
+    1fr
+    1fr;
+
+    gap:50px;
+
+}
+
+.footer-brand p{
+
+    max-width:330px;
+
+    color:#94a69a;
+
+    line-height:1.8;
+
+    margin:20px 0;
+
+}
+
+.footer-title{
+
+    color:var(--gold);
+
+    font-size:11px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    margin-bottom:20px;
+
+}
+
+.footer-links{
+
+    list-style:none;
+
+}
+
+.footer-links li{
+
+    margin:12px 0;
+
+}
+
+.footer-links a{
+
+    color:#a9b8ae;
+
+    font-size:13px;
+
+    transition:var(--transition);
+
+}
+
+.footer-links a:hover{
+
+    color:var(--gold);
+
+    padding-left:5px;
+
+}
+
+.footer-bottom{
+
+    width:min(1200px,90%);
+
+    margin:50px auto 0;
+
+    padding-top:25px;
+
+    border-top:
+    1px solid rgba(255,255,255,.08);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    color:#718177;
+
+    font-size:11px;
+
+}
+
+
+/* =========================================================
+   REVEAL
+   ========================================================= */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(45px);
+
+    transition:
+    opacity .9s ease,
+    transform .9s ease;
+
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:1000px){
+
+    .nav-links{
+
+        position:absolute;
+
+        top:80px;
+
+        left:5%;
+
+        right:5%;
+
+        display:none;
+
+        flex-direction:column;
+
+        background:rgba(5,21,13,.98);
+
+        padding:30px;
+
+        border:
+        1px solid rgba(212,175,55,.2);
+
+        border-radius:12px;
+
+    }
+
+    .nav-links.show{
+
+        display:flex;
+
+    }
+
+    .menu-btn{
+
+        display:block;
+
+    }
+
+    .hero-orbit{
+
+        opacity:.3;
+
+        right:-180px;
+
+    }
+
+    .business-card{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .footer-grid{
+
+        grid-template-columns:1fr 1fr;
+
+    }
+
+}
+
+@media(max-width:650px){
+
+    .navbar{
+
+        padding:14px 5%;
+
+    }
+
+    .brand-text strong{
+
+        font-size:14px;
+
+    }
+
+    .brand-symbol{
+
+        width:38px;
+
+        height:38px;
+
+    }
+
+    .hero{
+
+        min-height:850px;
+
+    }
+
+    .hero-content{
+
+        padding-top:100px;
+
+    }
+
+    .hero h1{
+
+        font-size:48px;
+
+        letter-spacing:-2px;
+
+    }
+
+    .hero-description{
+
+        font-size:15px;
+
+    }
+
+    .section{
+
+        padding:75px 5%;
+
+    }
+
+    .business-card{
+
+        width:100%;
+
+    }
+
+    .business-image{
+
+        min-height:350px;
+
+    }
+
+    .business-content{
+
+        padding:35px 25px;
+
+    }
+
+    .business-content h3{
+
+        font-size:34px;
+
+    }
+
+    .footer-grid{
+
+        width:100%;
+
+        grid-template-columns:1fr;
+
+        gap:35px;
+
+    }
+
+    .footer-bottom{
+
+        width:100%;
+
+        flex-direction:column;
+
+        gap:10px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ======================================================
+     PRELOADER
+     ====================================================== -->
+
+<div class="loader" id="loader">
+
+    <div class="loader-content">
+
+        <div class="loader-logo">
+            CD
+        </div>
+
+        <h2>
+            CEE-DOUG'S GROUP HOLDINGS LTD
+        </h2>
+
+        <div class="loader-line"></div>
+
+    </div>
+
+</div>
+
+
+<!-- ======================================================
+     NAVIGATION
+     ====================================================== -->
+
+<header class="navbar" id="navbar">
+
+    <a href="index.html" class="brand">
+
+        <div class="brand-symbol">
+            CD
+        </div>
+
+        <div class="brand-text">
+
+            <strong>
+                CEE-DOUG'S
+            </strong>
+
+            <span>
+                GROUP HOLDINGS LTD
+            </span>
+
+        </div>
+
+    </a>
+
+
+    <nav class="nav-links" id="navLinks">
+
+        <!-- SEPARATE WEBPAGES -->
+
+        <a href="WelcomeHome.html">
+            Home
+        </a>
+
+        <a href="AboutUs.html">
+            Who We Are
+        </a>
+
+        <a href="business.html">
+            Our Business
+        </a>
+
+        <a href="approach.html">
+            Our Approach
+        </a>
+
+        <a href="vision.html">
+            Vision & Mission
+        </a>
+
+        <a href="CatShop.html">
+            Shop
+        </a>
+
+        <a href="delivery.html">
+            Delivery
+        </a>
+
+        <a href="contactus.html"
+           class="nav-cta">
+            Contact Us
+        </a>
+
+    </nav>
+
+
+    <button
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="Open navigation menu">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+</header>
+
+
+<!-- ======================================================
+     HERO
+     ====================================================== -->
+
+<section class="hero">
+
+    <div class="hero-grid"></div>
+
+    <div class="hero-orbit">
+
+        <div class="orbit-dot"></div>
+        <div class="orbit-dot"></div>
+        <div class="orbit-dot"></div>
+
+    </div>
+
+
+    <div class="hero-content reveal">
+
+        <div class="hero-label">
+            CEE-DOUG'S GROUP HOLDINGS LTD
+        </div>
+
+        <h1>
+            Building Businesses.
+            <br>
+            Creating <span>Value.</span>
+            <br>
+            Shaping Tomorrow.
+        </h1>
+
+        <p class="hero-description">
+
+            A growing Nigerian business group developing
+            credible enterprises across strategic sectors,
+            creating value and building businesses designed
+            for the future.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="business.html"
+                class="btn btn-primary">
+
+                Explore Our Business →
+
+            </a>
+
+
+            <a
+                href="about.html"
+                class="btn btn-outline">
+
+                Who We Are
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     BUSINESS
+     ====================================================== -->
+
+<section
+    class="section business"
+    id="business">
+
+    <div class="business-header reveal">
+
+        <div class="section-label">
+            OUR BUSINESS
+        </div>
+
+        <h2 class="section-title">
+
+            Cee-Dougs Foods
+            <span>& Commodities</span>
+
+        </h2>
+
+        <p class="section-intro">
+
+            From Nigerian farms and markets
+            to homes and businesses.
+
+        </p>
+
+    </div>
+
+
+    <div class="business-card reveal">
+
+
+        <div class="business-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=1400&q=85"
+                alt="Agricultural commodities">
+
+        </div>
+
+
+        <div class="business-content">
+
+            <h3>
+                Quality Nigerian Food.
+            </h3>
+
+            <div class="business-subtitle">
+
+                TRUSTED COMMODITIES.
+                BETTER VALUE.
+
+            </div>
+
+
+            <p>
+
+                Cee-Dougs Foods & Commodities is
+                an operating business within the
+                Cee-Dougs Group focused on the
+                sourcing, processing, packaging
+                and distribution of quality Nigerian
+                food staples and agricultural
+                commodities.
+
+            </p>
+
+
+            <p>
+
+                From grains and beans to flours,
+                rice and other essential commodities,
+                the business is built around a simple
+                promise:
+
+            </p>
+
+
+            <ul class="business-list">
+
+                <li>
+                    Quality you can trust
+                </li>
+
+                <li>
+                    Value you can afford
+                </li>
+
+                <li>
+                    Service you can rely on
+                </li>
+
+                <li>
+                    Responsible sourcing
+                </li>
+
+                <li>
+                    Dependable distribution
+                </li>
+
+            </ul>
+
+
+            <!-- THIS OPENS THE SEPARATE FOOD WEBSITE -->
+
+            <a
+                href="Links/FoodCom.html"
+                class="btn btn-primary">
+
+                Visit Foods & Commodities →
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     FOOTER
+     ====================================================== -->
+
+<footer>
+
+    <div class="footer-grid">
+
+
+        <div class="footer-brand">
+
+            <div class="brand">
+
+                <div class="brand-symbol">
+                    CD
+                </div>
+
+                <div class="brand-text">
+
+                    <strong>
+                        CEE-DOUG'S
+                    </strong>
+
+                    <span>
+                        GROUP HOLDINGS LTD
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <p>
+
+                Building businesses.
+                Creating value.
+                Shaping tomorrow.
+
+                A growing Nigerian business group
+                developing credible enterprises across
+                strategic sectors.
+
+            </p>
+
+        </div>
+
+
+        <!-- COMPANY -->
+
+        <div>
+
+            <div class="footer-title">
+                Company
+            </div>
+
+            <ul class="footer-links">
+
+                <li>
+                    <a href="about.html">
+                        About Us
+                    </a>
+                </li>
+
+                <li>
+                    <a href="business.html">
+                        Our Business
+                    </a>
+                </li>
+
+                <li>
+                    <a href="approach.html">
+                        Our Approach
+                    </a>
+                </li>
+
+                <li>
+                    <a href="vision.html">
+                        Vision & Mission
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- BUSINESSES -->
+
+        <div>
+
+            <div class="footer-title">
+                Businesses
+            </div>
+
+            <ul class="footer-links">
+
+                <li>
+
+                    <a href="Links/FoodCom.html">
+
+                        Foods & Commodities
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="business.html">
+
+                        Our Businesses
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="partnerships.html">
+
+                        Partnerships
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="contact.html">
+
+                        Business Enquiries
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- CONNECT -->
+
+        <div>
+
+            <div class="footer-title">
+                Connect
+            </div>
+
+            <ul class="footer-links">
+
+                <li>
+
+                    <a href="mailto:info@ceedougs.com">
+
+                        Gmail / Email
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a
+                        href="https://wa.me/2347001234567"
+                        target="_blank"
+                        rel="noopener">
+
+                        WhatsApp
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="contact.html">
+
+                        Contact Us
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+
+            © 2026 Cee-Dougs Group Holdings Ltd.
+            All Rights Reserved.
+
+        </span>
+
+
+        <span>
+
+            Building Businesses • Creating Value •
+            Shaping Tomorrow
+
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- ======================================================
+     JAVASCRIPT
+     ====================================================== -->
+
+<script>
+
+
+/* =========================================================
+   PRELOADER
+   ========================================================= */
+
+window.addEventListener("load", function(){
+
+    setTimeout(function(){
+
+        const loader =
+        document.getElementById("loader");
+
+        if(loader){
+
+            loader.classList.add("hide");
+
+        }
+
+    }, 900);
+
+});
+
+
+/* =========================================================
+   PAGE TRANSITION
+   KEEP PRELOADER WHEN OPENING OTHER PAGES
+   ========================================================= */
+
+document
+.querySelectorAll("a[href]")
+.forEach(function(link){
+
+    link.addEventListener("click", function(e){
+
+        const href =
+        link.getAttribute("href");
+
+        if(
+            !href ||
+            href.startsWith("#") ||
+            href.startsWith("mailto:") ||
+            href.startsWith("https://wa.me") ||
+            link.target === "_blank"
+        ){
+
+            return;
+
+        }
+
+        e.preventDefault();
+
+        const loader =
+        document.getElementById("loader");
+
+        if(loader){
+
+            loader.classList.remove("hide");
+
+        }
+
+        setTimeout(function(){
+
+            window.location.href = href;
+
+        }, 500);
+
+    });
+
+});
+
+
+/* =========================================================
+   NAVBAR SCROLL EFFECT
+   ========================================================= */
+
+const navbar =
+document.getElementById("navbar");
+
+window.addEventListener("scroll", function(){
+
+    if(window.scrollY > 50){
+
+        navbar.classList.add("scrolled");
+
+    }
+
+    else{
+
+        navbar.classList.remove("scrolled");
+
+    }
+
+});
+
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+const menuBtn =
+document.getElementById("menuBtn");
+
+const navLinks =
+document.getElementById("navLinks");
+
+
+if(menuBtn && navLinks){
+
+    menuBtn.addEventListener(
+        "click",
+        function(){
+
+            navLinks.classList.toggle("show");
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   CLOSE MOBILE MENU
+   ========================================================= */
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(function(link){
+
+    link.addEventListener(
+        "click",
+        function(){
+
+            if(navLinks){
+
+                navLinks.classList.remove("show");
+
+            }
+
+        }
+    );
+
+});
+
+
+/* =========================================================
+   SCROLL REVEAL
+   ========================================================= */
+
+const revealElements =
+document.querySelectorAll(".reveal");
+
+
+if("IntersectionObserver" in window){
+
+    const revealObserver =
+    new IntersectionObserver(
+
+        function(entries){
+
+            entries.forEach(
+                function(entry){
+
+                    if(entry.isIntersecting){
+
+                        entry.target
+                        .classList
+                        .add("active");
+
+                        revealObserver
+                        .unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                }
+            );
+
+        },
+
+        {
+            threshold:0.12
+        }
+
+    );
+
+
+    revealElements.forEach(
+        function(element){
+
+            revealObserver.observe(element);
+
+        }
+    );
+
+}
+
+else{
+
+    revealElements.forEach(
+        function(element){
+
+            element.classList.add("active");
+
+        }
+    );
+
+}
+
+
+</script>
+
+</body>
+
+</html>
+```

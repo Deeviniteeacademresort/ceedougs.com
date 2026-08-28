@@ -1,0 +1,4173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cee-Doug's Group Holdings Ltd | Foods & Commodities</title>
+
+<style>
+
+:root{
+    --green:#0d4d25;
+    --green2:#176b36;
+    --green3:#2d873f;
+    --light-green:#eaf4e9;
+    --gold:#c99b35;
+    --gold-light:#e6c66c;
+    --cream:#f8f5e9;
+    --white:#ffffff;
+    --dark:#092713;
+    --text:#26372c;
+    --muted:#6a756d;
+    --shadow:0 20px 60px rgba(0,0,0,.16);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f7faf5;
+    color:var(--text);
+}
+
+
+/* =========================================================
+   TOP AGRICULTURAL BAR
+========================================================= */
+
+.top-bar{
+    height:34px;
+    background:var(--dark);
+    color:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:12px;
+    letter-spacing:.5px;
+}
+
+.top-bar span{
+    color:var(--gold-light);
+    margin:0 5px;
+}
+
+
+/* =========================================================
+   MAIN NAVIGATION
+========================================================= */
+
+.header{
+    position:sticky;
+    top:0;
+    z-index:9999;
+
+    background:rgba(255,255,255,.94);
+    backdrop-filter:blur(20px);
+
+    border-bottom:1px solid rgba(13,77,37,.12);
+
+    box-shadow:0 8px 30px rgba(0,0,0,.06);
+}
+
+.navigation{
+    max-width:1400px;
+    margin:auto;
+
+    min-height:82px;
+
+    padding:0 25px;
+
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+
+.welcome-btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:12px;min-width:220px;padding:16px 30px;border-radius:50px;text-decoration:none;color:#062814;background:linear-gradient(135deg,#e8c85e,#b98b24);font-size:12px;font-weight:800;letter-spacing:1.3px;box-shadow:0 14px 45px #0006,0 0 30px #d5a63a38;transition:.35s;overflow:hidden}
+.welcome-btn:before{content:"";position:absolute;top:0;left:-120%;width:80%;height:100%;transform:skewX(-25deg);background:#fff6;transition:left .6s}
+.welcome-btn:hover{transform:translateY(-5px) scale(1.025);box-shadow:0 20px 55px #0007,0 0 45px #d5a63a59}.welcome-btn:hover:before{left:140%}.arrow{font-size:18px}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo{
+    min-width:220px;
+
+    display:flex;
+    align-items:center;
+    gap:11px;
+
+    color:var(--green);
+
+    text-decoration:none;
+}
+
+.logo-symbol{
+    width:50px;
+    height:50px;
+
+    border-radius:50%;
+
+    border:2px solid var(--gold);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+        radial-gradient(circle,#fff 40%,#edf5e9 100%);
+
+    font-family:Georgia,serif;
+
+    font-size:17px;
+    font-weight:bold;
+
+    box-shadow:
+        0 0 0 4px rgba(201,155,53,.08);
+}
+
+.logo-name{
+    font-family:Georgia,serif;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.logo-sub{
+    display:block;
+
+    font-family:Arial,sans-serif;
+
+    font-size:8px;
+
+    letter-spacing:2.5px;
+
+    color:#657267;
+
+    margin-top:3px;
+}
+
+
+/* =========================================================
+   HORIZONTAL MENU
+========================================================= */
+
+.main-menu{
+    flex:1;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:5px;
+
+    height:82px;
+}
+
+.menu-item{
+    height:82px;
+
+    display:flex;
+    align-items:center;
+
+    position:relative;
+}
+
+.menu-link{
+    border:0;
+
+    background:transparent;
+
+    height:45px;
+
+    padding:0 12px;
+
+    display:flex;
+    align-items:center;
+
+    gap:6px;
+
+    color:var(--gold);
+
+    font-size:12px;
+
+    font-weight:800;
+
+    letter-spacing:.2px;
+
+    cursor:pointer;
+
+    position:relative;
+
+    transition:.3s;
+}
+
+.menu-link::after{
+    content:"";
+
+    position:absolute;
+
+    left:12px;
+    right:12px;
+
+    bottom:0;
+
+    height:2px;
+
+    background:linear-gradient(
+        90deg,
+        var(--green),
+        var(--gold)
+    );
+
+    transform:scaleX(0);
+
+    transform-origin:center;
+
+    transition:.35s;
+}
+
+.menu-item:hover .menu-link,
+.menu-item.active .menu-link{
+    color:var(--green);
+}
+
+.menu-item:hover .menu-link::after,
+.menu-item.active .menu-link::after{
+    transform:scaleX(1);
+}
+
+.arrow{
+    font-size:11px;
+    transition:.3s;
+}
+
+.menu-item:hover .arrow{
+    transform:rotate(180deg);
+}
+
+
+/* =========================================================
+   RIGHT SIDE NAV ACTIONS
+========================================================= */
+
+.nav-actions{
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    white-space:nowrap;
+}
+
+
+/* Search */
+
+.search-button{
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+
+    border:1px solid #dce6d9;
+
+    background:#f4f8f1;
+
+    color:var(--green);
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.search-button:hover{
+    background:var(--green);
+    color:white;
+
+    transform:translateY(-2px);
+}
+
+
+/* Cart */
+
+.cart-button{
+    position:relative;
+
+    width:45px;
+    height:42px;
+
+    border-radius:22px;
+
+    border:1px solid #dce6d9;
+
+    background:#f4f8f1;
+
+    color:var(--green);
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    transition:.3s;
+}
+
+.cart-button:hover{
+    background:var(--green);
+    color:white;
+
+    transform:translateY(-2px);
+}
+
+.cart-number{
+    position:absolute;
+
+    right:-3px;
+    top:-5px;
+
+    width:18px;
+    height:18px;
+
+    border-radius:50%;
+
+    background:#d93636;
+
+    color:white;
+
+    font-size:9px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-weight:bold;
+}
+
+
+/* =========================================================
+   SERVICE TEAM BUTTON
+========================================================= */
+
+.service-button{
+
+    height:43px;
+
+    padding:0 15px;
+
+    border-radius:25px;
+
+    border:1px solid #cfe0ce;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef7ec,
+            #ffffff
+        );
+
+    color:var(--green);
+
+    font-weight:800;
+
+    font-size:11px;
+
+    display:flex;
+    align-items:center;
+
+    gap:7px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:0 5px 18px rgba(13,77,37,.08);
+}
+
+.service-button:hover{
+
+    background:var(--green);
+
+    color:white;
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(13,77,37,.22);
+}
+
+.online-dot{
+
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    background:#27c85b;
+
+    box-shadow:
+        0 0 0 4px rgba(39,200,91,.13);
+
+    animation:pulse 1.8s infinite;
+}
+
+@keyframes pulse{
+
+    0%,100%{
+        box-shadow:
+        0 0 0 3px rgba(39,200,91,.12);
+    }
+
+    50%{
+        box-shadow:
+        0 0 0 7px rgba(39,200,91,.04);
+    }
+}
+
+
+/* =========================================================
+   ORDER NOW
+========================================================= */
+
+.order-button{
+
+    height:45px;
+
+    padding:0 19px;
+
+    border:0;
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--green),
+            var(--green2)
+        );
+
+    color:white;
+
+    font-weight:900;
+
+    font-size:11px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 10px 25px rgba(13,77,37,.22);
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.order-button::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:70%;
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.28),
+            transparent
+        );
+
+    transform:skewX(-20deg);
+
+    transition:.7s;
+}
+
+.order-button:hover::before{
+    left:140%;
+}
+
+.order-button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(13,77,37,.3);
+}
+
+
+/* =========================================================
+   MEGA DROPDOWN
+========================================================= */
+
+.mega-menu{
+
+    position:absolute;
+
+    top:74px;
+
+    left:50%;
+
+    transform:
+        translateX(-50%)
+        translateY(15px);
+
+    width:780px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.98),
+            rgba(246,249,241,.98)
+        );
+
+    border:1px solid rgba(13,77,37,.13);
+
+    border-top:3px solid var(--gold);
+
+    border-radius:0 0 24px 24px;
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.18);
+
+    padding:25px;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    transition:
+        opacity .28s ease,
+        transform .28s ease,
+        visibility .28s;
+}
+
+.menu-item:hover .mega-menu{
+
+    opacity:1;
+
+    visibility:visible;
+
+    pointer-events:auto;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+
+/* decorative agricultural line */
+
+.mega-menu::before{
+
+    content:"🌿";
+
+    position:absolute;
+
+    right:25px;
+
+    top:12px;
+
+    opacity:.12;
+
+    font-size:45px;
+}
+
+.mega-title{
+
+    color:var(--green);
+
+    font-family:Georgia,serif;
+
+    font-size:20px;
+
+    margin-bottom:5px;
+}
+
+.mega-description{
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    margin-bottom:20px;
+}
+
+.mega-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:25px;
+}
+
+.mega-column{
+
+    border-left:1px solid #e1e9dc;
+
+    padding-left:17px;
+}
+
+.mega-column:first-child{
+
+    border-left:0;
+
+    padding-left:0;
+}
+
+.mega-column h4{
+
+    color:var(--green);
+
+    font-size:12px;
+
+    margin-bottom:12px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+}
+
+.mega-column a{
+
+    display:block;
+
+    padding:6px 0;
+
+    color:#5d6b61;
+
+    font-size:11px;
+
+    text-decoration:none;
+
+    transition:.25s;
+
+    position:relative;
+}
+
+.mega-column a:hover{
+
+    color:var(--green);
+
+    padding-left:6px;
+}
+
+.mega-column a:hover::before{
+
+    content:"→";
+
+    position:absolute;
+
+    left:-7px;
+
+    color:var(--gold);
+}
+
+
+/* =========================================================
+   SPECIAL AGRICULTURAL DROPDOWN CARD
+========================================================= */
+
+.feature-card{
+
+    margin-top:20px;
+
+    padding:14px 17px;
+
+    border-radius:15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eff6e9,
+            #faf7e9
+        );
+
+    border:1px solid #dfe8d9;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+.feature-card strong{
+
+    color:var(--green);
+
+    font-size:12px;
+}
+
+.feature-card span{
+
+    display:block;
+
+    color:var(--muted);
+
+    font-size:10px;
+
+    margin-top:3px;
+}
+
+.feature-card button{
+
+    border:0;
+
+    background:var(--green);
+
+    color:white;
+
+    border-radius:18px;
+
+    padding:9px 14px;
+
+    font-size:10px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    min-height:650px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.97),
+            rgba(255,255,255,.78),
+            rgba(255,255,255,.2)
+        ),
+
+        url(
+        "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1800&q=85"
+        )
+
+        center/cover;
+}
+
+.hero-content{
+
+    max-width:1250px;
+
+    margin:auto;
+
+    padding:130px 25px;
+}
+
+.hero-tag{
+
+    display:inline-block;
+
+    background:#eaf4e9;
+
+    color:var(--green);
+
+    padding:9px 15px;
+
+    border-radius:25px;
+
+    font-size:11px;
+
+    font-weight:bold;
+}
+
+.hero h1{
+
+    max-width:760px;
+
+    margin:20px 0;
+
+    font-family:Georgia,serif;
+
+    font-size:
+        clamp(
+            50px,
+            7vw,
+            85px
+        );
+
+    line-height:.95;
+
+    color:var(--green);
+}
+
+.hero h1 span{
+
+    color:var(--gold);
+}
+
+
+.hero p{
+
+    max-width:620px;
+
+    color:#56635a;
+
+    line-height:1.8;
+
+    font-size:16px;
+}
+
+.hero-actions{
+
+    margin-top:28px;
+
+    display:flex;
+
+    gap:12px;
+}
+
+.hero-primary{
+
+    border:0;
+
+    background:var(--green);
+
+    color:white;
+
+    border-radius:28px;
+
+    padding:15px 24px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+.hero-secondary{
+
+    border:1px solid #d7e2d4;
+
+    background:white;
+
+    color:var(--green);
+
+    border-radius:28px;
+
+    padding:15px 24px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+
+/* =========================================================
+   FLOATING AGRICULTURAL BUBBLES
+========================================================= */
+
+.bubbles{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+    overflow:hidden;
+}
+
+.bubble{
+
+    position:absolute;
+
+    bottom:-80px;
+
+    border-radius:50%;
+
+    background:
+        rgba(45,135,63,.08);
+
+    animation:
+        bubbleFloat
+        linear
+        infinite;
+}
+
+.bubble:nth-child(1){
+    left:7%;
+    width:25px;
+    height:25px;
+    animation-duration:14s;
+}
+
+.bubble:nth-child(2){
+    left:25%;
+    width:50px;
+    height:50px;
+    animation-duration:18s;
+}
+
+.bubble:nth-child(3){
+    left:47%;
+    width:20px;
+    height:20px;
+    animation-duration:11s;
+}
+
+.bubble:nth-child(4){
+    left:70%;
+    width:70px;
+    height:70px;
+    animation-duration:21s;
+}
+
+.bubble:nth-child(5){
+    left:90%;
+    width:28px;
+    height:28px;
+    animation-duration:13s;
+}
+
+@keyframes bubbleFloat{
+
+    0%{
+        transform:
+            translateY(0)
+            translateX(0);
+
+        opacity:0;
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    50%{
+        transform:
+            translateY(-50vh)
+            translateX(40px);
+    }
+
+    100%{
+        transform:
+            translateY(-110vh)
+            translateX(-40px);
+
+        opacity:0;
+    }
+}
+
+
+/* =========================================================
+   DEMO CONTENT
+========================================================= */
+
+.content{
+
+    padding:100px 20px;
+
+    text-align:center;
+}
+
+.content h2{
+
+    font-family:Georgia,serif;
+
+    color:var(--green);
+
+    font-size:45px;
+
+    margin-bottom:15px;
+}
+
+.content p{
+
+    max-width:650px;
+
+    margin:auto;
+
+    color:var(--muted);
+
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   SERVICE CHAT WINDOW
+========================================================= */
+
+.service-chat{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:390px;
+
+    height:590px;
+
+    background:#f5f8f3;
+
+    border-radius:27px;
+
+    overflow:hidden;
+
+    z-index:20000;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.28);
+
+    border:1px solid #dce8d9;
+
+    display:none;
+
+    flex-direction:column;
+
+    animation:chatOpen .35s ease;
+}
+
+.service-chat.open{
+
+    display:flex;
+}
+
+@keyframes chatOpen{
+
+    from{
+        opacity:0;
+        transform:
+            translateY(30px)
+            scale(.94);
+    }
+
+    to{
+        opacity:1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+.chat-header{
+
+    min-height:78px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--dark),
+            var(--green2)
+        );
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:14px 17px;
+}
+
+.chat-profile{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+}
+
+.chat-avatar{
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold),
+            #f1da8b
+        );
+
+    color:var(--dark);
+
+    display:grid;
+
+    place-items:center;
+
+    font-family:Georgia,serif;
+
+    font-weight:bold;
+
+    position:relative;
+}
+
+.chat-avatar i{
+
+    position:absolute;
+
+    right:0;
+
+    bottom:0;
+
+    width:11px;
+    height:11px;
+
+    background:#2bd56b;
+
+    border:2px solid white;
+
+    border-radius:50%;
+}
+
+.chat-profile strong{
+
+    display:block;
+
+    font-size:13px;
+}
+
+.chat-profile small{
+
+    display:block;
+
+    margin-top:4px;
+
+    color:#c7ddcb;
+
+    font-size:9px;
+}
+
+.chat-close{
+
+    border:0;
+
+    width:34px;
+    height:34px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.12);
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+}
+
+.chat-body{
+
+    flex:1;
+
+    padding:18px;
+
+    overflow-y:auto;
+}
+
+.message{
+
+    max-width:88%;
+
+    padding:12px 14px;
+
+    margin-bottom:13px;
+
+    border-radius:17px;
+
+    font-size:12px;
+
+    line-height:1.6;
+}
+
+.message.received{
+
+    background:white;
+
+    border-top-left-radius:5px;
+
+    box-shadow:0 4px 14px rgba(0,0,0,.05);
+}
+
+.message.sent{
+
+    margin-left:auto;
+
+    background:var(--green);
+
+    color:white;
+
+    border-top-right-radius:5px;
+}
+
+.quick-buttons{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:7px;
+
+    margin-top:10px;
+}
+
+.quick-buttons button{
+
+    border:1px solid #d9e4d6;
+
+    background:white;
+
+    color:var(--green);
+
+    border-radius:14px;
+
+    padding:10px 5px;
+
+    font-size:10px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+.quick-buttons button:hover{
+
+    background:var(--green);
+
+    color:white;
+}
+
+.chat-input{
+
+    background:white;
+
+    padding:10px;
+
+    display:flex;
+
+    gap:7px;
+
+    border-top:1px solid #e1e8df;
+}
+
+.chat-input input{
+
+    flex:1;
+
+    border:1px solid #d8e2d5;
+
+    border-radius:23px;
+
+    padding:11px 14px;
+
+    outline:none;
+
+    font-size:11px;
+}
+
+.chat-input button{
+
+    width:43px;
+
+    height:43px;
+
+    border:0;
+
+    border-radius:50%;
+
+    background:var(--green);
+
+    color:white;
+
+    cursor:pointer;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+.mobile-menu-button{
+
+    display:none;
+
+    border:0;
+
+    width:43px;
+
+    height:43px;
+
+    border-radius:50%;
+
+    background:#edf5e9;
+
+    color:var(--green);
+
+    font-size:20px;
+}
+
+@media(max-width:1200px){
+
+    .main-menu{
+        gap:0;
+    }
+
+    .menu-link{
+        padding:0 8px;
+        font-size:10px;
+    }
+
+    .service-button{
+        padding:0 10px;
+    }
+
+    .order-button{
+        padding:0 13px;
+    }
+
+}
+
+@media(max-width:1000px){
+
+    .main-menu{
+        display:none;
+    }
+
+    .mobile-menu-button{
+        display:block;
+    }
+
+    .navigation{
+        justify-content:space-between;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .logo{
+        min-width:auto;
+    }
+
+    .logo-name{
+        font-size:17px;
+    }
+
+    .logo-symbol{
+        width:43px;
+        height:43px;
+    }
+
+    .search-button{
+        display:none;
+    }
+
+    .service-button{
+        font-size:0;
+        width:42px;
+        padding:0;
+        justify-content:center;
+    }
+
+    .service-button .online-dot{
+        width:9px;
+        height:9px;
+    }
+
+    .order-button{
+        font-size:9px;
+        padding:0 11px;
+    }
+
+    .hero-content{
+        padding:100px 20px;
+    }
+
+    .hero h1{
+        font-size:53px;
+    }
+
+    .service-chat{
+        right:0;
+        bottom:0;
+        width:100%;
+        height:100dvh;
+        border-radius:0;
+    }
+
+}
+
+
+/* =========================================================
+STYLE 2
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f8faf4;
+    color:#17331d;
+    overflow-x:hidden;
+}
+
+:root{
+    --green:#12652b;
+    --dark-green:#073b18;
+    --lime:#7cae28;
+    --gold:#d9ad3c;
+    --cream:#fffef5;
+    --white:#ffffff;
+    --dark:#102516;
+}
+
+
+/* =========================================================
+   LOADING SCREEN
+========================================================= */
+
+.loader{
+    position:fixed;
+    inset:0;
+    background:var(--dark-green);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+    transition:opacity 1s ease, visibility 1s ease;
+}
+
+.loader.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+.loader-box{
+    text-align:center;
+    color:white;
+}
+
+.loader-logo{
+    width:90px;
+    height:90px;
+    border:4px solid var(--gold);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:auto;
+    font-size:42px;
+    font-family:Georgia,serif;
+    animation:spinLogo 2s infinite linear;
+}
+
+.loader-box h2{
+    margin-top:20px;
+    letter-spacing:3px;
+}
+
+.loader-box p{
+    margin-top:8px;
+    opacity:.7;
+}
+
+@keyframes spinLogo{
+    0%{transform:rotate(0deg)}
+    100%{transform:rotate(360deg)}
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:9000;
+    transition:.4s;
+}
+
+header.scrolled{
+    background:rgba(255,255,255,.94);
+    backdrop-filter:blur(20px);
+    box-shadow:0 8px 30px rgba(0,0,0,.08);
+}
+
+.navbar{
+    max-width:1350px;
+    margin:auto;
+    padding:18px 35px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+header.scrolled .logo{
+    color:var(--green);
+}
+
+.logo-circle{
+    width:52px;
+    height:52px;
+    border:3px solid currentColor;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Georgia,serif;
+    font-size:26px;
+    font-weight:bold;
+}
+
+.logo-text strong{
+    display:block;
+    font-family:Georgia,serif;
+    font-size:23px;
+}
+
+.logo-text small{
+    font-size:8px;
+    letter-spacing:2px;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+
+.nav-links button{
+    border:none;
+    background:none;
+    color:white;
+    cursor:pointer;
+    font-weight:600;
+    font-size:14px;
+    transition:.3s;
+}
+
+header.scrolled .nav-links button{
+    color:#444;
+}
+
+.nav-links button:hover{
+    color:var(--gold);
+}
+
+.nav-order{
+    border:none;
+    background:var(--gold);
+    color:#17320e;
+    padding:13px 28px;
+    border-radius:30px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.nav-order:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(217,173,60,.3);
+}
+
+.menu{
+    display:none;
+    color:white;
+    background:none;
+    border:none;
+    font-size:28px;
+}
+
+
+/* =========================================================
+   PAGE SYSTEM
+========================================================= */
+
+.page{
+    display:none;
+    min-height:100vh;
+    animation:pageEnter .8s ease;
+}
+
+.page.active{
+    display:block;
+}
+
+@keyframes pageEnter{
+
+    0%{
+        opacity:0;
+        transform:translateX(50px);
+    }
+
+    100%{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+
+/* =========================================================
+   BUBBLES
+========================================================= */
+
+.bubbles{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:2;
+}
+
+.bubble{
+    position:absolute;
+    bottom:-100px;
+    border:1px solid rgba(255,255,255,.4);
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(4px);
+    border-radius:50%;
+    animation:floatBubble linear infinite;
+}
+
+@keyframes floatBubble{
+
+    0%{
+        transform:translateY(0) translateX(0) rotate(0);
+        opacity:0;
+    }
+
+    10%{
+        opacity:.8;
+    }
+
+    50%{
+        transform:translateY(-55vh) translateX(80px) rotate(180deg);
+    }
+
+    100%{
+        transform:translateY(-120vh) translateX(-70px) rotate(360deg);
+        opacity:0;
+    }
+}
+
+
+/* =========================================================
+   HOME HERO
+========================================================= */
+
+.home-hero{
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    color:white;
+}
+
+.hero-video{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:0;
+}
+
+.video-overlay{
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3,35,12,.95),
+            rgba(6,63,22,.78),
+            rgba(5,45,15,.35)
+        );
+    z-index:1;
+}
+
+.hero-content{
+    max-width:1350px;
+    width:100%;
+    margin:auto;
+    padding:150px 50px 80px;
+    position:relative;
+    z-index:5;
+}
+
+.hero-small{
+    display:inline-block;
+    border:1px solid rgba(255,255,255,.5);
+    padding:9px 18px;
+    border-radius:30px;
+    font-size:12px;
+    letter-spacing:2px;
+    margin-bottom:22px;
+    backdrop-filter:blur(10px);
+}
+
+.hero-content h1{
+    font-family:Georgia,serif;
+    font-size:clamp(55px,8vw,110px);
+    line-height:.9;
+    max-width:850px;
+    margin-bottom:25px;
+}
+
+.hero-content h1 span{
+    color:var(--gold);
+}
+
+.hero-content p{
+    max-width:620px;
+    line-height:1.8;
+    font-size:18px;
+    color:#e4eee4;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    margin-top:35px;
+}
+
+.primary-btn,
+.secondary-btn{
+    padding:16px 30px;
+    border-radius:35px;
+    border:none;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.4s;
+}
+
+.primary-btn{
+    background:var(--gold);
+    color:#163414;
+}
+
+.secondary-btn{
+    background:rgba(255,255,255,.1);
+    color:white;
+    border:1px solid rgba(255,255,255,.4);
+    backdrop-filter:blur(10px);
+}
+
+.primary-btn:hover,
+.secondary-btn:hover{
+    transform:translateY(-5px) scale(1.03);
+}
+
+
+/* =========================================================
+   HERO SLIDER
+========================================================= */
+
+.hero-slider{
+    position:absolute;
+    right:6%;
+    bottom:12%;
+    width:390px;
+    height:280px;
+    z-index:6;
+}
+
+.hero-slide{
+    position:absolute;
+    inset:0;
+    border-radius:30px;
+    overflow:hidden;
+    opacity:0;
+    transform:scale(.9) translateX(50px);
+    transition:1s;
+    box-shadow:0 30px 60px rgba(0,0,0,.3);
+}
+
+.hero-slide.active{
+    opacity:1;
+    transform:scale(1) translateX(0);
+}
+
+.hero-slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.slide-caption{
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    padding:25px;
+    background:linear-gradient(transparent,rgba(0,0,0,.8));
+}
+
+.slide-caption h3{
+    font-size:25px;
+}
+
+.slider-controls{
+    position:absolute;
+    bottom:-65px;
+    right:0;
+    display:flex;
+    gap:10px;
+}
+
+.slider-controls button{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    border:1px solid white;
+    background:rgba(255,255,255,.1);
+    color:white;
+    cursor:pointer;
+}
+
+
+/* =========================================================
+   FLOATING TRUST STRIP
+========================================================= */
+
+.trust-strip{
+    position:absolute;
+    bottom:35px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:8;
+    width:min(800px,90%);
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.25);
+    backdrop-filter:blur(20px);
+    border-radius:25px;
+    overflow:hidden;
+    padding:10px 4px 2px;
+}
+
+.trust{
+    text-align:center;
+    padding: 10px;
+    border-right:1px solid rgba(255,255,255,.2);
+}
+
+.trust:last-child{
+    border:none;
+}
+
+.trust strong{
+    display:block;
+    margin-top:px;
+    font-size:13px;
+}
+
+
+/* =========================================================
+   GENERAL SECTION
+========================================================= */
+
+.section{
+    padding:110px 35px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-heading span{
+    color:var(--gold);
+    font-weight:bold;
+    letter-spacing:3px;
+    font-size:12px;
+}
+
+.section-heading h2{
+    font-family:Georgia,serif;
+    font-size:55px;
+    color:var(--green);
+    margin:12px 0;
+}
+
+.section-heading p{
+    max-width:650px;
+    margin:auto;
+    color:#647067;
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   BUSINESS PAGE
+========================================================= */
+
+.business-hero{
+    min-height:70vh;
+    background:
+        linear-gradient(
+            120deg,
+            #063916,
+            #12652b,
+            #4b7d1e
+        );
+    color:white;
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+}
+
+.business-content{
+    max-width:1200px;
+    margin:auto;
+    width:100%;
+    padding:160px 35px 100px;
+    position:relative;
+    z-index:5;
+}
+
+.business-content h1{
+    font-family:Georgia,serif;
+    font-size:clamp(55px,7vw,90px);
+    max-width:850px;
+}
+
+.business-content h1 span{
+    color:var(--gold);
+}
+
+.business-content p{
+    margin-top:25px;
+    max-width:650px;
+    line-height:1.8;
+    color:#e2eee2;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats{
+    margin-top:-70px;
+    position:relative;
+    z-index:20;
+}
+
+.stats-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    background:white;
+    border-radius:30px;
+    box-shadow:0 20px 50px rgba(0,0,0,.12);
+    overflow:hidden;
+}
+
+.stat{
+    text-align:center;
+    padding:35px 15px;
+    border-right:1px solid #eee;
+}
+
+.stat:last-child{
+    border:none;
+}
+
+.stat-number{
+    color:var(--green);
+    font-size:42px;
+    font-weight:900;
+}
+
+.stat p{
+    color:#687169;
+    margin-top:5px;
+}
+
+
+/* =========================================================
+   BUSINESS CARDS
+========================================================= */
+
+.business-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.business-card{
+    padding:35px;
+    background:white;
+    border-radius:25px;
+    box-shadow:0 12px 35px rgba(0,0,0,.07);
+    transition:.4s;
+    position:relative;
+    overflow:hidden;
+}
+
+.business-card::before{
+    content:"";
+    position:absolute;
+    width:100px;
+    height:100px;
+    background:#e8f2d8;
+    border-radius:50%;
+    top:-40px;
+    right:-40px;
+}
+
+.business-card:hover{
+    transform:translateY(-12px) rotateX(3deg);
+    box-shadow:0 25px 50px rgba(0,0,0,.12);
+}
+
+.business-icon{
+    width:65px;
+    height:65px;
+    border-radius:20px;
+    background:#edf5df;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+    margin-bottom:25px;
+}
+
+.business-card h3{
+    color:var(--green);
+    font-size:23px;
+    margin-bottom:12px;
+}
+
+.business-card p{
+    color:#667168;
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   SHOP
+========================================================= */
+
+.shop-hero{
+    min-height:60vh;
+    background:
+        linear-gradient(
+            120deg,
+            rgba(3,48,17,.95),
+            rgba(20,105,43,.8)
+        ),
+        url("https://images.unsplash.com/photo-1518843875459-f738682238a6?auto=format&fit=crop&w=1800&q=90");
+    background-size:cover;
+    background-position:center;
+    color:white;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.shop-hero-content{
+    max-width:1200px;
+    margin:auto;
+    width:100%;
+    padding:150px 35px 100px;
+}
+
+.shop-hero h1{
+    font-family:Georgia,serif;
+    font-size:clamp(60px,8vw,100px);
+}
+
+.shop-hero p{
+    margin-top:20px;
+    max-width:600px;
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   CATEGORY FILTER
+========================================================= */
+
+.category-buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-bottom:50px;
+}
+
+.category-buttons button{
+    border:1px solid #cfd9c9;
+    background:white;
+    color:#426048;
+    padding:12px 25px;
+    border-radius:30px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.category-buttons button.active,
+.category-buttons button:hover{
+    background:var(--green);
+    color:white;
+    border-color:var(--green);
+}
+
+
+/* =========================================================
+   PRODUCTS
+========================================================= */
+
+.products-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.product{
+    background:white;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.07);
+    transition:.5s;
+    opacity:1;
+}
+
+.product.hide{
+    display:none;
+}
+
+.product:hover{
+    transform:translateY(-12px);
+    box-shadow:0 25px 50px rgba(0,0,0,.14);
+}
+
+.product-image{
+    height:240px;
+    overflow:hidden;
+    position:relative;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.7s;
+}
+
+.product:hover img{
+    transform:scale(1.12) rotate(2deg);
+}
+
+.product-tag{
+    position:absolute;
+    top:15px;
+    left:15px;
+    background:var(--gold);
+    color:#173614;
+    padding:7px 12px;
+    border-radius:20px;
+    font-size:11px;
+    font-weight:bold;
+}
+
+.product-info{
+    padding:22px;
+}
+
+.product-info h3{
+    color:var(--green);
+    margin-bottom:8px;
+}
+
+.product-info p{
+    color:#717a72;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.product-bottom{
+    margin-top:18px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.product-price{
+    font-size:20px;
+    font-weight:bold;
+    color:#173b1c;
+}
+
+.product-order{
+    width:40px;
+    height:40px;
+    border:none;
+    background:var(--green);
+    color:white;
+    border-radius:50%;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.product-order:hover{
+    transform:rotate(360deg) scale(1.1);
+}
+
+
+/* =========================================================
+   VIDEO SECTION
+========================================================= */
+
+.video-section{
+    min-height:550px;
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+}
+
+.video-section video{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.video-section::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(4,40,15,.72);
+}
+
+.video-content{
+    position:relative;
+    z-index:3;
+    text-align:center;
+    max-width:700px;
+    padding:30px;
+}
+
+.video-content h2{
+    font-family:Georgia,serif;
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.video-content p{
+    line-height:1.8;
+    color:#e4eee4;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    background:#062b12;
+    color:white;
+    padding:70px 35px 25px;
+}
+
+.footer-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:45px;
+}
+
+.footer-grid h3{
+    color:var(--gold);
+    margin-bottom:18px;
+}
+
+.footer-grid p,
+.footer-grid li{
+    color:#c6d3c8;
+    line-height:1.9;
+    font-size:14px;
+}
+
+.footer-grid ul{
+    list-style:none;
+}
+
+.footer-bottom{
+    max-width:1200px;
+    margin:50px auto 0;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.15);
+    text-align:center;
+    color:#9eafa2;
+    font-size:13px;
+}
+
+
+/* =========================================================
+   WHATSAPP
+========================================================= */
+
+.whatsapp{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:62px;
+    height:62px;
+    border-radius:50%;
+    background:#25d366;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    text-decoration:none;
+    z-index:9998;
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+    0%,100%{
+        box-shadow:0 0 0 0 rgba(37,211,102,.5);
+    }
+
+    50%{
+        box-shadow:0 0 0 15px rgba(37,211,102,0);
+    }
+}
+
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(60px);
+    transition:1s;
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:1000px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .hero-slider{
+        opacity:.45;
+        right:3%;
+    }
+
+    .products-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .business-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .stats-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:650px){
+
+    .navbar{
+        padding:15px 18px;
+    }
+
+    .logo-text strong{
+        font-size:18px;
+    }
+
+    .logo-circle{
+        width:43px;
+        height:43px;
+    }
+
+    .nav-order{
+        display:none;
+    }
+
+    .hero-content{
+        padding:140px 22px 120px;
+    }
+
+    .hero-content h1{
+        font-size:55px;
+    }
+
+    .hero-content p{
+        font-size:15px;
+    }
+
+    .hero-slider{
+        display:none;
+    }
+
+    .trust-strip{
+        grid-template-columns:1fr;
+        bottom:15px;
+    }
+
+    .trust{
+        border-right:none;
+        border-bottom:1px solid rgba(255,255,255,.2);
+        padding:10px;
+    }
+
+    .trust:last-child{
+        border-bottom:none;
+    }
+
+    .section{
+        padding:75px 20px;
+    }
+
+    .section-heading h2{
+        font-size:40px;
+    }
+
+    .business-content{
+        padding:140px 22px 100px;
+    }
+
+    .business-content h1{
+        font-size:52px;
+    }
+
+    .business-grid,
+    .products-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .stat-number{
+        font-size:32px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+.order {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 25px;
+}
+
+
+.contactus -btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:12px;min-width:220px;padding:16px 30px;border-radius:50px;text-decoration:none;color:#062814;background:linear-gradient(135deg,#e8c85e,#b98b24);font-size:12px;font-weight:800;letter-spacing:1.3px;box-shadow:0 14px 45px #0006,0 0 30px #d5a63a38;transition:.35s;overflow:hidden}
+.contactus-btn:before{content:"";position:absolute;top:0;left:-120%;width:80%;height:100%;transform:skewX(-25deg);background:#fff6;transition:left .6s}
+.contactus-btn:hover{transform:translateY(-5px) scale(1.025);box-shadow:0 20px 55px #0007,0 0 45px #d5a63a59}.contactus-btn:hover:before{left:140%}.arrow{font-size:18px}
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     LOADER
+========================================================= -->
+
+<div class="loader" id="loader">
+
+    <div class="loader-box">
+
+        <div class="loader-logo">
+            CD
+        </div>
+
+        <h2>CEE-DOUG'S</h2>
+
+        <p>GROUP HOLDINGS LTD</p>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<header id="header">
+
+<nav class="navbar">
+
+    <a href="#" class="logo">
+
+        <div class="logo-circle">
+            CD
+        </div>
+
+        <div class="logo-text">
+
+            <strong>Cee-Doug's</strong>
+
+            <small>
+             GROUP HOLDINGS LTD
+            </small>
+
+        </div>
+
+    </a>
+ <nav class="main-menu">
+
+
+        <!-- HOME -->
+
+        <div class="menu-item">
+
+            <a href="file:///C:/Users/USER/Documents/Cee-Doug's/cee-dougs-welcome-home-1.html" class="menu-link">
+                HOME
+            </a>
+
+        </div>
+
+
+        <!-- SHOP -->
+
+        <div class="menu-item">
+
+            <button class="menu-link">
+
+                SHOP
+
+                <span class="arrow">
+                    ▾
+                </span>
+
+            </button>
+
+
+            <div class="mega-menu">
+
+                <div class="mega-title">
+                    Shop Cee-Doug's
+                </div>
+
+                <div class="mega-description">
+                    Discover quality food products and agricultural commodities.
+                </div>
+
+
+                <div class="mega-grid">
+
+
+                    <div class="mega-column">
+
+                        <h4>🛍 Products</h4>
+
+                        <a href="#">All Products</a>
+                        <a href="#">New Arrivals</a>
+                        <a href="#">Best Sellers</a>
+                        <a href="#">Featured Products</a>
+
+                    </div>
+
+
+                    <div class="mega-column">
+
+                        <h4>🌾 Shopping</h4>
+
+                        <a href="#">Special Offers</a>
+                        <a href="#">Family Packs</a>
+                        <a href="#">Business Packs</a>
+                        <a href="#">Bulk Orders</a>
+
+                    </div>
+
+
+                    <div class="mega-column">
+
+                        <h4>⭐ Featured</h4>
+
+                        <a href="#">Popular Foods</a>
+                        <a href="#">Seasonal Products</a>
+                        <a href="#">Premium Products</a>
+                        <a href="#">Commodity Deals</a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div>
+
+                        <strong>
+                            🌿 Ready to order?
+                        </strong>
+
+                        <span>
+                            Browse our products and start your order.
+                        </span>
+
+                    </div>
+
+                    <button onclick="orderNow()">
+                        SHOP NOW →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CATEGORIES -->
+
+        <div class="menu-item">
+
+            <button class="menu-link">
+
+                CATEGORIES
+
+                <span class="arrow">
+                    ▾
+                </span>
+
+            </button>
+
+
+            <div class="mega-menu">
+
+                <div class="mega-title">
+                    Agricultural Categories
+                </div>
+
+                <div class="mega-description">
+                    Explore food groups and Nigerian agricultural commodities.
+                </div>
+
+
+                <div class="mega-grid">
+
+
+                    <div class="mega-column">
+
+                        <h4>🌾 Grains</h4>
+
+                        <a href="#">Rice</a>
+                        <a href="#">Maize</a>
+                        <a href="#">Millet</a>
+                        <a href="#">Sorghum</a>
+
+                    </div>
+
+
+                    <div class="mega-column">
+
+                        <h4>🫘 Beans & Legumes</h4>
+
+                        <a href="#">Beans</a>
+                        <a href="#">Cowpea</a>
+                        <a href="#">Lentils</a>
+                        <a href="#">Other Legumes</a>
+
+                    </div>
+
+
+                    <div class="mega-column">
+
+                        <h4>🌿 Farm Produce</h4>
+
+                        <a href="#">Vegetables</a>
+                        <a href="#">Fruits</a>
+                        <a href="#">Plantain</a>
+                        <a href="#">Cassava</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BUSINESS -->
+
+        <div class="menu-item">
+
+            <button class="menu-link">
+
+                BUSINESS
+
+                <span class="arrow">
+                    ▾
+                </span>
+
+            </button>
+
+
+            <div class="mega-menu">
+
+                <div class="mega-title">
+                    Business Solutions
+                </div>
+
+                <div class="mega-description">
+                    Solutions for retailers, wholesalers and business customers.
+                </div>
+
+
+                <div class="mega-grid">
+
+
+                    <div class="mega-column">
+
+                        <h4>🏢 Business</h4>
+
+                        <a href="#">Wholesale</a>
+                        <a href="#">Retail</a>
+                        <a href="#">Corporate Orders</a>
+                        <a href="#">Bulk Purchasing</a>
+
+                    </div>
+
+
+                    <div class="mega-column">
+
+                        <h4>🤝 Partnership</h4>
+
+                        <a href="#">Become a Distributor</a>
+                        <a href="#">Supplier Partnership</a>
+                        <a href="#">Business Enquiries</a>
+
+                    </div>
+
+
+                    <div class="mega-column">
+
+                        <h4>📦 Bulk Services</h4>
+
+                        <a href="#">Large Orders</a>
+                        <a href="#">Business Packages</a>
+                        <a href="#">Commodity Supply</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- DELIVERY -->
+
+        <div class="menu-item">
+
+            <button class="menu-link">
+
+                DELIVERY
+
+                <span class="arrow">
+                    ▾
+                </span>
+
+            </button>
+
+
+            <div class="mega-menu">
+
+                <div class="mega-title">
+                    Delivery Centre
+                </div>
+
+                <div class="mega-description">
+                    Manage delivery information, bookings and orders.
+                </div>
+
+
+                <div class="mega-grid">
+
+
+                    <div class="mega-column">
+
+                        <h4>🚚 Delivery</h4>
+
+                        <a href="#">Delivery Information</a>
+                        <a href="#">Delivery Areas</a>
+                        <a href="#">Delivery Rates</a>
+
+                    </div>
+
+
+                    <div class="mega-column">
+
+                        <h4>📅 Schedule</h4>
+
+                        <a href="file:///C:/Users/USER/Documents/Cee-Doug's/check4.html" onclick="openService()">
+                            Book a Delivery
+                        </a>
+
+                        <a href="#">
+                            Available Time Slots
+                        </a>
+
+                        <a href="#">
+                            Delivery Calendar
+                        </a>
+
+                    </div>
+
+
+                    <div class="mega-column">
+
+                        <h4>📦 Orders</h4>
+
+                        <a href="file:///C:/Users/USER/Documents/Cee-Doug's/track.html">
+                            Track My Order
+                        </a>
+
+                        <a href="file:///C:/Users/USER/Documents/Cee-Doug's/orderhistory.html">
+                            Order History
+                        </a>
+
+                        <a href="file:///C:/Users/USER/Documents/Cee-Doug's/deliveryfaq.html">
+                            Delivery FAQs
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div>
+
+                        <strong>
+                            📅 Need delivery assistance?
+                        </strong>
+
+                        <span>
+                            Talk directly with Cee-Doug's Service Team.
+                        </span>
+
+                    </div>
+
+                    <button onclick="openService()">
+                        GET HELP →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ABOUT -->
+
+        <div class="menu-item">
+
+            <button class="menu-link">
+
+                ABOUT
+
+                <span class="arrow">
+                    ▾
+                </span>
+
+            </button>
+
+
+            <div class="mega-menu">
+
+                <div class="mega-title">
+                    About Cee-Doug's
+                </div>
+
+                <div class="mega-description">
+                    Learn more about our food, commodities and community.
+                </div>
+
+
+                <div class="mega-grid">
+
+
+                    <div class="mega-column">
+
+                        <h4>🌿 Company</h4>
+
+                        <a href="#">About Us</a>
+                        <a href="#">Our Story</a>
+                        <a href="file:///C:/Users/USER/Documents/Cee-Doug's/vision.html">Our Mission</a>
+
+                    </div>
+
+
+                    <div class="mega-column">
+
+                        <h4>⭐ Quality</h4>
+
+                        <a href="#">Quality Promise</a>
+                        <a href="#">Our Products</a>
+                        <a href="#">Why Choose Us</a>
+
+                    </div>
+
+
+                    <div class="mega-column">
+
+                        <h4>🌍 Community</h4>
+
+                        <a href="#">Our Community</a>
+                        <a href="#">Agricultural Partners</a>
+                        <a href="#">Contact Us</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CONTACT -->
+
+        <div class="menu-item">
+
+            <button class="menu-link">
+
+                CONTACT
+
+                <span class="arrow">
+                    ▾
+                </span>
+
+            </button>
+
+
+            <div class="mega-menu">
+
+                <div class="mega-title">
+                    Contact & Support
+                </div>
+
+                <div class="mega-description">
+                    Our team is ready to assist customers and business partners.
+                </div>
+
+
+                <div class="mega-grid">
+
+
+                    <div class="mega-column">
+
+                        <h4>💬 Customer Support</h4>
+
+                        <a href="file:///C:/Users/USER/Documents/Cee-Doug's/test%20copy.html" onclick="openService()">
+                            Service Team
+                        </a>
+
+    
+
+                    </div>
+
+
+                    <div class="mega-column">
+
+                        <h4>📞 Contact</h4>
+
+                        <a href="#">
+                            Contact Us
+                        </a>
+
+
+                    </div>
+
+
+                    <div class="mega-column">
+
+                        <h4>🕐 Assistance</h4>
+
+                        <a href="file:///C:/Users/USER/Documents/Cee-Doug's/aiassisstance.html" onclick="openService()">
+                            Chat With Us
+                        </a>
+
+                        <a href="file:///C:/Users/USER/Documents/Cee-Doug's/aiassisstance.html">
+                            Order Assistance
+                        </a>
+
+                        <a href="file:///C:/Users/USER/Documents/Cee-Doug's/aiassisstance.html">
+                            Delivery Support
+                        </a>
+
+
+                    </div>
+
+                </div>
+   <div class="feature-card">
+
+                    <div>
+
+                        <strong>
+                            🌿 Ready to order?
+                        </strong>
+
+                        <span>
+                            Browse our products and start your order.
+                        </span>
+
+                    </div>
+
+                   <div class="hero2-buttons">
+
+    <a
+        href="file:///C:/Users/USER/Documents/Cee-Doug's/busenquires.html"
+        class="primary-btn"
+    >
+      CONTACT US
+    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </nav>
+
+
+    <!-- ==================================================
+         RIGHT SIDE ACTIONS
+    ================================================== -->
+
+    <div class="nav-actions">
+
+
+        <!-- SEARCH -->
+
+        <button
+            class="search-button"
+            title="Search">
+            🔍
+        </button>
+
+
+        <!-- CART -->
+
+        <button
+            class="cart-button"
+            onclick="openCart()"
+            title="Shopping Cart">
+
+            🛒
+
+            <span
+                class="cart-number"
+                id="cartNumber">
+                0
+            </span>
+
+        </button>
+
+
+        <!-- SERVICE TEAM -->
+
+        <button
+            class="service-button"
+            onclick="openService()">
+
+            <span class="online-dot"></span>
+
+            <span>
+                Our Service Team
+            </span>
+
+        </button><br>
+
+
+    <button class="menu" onclick="mobileMenu()">
+        ☰
+    </button>
+
+</nav>
+
+</header>
+
+
+
+<!-- =========================================================
+     HOME PAGE
+========================================================= -->
+
+<section id="home" class="page active">
+
+
+<div class="home-hero">
+
+
+    <!-- VIDEO BACKGROUND -->
+
+    <video
+        class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline>
+
+        <source
+            src="https://cdn.coverr.co/videos/coverr-a-woman-buying-vegetables-at-a-market-1577/1080p.mp4"
+            type="video/mp4">
+
+    </video>
+
+
+    <div class="video-overlay"></div>
+
+
+    <!-- BUBBLES -->
+
+    <div class="bubbles" id="homeBubbles"></div>
+
+
+    <div class="hero-content">
+
+        <span class="hero-small">
+            TRUSTED NIGERIAN FOOD & COMMODITY BRAND
+        </span>
+
+
+        <h1>
+            Quality Food.
+            <span>Trusted.</span>
+            Delivered.
+        </h1>
+
+
+        <p>
+            Cee-Doug's Group Holdings Ltd brings quality
+            Nigerian food products and commodities closer
+            to homes, businesses, retailers and distributors.
+        </p>
+
+<div class="hero-buttons">
+
+    <a
+        href="shop.html"
+        class="primary-btn"
+    >
+        Explore Our Shop
+    </a>
+
+
+    <a
+        href="vision.html"
+        class="secondary-btn"
+    >
+        Discover Our Vision
+    </a>
+
+</div>
+
+    </div><br>
+
+
+
+
+
+
+    <!-- HERO SLIDES -->
+
+    <div class="hero-slider" id="heroSlider">
+
+
+        <div class="hero-slide active">
+
+            <img src="https://images.unsplash.com/photo-1515543904379-3d757afe72e4?auto=format&fit=crop&w=900&q=90">
+
+            <div class="slide-caption">
+
+                <h3>Premium Grains</h3>
+
+                <p>Carefully selected quality</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-slide">
+
+            <img src="https://images.unsplash.com/photo-1508747703725-719777637510?auto=format&fit=crop&w=900&q=90">
+
+            <div class="slide-caption">
+
+                <h3>Authentic Food Products</h3>
+
+                <p>From trusted sources</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-slide">
+
+            <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=900&q=90">
+
+            <div class="slide-caption">
+
+                <h3>Fresh Commodities</h3>
+
+                <p>Quality you can depend on</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="slider-controls">
+
+            <button onclick="previousSlide()">
+                ←
+            </button>
+
+            <button onclick="nextSlide()">
+                →
+            </button>
+
+        </div>
+
+    </div>
+
+
+</div>
+</section>
+
+<!-- ======================================================
+     AGRICULTURAL FLOATING BACKGROUND
+====================================================== -->
+
+<div class="bubbles">
+
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+
+</div>
+
+
+<!-- ======================================================
+     TOP BAR
+====================================================== -->
+
+<div class="top-bar">
+
+    🌾 Cee-Doug's Group Holdings LTD
+
+    <span>•</span>
+
+    Quality Nigerian Food Products
+
+    <span>•</span>
+
+    Trusted Service
+    </div>
+    
+<div class="order">
+    <button class="nav-order" onclick="orderNow()">
+        Order Now
+    </button>
+</div>
+
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+© <span id="year"></span>
+Cee-Doug's Group Holdings Ltd.
+All Rights Reserved.
+
+</div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     WHATSAPP
+========================================================= -->
+
+<a
+href="https://wa.me/2348000000000"
+target="_blank"
+class="whatsapp">
+
+☎
+
+</a>
+<script>
+
+/* =========================================================
+   LOADER
+========================================================= */
+
+window.addEventListener("load", () => {
+
+    setTimeout(() => {
+
+        document
+        .getElementById("loader")
+        .classList.add("hide");
+
+    },1000);
+
+});
+
+
+/* =========================================================
+   YEAR
+========================================================= */
+
+document.getElementById("year").textContent =
+new Date().getFullYear();
+
+
+/* =========================================================
+   PAGE NAVIGATION
+========================================================= */
+
+function showPage(pageName){
+
+    document
+    .querySelectorAll(".page")
+    .forEach(page => {
+
+        page.classList.remove("active");
+
+    });
+
+
+    const page =
+    document.getElementById(pageName);
+
+    page.classList.add("active");
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+
+    createBubbles(pageName);
+
+    if(pageName === "business"){
+        startCounters();
+    }
+
+}
+
+
+/* =========================================================
+   BUBBLE GENERATOR
+========================================================= */
+
+function createBubbles(page){
+
+    const container =
+    document.getElementById(page + "Bubbles");
+
+    if(!container) return;
+
+    container.innerHTML = "";
+
+
+    for(let i=0;i<35;i++){
+
+        const bubble =
+        document.createElement("div");
+
+        bubble.className="bubble";
+
+
+        const size =
+        Math.random()*70+15;
+
+        bubble.style.width =
+        size+"px";
+
+        bubble.style.height =
+        size+"px";
+
+        bubble.style.left =
+        Math.random()*100+"%";
+
+        bubble.style.animationDuration =
+        (Math.random()*12+8)+"s";
+
+        bubble.style.animationDelay =
+        (Math.random()*10)+"s";
+
+        container.appendChild(bubble);
+
+    }
+
+}
+
+
+/* =========================================================
+   INITIAL BUBBLES
+========================================================= */
+
+createBubbles("home");
+
+
+/* =========================================================
+   HERO SLIDER
+========================================================= */
+
+let currentSlide=0;
+
+const slides =
+document.querySelectorAll(".hero-slide");
+
+
+function showSlide(index){
+
+    slides.forEach(slide => {
+
+        slide.classList.remove("active");
+
+    });
+
+
+    currentSlide =
+    (index + slides.length) % slides.length;
+
+
+    slides[currentSlide]
+    .classList.add("active");
+
+}
+
+
+function nextSlide(){
+
+    showSlide(currentSlide + 1);
+
+}
+
+
+function previousSlide(){
+
+    showSlide(currentSlide - 1);
+
+}
+
+
+setInterval(nextSlide,5000);
+
+
+/* =========================================================
+   PRODUCT FILTER
+========================================================= */
+
+function filterProducts(category,button){
+
+    document
+    .querySelectorAll(".category-buttons button")
+    .forEach(btn => {
+
+        btn.classList.remove("active");
+
+    });
+
+
+    button.classList.add("active");
+
+
+    document
+    .querySelectorAll(".product")
+    .forEach(product => {
+
+        const productCategory =
+        product.dataset.category;
+
+
+        if(
+            category === "all" ||
+            productCategory === category
+        ){
+
+            product.classList.remove("hide");
+
+        }else{
+
+            product.classList.add("hide");
+
+        }
+
+    });
+
+}
+
+
+/* =========================================================
+   ORDER
+========================================================= */
+
+function orderNow(){
+
+    const phone =
+    "2348000000000";
+
+    const message =
+    "Hello Cee-Doug's Foods & Commodities. I would like to place an order.";
+
+    const url =
+    "https://wa.me/" +
+    phone +
+    "?text=" +
+    encodeURIComponent(message);
+
+    window.open(url,"_blank");
+
+}
+
+
+function orderProduct(product){
+
+    const phone =
+    "2348000000000";
+
+    const message =
+    "Hello Cee-Doug's. I would like to order " +
+    product +
+    ".";
+
+    const url =
+    "https://wa.me/" +
+    phone +
+    "?text=" +
+    encodeURIComponent(message);
+
+    window.open(url,"_blank");
+
+}
+
+
+/* =========================================================
+   NAVBAR SCROLL
+========================================================= */
+
+window.addEventListener("scroll",()=>{
+
+    const header =
+    document.getElementById("header");
+
+    if(window.scrollY > 50){
+
+        header.classList.add("scrolled");
+
+    }else{
+
+        header.classList.remove("scrolled");
+
+    }
+
+});
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+function revealElements(){
+
+    document
+    .querySelectorAll(".reveal")
+    .forEach(element => {
+
+        const position =
+        element.getBoundingClientRect().top;
+
+        if(position <
+           window.innerHeight - 100){
+
+            element.classList.add("visible");
+
+        }
+
+    });
+
+}
+
+window.addEventListener("scroll",revealElements);
+
+revealElements();
+
+
+/* =========================================================
+   BUSINESS COUNTERS
+========================================================= */
+
+let countersStarted=false;
+
+function startCounters(){
+
+    if(countersStarted) return;
+
+    countersStarted=true;
+
+
+    document
+    .querySelectorAll(".stat-number")
+    .forEach(counter => {
+
+        const target =
+        Number(counter.dataset.target);
+
+        let number=0;
+
+        const interval =
+        setInterval(()=>{
+
+            number += Math.ceil(target/60);
+
+            if(number >= target){
+
+                number=target;
+
+                clearInterval(interval);
+
+            }
+
+            counter.textContent =
+            number + "+";
+
+        },30);
+
+    });
+
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+function mobileMenu(){
+
+    const nav =
+    document.querySelector(".nav-links");
+
+    if(nav.style.display === "flex"){
+
+        nav.style.display="none";
+
+    }else{
+
+        nav.style.display="flex";
+        nav.style.position="absolute";
+        nav.style.top="75px";
+        nav.style.left="10px";
+        nav.style.right="10px";
+        nav.style.padding="25px";
+        nav.style.flexDirection="column";
+        nav.style.background="rgba(255,255,255,.98)";
+        nav.style.borderRadius="20px";
+        nav.style.boxShadow=
+        "0 15px 40px rgba(0,0,0,.15)";
+
+        nav
+        .querySelectorAll("button")
+        .forEach(button=>{
+
+            button.style.color="#176b2c";
+
+        });
+
+    }
+
+}
+
+
+/* =========================================================
+   MOUSE PARALLAX BUBBLE EFFECT
+========================================================= */
+
+document.addEventListener("mousemove",(event)=>{
+
+    const x =
+    (event.clientX / window.innerWidth - .5) * 20;
+
+    const y =
+    (event.clientY / window.innerHeight - .5) * 20;
+
+
+    document
+    .querySelectorAll(".bubble")
+    .forEach((bubble,index)=>{
+
+        const amount =
+        (index % 5 + 1) / 5;
+
+        bubble.style.marginLeft =
+        x * amount + "px";
+
+        bubble.style.marginTop =
+        y * amount + "px";
+
+    });
+
+});
+
+
+
+/* =========================================================
+   CEE-DOUG'S NAVIGATION JAVASCRIPT
+========================================================= */
+
+
+/* =========================================================
+   ORDER BUTTON
+========================================================= */
+
+function orderNow(){
+
+    document.querySelector(".content")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+    alert(
+        "Welcome to Cee-Doug's! 🌾\n\n" +
+        "The product shop will open here. " +
+        "You can then select your products and continue to delivery."
+    );
+}
+
+
+/* =========================================================
+   CART
+========================================================= */
+
+let cartCount = 0;
+
+function openCart(){
+
+    cartCount++;
+
+    document.getElementById("cartNumber")
+        .textContent = cartCount;
+
+    alert(
+        "🛒 Your Cee-Doug's shopping cart is ready.\n\n" +
+        "Connect this button to your live product database " +
+        "when deploying the full e-commerce system."
+    );
+
+}
+
+
+/* =========================================================
+   SERVICE TEAM
+========================================================= */
+
+function openService(){
+
+    document
+        .getElementById("serviceChat")
+        .classList.add("open");
+
+}
+
+
+function closeService(){
+
+    document
+        .getElementById("serviceChat")
+        .classList.remove("open");
+
+}
+
+
+/* =========================================================
+   AUTOMATED SERVICE TEAM RESPONSE
+========================================================= */
+
+function sendMessage(){
+
+    const input =
+        document.getElementById("chatInput");
+
+    const message =
+        input.value.trim();
+
+    if(!message) return;
+
+    serviceMessage(message);
+
+    input.value="";
+
+}
+
+
+function serviceMessage(message){
+
+    const chatBody =
+        document.getElementById("chatBody");
+
+
+    /* Customer message */
+
+    const customer =
+        document.createElement("div");
+
+    customer.className =
+        "message sent";
+
+    customer.textContent =
+        message;
+
+    chatBody.appendChild(customer);
+
+
+    /* Automatic response */
+
+    setTimeout(function(){
+
+        const response =
+            document.createElement("div");
+
+        response.className =
+            "message received";
+
+        response.innerHTML =
+            getServiceResponse(message);
+
+        chatBody.appendChild(response);
+
+        chatBody.scrollTop =
+            chatBody.scrollHeight;
+
+    },700);
+
+
+    chatBody.scrollTop =
+        chatBody.scrollHeight;
+
+}
+
+
+/* =========================================================
+   SERVICE RESPONSE ENGINE
+========================================================= */
+
+function getServiceResponse(message){
+
+    const text =
+        message.toLowerCase();
+
+
+    if(
+        text.includes("product") ||
+        text.includes("food") ||
+        text.includes("commodity")
+    ){
+
+        return `
+        <strong>Cee-Doug's Service Team</strong>
+        <br><br>
+
+        Certainly 😊. Cee-Doug's provides
+        Nigerian food products and agricultural
+        commodities.
+
+        <br><br>
+
+        You can explore categories such as
+        <strong>Grains, Beans & Legumes,
+        Flour, Farm Produce and Food Commodities.</strong>
+        `;
+
+    }
+
+
+    if(
+        text.includes("delivery") ||
+        text.includes("deliver")
+    ){
+
+        return `
+        <strong>Cee-Doug's Service Team</strong>
+        <br><br>
+
+        🚚 We can assist you with delivery
+        information, preferred delivery dates
+        and available delivery time slots.
+
+        <br><br>
+
+        Please tell us your order and preferred
+        delivery date so we can assist you.
+        `;
+
+    }
+
+
+    if(
+        text.includes("book") ||
+        text.includes("booking") ||
+        text.includes("schedule")
+    ){
+
+        return `
+        <strong>Cee-Doug's Service Team</strong>
+        <br><br>
+
+        📅 Absolutely! We can help you arrange
+        a delivery booking.
+
+        <br><br>
+
+        Please provide your preferred delivery
+        date, time and order details.
+        `;
+
+    }
+
+
+    if(
+        text.includes("price") ||
+        text.includes("cost")
+    ){
+
+        return `
+        <strong>Cee-Doug's Service Team</strong>
+        <br><br>
+
+        💰 Product prices are displayed in the
+        Shop section.
+
+        <br><br>
+
+        For a production website, we can connect
+        our Service Team directly to the live
+        product and pricing database.
+        `;
+
+    }
+
+
+    if(
+        text.includes("hello") ||
+        text.includes("hi") ||
+        text.includes("hey")
+    ){
+
+        return `
+        <strong>Cee-Doug's Service Team</strong>
+        <br><br>
+
+        Hello 👋 Welcome to Cee-Doug's!
+
+        <br><br>
+
+        How may we assist you today?
+        `;
+
+    }
+
+
+    if(
+        text.includes("platform") ||
+        text.includes("website") ||
+        text.includes("how")
+    ){
+
+        return `
+        <strong>Cee-Doug's Service Team</strong>
+        <br><br>
+
+        🌿 Welcome to the Cee-Doug's platform.
+
+        <br><br>
+
+        You can browse products,
+        explore agricultural categories,
+        place orders and arrange delivery
+        through our Service Team.
+        `;
+
+    }
+
+
+    return `
+        <strong>Cee-Doug's Service Team</strong>
+        <br><br>
+
+        Thank you for contacting us 😊.
+
+        <br><br>
+
+        We can help you with:
+
+        <br>
+        • Products
+        <br>
+        • Orders
+        <br>
+        • Delivery
+        <br>
+        • Delivery dates
+        <br>
+        • Delivery times
+        <br>
+        • Bookings
+        <br>
+        • Platform information
+
+        <br><br>
+
+        Please tell us what you need help with.
+    `;
+
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+function toggleMobileMenu(){
+
+    alert(
+        "Mobile navigation can be expanded here " +
+        "with the same Shop, Categories, Business, " +
+        "Delivery, About and Contact menus."
+    );
+
+}
+</script>
+
+</body>
+</html>

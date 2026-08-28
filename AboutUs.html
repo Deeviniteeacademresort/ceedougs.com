@@ -1,0 +1,2716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="Cee-Dougs Group Holdings Ltd — Building Businesses. Creating Value. Shaping Tomorrow.">
+
+<meta name="theme-color" content="#102f1c">
+
+<title>Cee-Dougs Group Holdings Ltd | Building Businesses. Creating Value. Shaping Tomorrow.</title>
+
+<style>
+
+/* =========================================================
+   CEE-DOUG'S GROUP HOLDINGS LTD
+   CORPORATE FUTURISTIC WEBSITE
+   ========================================================= */
+
+:root{
+    --military:#12351f;
+    --military-dark:#071c11;
+    --military-deep:#05150d;
+    --light-green:#8fba63;
+    --light-green-soft:#dcebc9;
+    --gold:#d4af37;
+    --gold-light:#f0d675;
+    --white:#ffffff;
+    --off-white:#f6f8f3;
+    --text:#25352a;
+    --muted:#68756b;
+
+    --shadow:0 20px 60px rgba(0,0,0,.12);
+
+    --transition:all .4s cubic-bezier(.2,.8,.2,1);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+    background:var(--off-white);
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
+}
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar{
+    width:9px;
+}
+
+::-webkit-scrollbar-track{
+    background:var(--military-dark);
+}
+
+::-webkit-scrollbar-thumb{
+    background:var(--gold);
+    border-radius:20px;
+}
+
+/* =========================================================
+   LOADING SCREEN
+   ========================================================= */
+
+.loader{
+    position:fixed;
+    inset:0;
+    z-index:99999;
+
+    background:
+    radial-gradient(
+        circle at center,
+        #1b4b2b 0%,
+        #071c11 55%,
+        #030c07 100%
+    );
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    transition:opacity .8s ease,
+               visibility .8s ease;
+}
+
+.loader.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+.loader-content{
+    text-align:center;
+}
+
+.loader-logo{
+    width:75px;
+    height:75px;
+
+    border:2px solid var(--gold);
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:var(--gold);
+    font-size:28px;
+    font-weight:800;
+
+    margin:auto;
+
+    animation:
+    logoPulse 1.8s infinite,
+    logoRotate 8s linear infinite;
+}
+
+.loader-content h2{
+    margin-top:20px;
+    color:white;
+    letter-spacing:4px;
+    font-size:14px;
+}
+
+.loader-line{
+    width:180px;
+    height:2px;
+    background:rgba(255,255,255,.15);
+    margin:18px auto;
+    overflow:hidden;
+}
+
+.loader-line::after{
+    content:"";
+    display:block;
+    height:100%;
+    width:50%;
+    background:var(--gold);
+
+    animation:loaderMove 1.2s infinite;
+}
+
+@keyframes logoPulse{
+    0%,100%{
+        box-shadow:0 0 0 rgba(212,175,55,0);
+    }
+
+    50%{
+        box-shadow:0 0 40px rgba(212,175,55,.35);
+    }
+}
+
+@keyframes logoRotate{
+    from{
+        transform:rotate(0);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes loaderMove{
+    from{
+        transform:translateX(-120%);
+    }
+
+    to{
+        transform:translateX(300%);
+    }
+}
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+
+    z-index:5000;
+
+    padding:18px 6%;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    background:rgba(5,21,13,.72);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:
+    1px solid rgba(212,175,55,.15);
+
+    transition:var(--transition);
+}
+
+.navbar.scrolled{
+    padding:12px 6%;
+    background:rgba(5,21,13,.94);
+    box-shadow:0 10px 40px rgba(0,0,0,.25);
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.brand-symbol{
+    width:44px;
+    height:44px;
+
+    border:1.5px solid var(--gold);
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:var(--gold);
+    font-weight:800;
+    font-size:18px;
+
+    box-shadow:
+    0 0 20px rgba(212,175,55,.12);
+}
+
+.brand-text strong{
+    display:block;
+    color:white;
+    font-family:Georgia,serif;
+    font-size:17px;
+    letter-spacing:1px;
+}
+
+.brand-text span{
+    color:var(--gold-light);
+    font-size:9px;
+    letter-spacing:2px;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+.nav-links a{
+    position:relative;
+
+    color:#e7eee9;
+
+    font-size:12px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+
+    transition:var(--transition);
+}
+
+.nav-links a::after{
+    content:"";
+
+    position:absolute;
+    left:0;
+    bottom:-8px;
+
+    width:0;
+    height:2px;
+
+    background:var(--gold);
+
+    transition:var(--transition);
+}
+
+.nav-links a:hover{
+    color:var(--gold-light);
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+.nav-cta{
+    padding:11px 18px;
+    border:1px solid var(--gold);
+    border-radius:30px;
+    color:white !important;
+}
+
+.nav-cta:hover{
+    background:var(--gold);
+    color:var(--military-dark) !important;
+}
+
+.menu-btn{
+    display:none;
+
+    width:42px;
+    height:42px;
+
+    border:1px solid rgba(212,175,55,.5);
+    background:transparent;
+    border-radius:8px;
+
+    cursor:pointer;
+}
+
+.menu-btn span{
+    display:block;
+    width:22px;
+    height:2px;
+    margin:5px auto;
+    background:white;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero{
+    min-height:100vh;
+
+    position:relative;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(5,21,13,.98) 0%,
+        rgba(8,32,19,.93) 42%,
+        rgba(8,32,19,.55) 70%,
+        rgba(8,32,19,.9) 100%
+    ),
+    url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2200&q=90");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle at 75% 40%,
+        rgba(143,186,99,.16),
+        transparent 35%
+    );
+}
+
+.hero-grid{
+    position:absolute;
+    inset:0;
+
+    opacity:.12;
+
+    background-image:
+    linear-gradient(rgba(212,175,55,.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212,175,55,.4) 1px, transparent 1px);
+
+    background-size:70px 70px;
+
+    mask-image:
+    linear-gradient(
+        to right,
+        transparent,
+        black 45%,
+        transparent
+    );
+
+    animation:gridMove 20s linear infinite;
+}
+
+@keyframes gridMove{
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(70px);
+    }
+}
+
+.hero-content{
+    position:relative;
+    z-index:3;
+
+    width:min(1200px,90%);
+
+    margin:auto;
+
+    padding-top:80px;
+}
+
+.hero-label{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    color:var(--gold-light);
+
+    text-transform:uppercase;
+    letter-spacing:4px;
+    font-size:11px;
+
+    margin-bottom:24px;
+}
+
+.hero-label::before{
+    content:"";
+    width:42px;
+    height:1px;
+    background:var(--gold);
+}
+
+.hero h1{
+    max-width:850px;
+
+    color:white;
+
+    font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+    font-size:
+    clamp(45px,7vw,90px);
+
+    line-height:.98;
+
+    font-weight:500;
+
+    letter-spacing:-3px;
+}
+
+.hero h1 span{
+    color:var(--gold);
+}
+
+.hero-description{
+    max-width:650px;
+
+    color:#d8e1da;
+
+    font-size:18px;
+    line-height:1.8;
+
+    margin:30px 0;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    padding:15px 25px;
+
+    border-radius:5px;
+
+    font-size:12px;
+    font-weight:800;
+
+    letter-spacing:1px;
+    text-transform:uppercase;
+
+    transition:var(--transition);
+}
+
+.btn-primary{
+    background:var(--gold);
+    color:var(--military-dark);
+
+    box-shadow:
+    0 10px 35px rgba(212,175,55,.2);
+}
+
+.btn-primary:hover{
+    transform:translateY(-4px);
+    background:var(--gold-light);
+
+    box-shadow:
+    0 15px 45px rgba(212,175,55,.35);
+}
+
+.btn-outline{
+    border:1px solid rgba(255,255,255,.35);
+    color:white;
+}
+
+.btn-outline:hover{
+    background:white;
+    color:var(--military-dark);
+    transform:translateY(-4px);
+}
+
+.hero-bottom{
+    position:absolute;
+    bottom:35px;
+    left:6%;
+    right:6%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    color:#cbd7ce;
+
+    font-size:10px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.scroll-indicator{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.scroll-wheel{
+    width:20px;
+    height:34px;
+
+    border:1px solid var(--gold);
+    border-radius:20px;
+
+    position:relative;
+}
+
+.scroll-wheel::after{
+    content:"";
+
+    position:absolute;
+
+    width:3px;
+    height:7px;
+
+    background:var(--gold);
+
+    left:50%;
+    top:6px;
+
+    transform:translateX(-50%);
+
+    border-radius:5px;
+
+    animation:scrollDown 1.6s infinite;
+}
+
+@keyframes scrollDown{
+    0%{
+        transform:translate(-50%,0);
+        opacity:1;
+    }
+
+    100%{
+        transform:translate(-50%,15px);
+        opacity:0;
+    }
+}
+
+/* =========================================================
+   FLOATING ORBIT
+   ========================================================= */
+
+.hero-orbit{
+    position:absolute;
+
+    right:5%;
+    top:24%;
+
+    width:430px;
+    height:430px;
+
+    border:1px solid rgba(212,175,55,.22);
+
+    border-radius:50%;
+
+    animation:orbitRotate 20s linear infinite;
+}
+
+.hero-orbit::before,
+.hero-orbit::after{
+    content:"";
+
+    position:absolute;
+
+    inset:50px;
+
+    border:1px solid rgba(143,186,99,.18);
+
+    border-radius:50%;
+}
+
+.hero-orbit::after{
+    inset:110px;
+    border-color:rgba(212,175,55,.15);
+}
+
+.orbit-dot{
+    position:absolute;
+
+    width:9px;
+    height:9px;
+
+    background:var(--gold);
+    border-radius:50%;
+
+    box-shadow:0 0 20px var(--gold);
+}
+
+.orbit-dot:nth-child(1){
+    top:20px;
+    left:50%;
+}
+
+.orbit-dot:nth-child(2){
+    bottom:60px;
+    left:15px;
+}
+
+.orbit-dot:nth-child(3){
+    right:15px;
+    top:110px;
+}
+
+@keyframes orbitRotate{
+    from{
+        transform:rotate(0);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+/* =========================================================
+   SECTION GENERAL
+   ========================================================= */
+
+section{
+    position:relative;
+}
+
+.section{
+    padding:110px 6%;
+}
+
+.section-label{
+    color:#6e963f;
+    font-size:11px;
+    letter-spacing:4px;
+    font-weight:800;
+    text-transform:uppercase;
+    margin-bottom:15px;
+}
+
+.section-title{
+    font-family:Georgia,serif;
+    font-size:clamp(34px,5vw,58px);
+    color:var(--military);
+    font-weight:500;
+    line-height:1.1;
+}
+
+.section-title span{
+    color:#8b7020;
+}
+
+.section-intro{
+    max-width:700px;
+    margin:20px auto 0;
+    color:var(--muted);
+    line-height:1.8;
+}
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.stats{
+    margin-top:-55px;
+    position:relative;
+    z-index:20;
+}
+
+.stats-container{
+    width:min(1150px,90%);
+    margin:auto;
+
+    background:white;
+
+    border-radius:14px;
+
+    padding:35px;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    box-shadow:var(--shadow);
+
+    border-top:3px solid var(--gold);
+}
+
+.stat{
+    text-align:center;
+    padding:10px 20px;
+
+    border-right:1px solid #e2e7e1;
+}
+
+.stat:last-child{
+    border-right:none;
+}
+
+.stat-number{
+    font-family:Georgia,serif;
+    font-size:42px;
+    color:var(--military);
+    font-weight:bold;
+}
+
+.stat-number span{
+    color:var(--gold);
+}
+
+.stat p{
+    color:var(--muted);
+    font-size:12px;
+    margin-top:7px;
+    letter-spacing:1px;
+}
+
+/* =========================================================
+   WHO WE ARE
+   ========================================================= */
+
+.who{
+    background:white;
+}
+
+.two-column{
+    width:min(1200px,90%);
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    gap:80px;
+
+    align-items:center;
+}
+
+.image-frame{
+    position:relative;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    min-height:520px;
+
+    box-shadow:var(--shadow);
+}
+
+.image-frame img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:transform 1s ease;
+}
+
+.image-frame:hover img{
+    transform:scale(1.07);
+}
+
+.image-frame::after{
+    content:"";
+
+    position:absolute;
+    inset:20px;
+
+    border:1px solid rgba(212,175,55,.7);
+
+    border-radius:10px;
+
+    pointer-events:none;
+}
+
+.image-badge{
+    position:absolute;
+
+    bottom:25px;
+    left:25px;
+
+    background:rgba(7,28,17,.92);
+
+    backdrop-filter:blur(10px);
+
+    color:white;
+
+    padding:20px;
+
+    border-left:3px solid var(--gold);
+
+    z-index:2;
+}
+
+.image-badge strong{
+    display:block;
+    color:var(--gold);
+    font-family:Georgia,serif;
+    font-size:25px;
+}
+
+.image-badge span{
+    font-size:11px;
+    color:#d6e1d8;
+}
+
+.content-text h3{
+    font-family:Georgia,serif;
+    font-size:30px;
+    color:var(--military);
+    margin-bottom:20px;
+}
+
+.content-text p{
+    color:var(--muted);
+    line-height:1.9;
+    margin-bottom:20px;
+}
+
+.gold-line{
+    width:60px;
+    height:3px;
+    background:var(--gold);
+    margin:25px 0;
+}
+
+/* =========================================================
+   RESPONSIBILITIES
+   ========================================================= */
+
+.responsibilities{
+    background:
+    linear-gradient(
+        135deg,
+        var(--military-dark),
+        var(--military)
+    );
+
+    color:white;
+
+    overflow:hidden;
+}
+
+.responsibilities::before{
+    content:"";
+
+    position:absolute;
+    width:600px;
+    height:600px;
+
+    right:-250px;
+    top:-250px;
+
+    border:1px solid rgba(212,175,55,.12);
+    border-radius:50%;
+}
+
+.responsibilities .section-title{
+    color:white;
+}
+
+.responsibilities .section-label{
+    color:var(--gold-light);
+}
+
+.responsibilities .section-intro{
+    color:#b8c8bc;
+}
+
+.responsibility-grid{
+    width:min(1200px,90%);
+    margin:60px auto 0;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+}
+
+.responsibility-card{
+    padding:35px 25px;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.07),
+        rgba(255,255,255,.02)
+    );
+
+    border:1px solid rgba(212,175,55,.18);
+
+    border-radius:12px;
+
+    transition:var(--transition);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.responsibility-card::before{
+    content:"";
+
+    position:absolute;
+
+    width:120px;
+    height:120px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(212,175,55,.15);
+
+    right:-60px;
+    top:-60px;
+}
+
+.responsibility-card:hover{
+    transform:
+    translateY(-10px)
+    perspective(500px)
+    rotateX(2deg);
+
+    border-color:var(--gold);
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(143,186,99,.13),
+        rgba(255,255,255,.03)
+    );
+
+    box-shadow:
+    0 25px 50px rgba(0,0,0,.25);
+}
+
+.card-number{
+    font-family:Georgia,serif;
+    color:var(--gold);
+    font-size:13px;
+    letter-spacing:2px;
+}
+
+.responsibility-card h3{
+    margin:20px 0 12px;
+
+    font-family:Georgia,serif;
+    font-size:28px;
+}
+
+.responsibility-card p{
+    color:#b9c8be;
+    font-size:14px;
+    line-height:1.8;
+}
+
+/* =========================================================
+   BUSINESS
+   ========================================================= */
+
+.business{
+    background:#f6f8f3;
+}
+
+.business-header{
+    text-align:center;
+    max-width:800px;
+    margin:auto;
+}
+
+.business-card{
+    width:min(1200px,90%);
+    margin:60px auto 0;
+
+    display:grid;
+    grid-template-columns:1.05fr 1fr;
+
+    background:white;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+}
+
+.business-image{
+    min-height:530px;
+    position:relative;
+    overflow:hidden;
+}
+
+.business-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    transition:transform 1s ease;
+}
+
+.business-card:hover .business-image img{
+    transform:scale(1.08);
+}
+
+.business-image::after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(18,53,31,.45)
+    );
+}
+
+.business-content{
+    padding:60px;
+}
+
+.business-content h3{
+    font-family:Georgia,serif;
+    font-size:42px;
+    color:var(--military);
+    margin-bottom:10px;
+}
+
+.business-subtitle{
+    color:#78984f;
+    font-size:15px;
+    font-weight:700;
+    letter-spacing:1px;
+    margin-bottom:25px;
+}
+
+.business-content p{
+    color:var(--muted);
+    line-height:1.9;
+    margin-bottom:18px;
+}
+
+.business-list{
+    list-style:none;
+    margin:25px 0;
+}
+
+.business-list li{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    margin:13px 0;
+
+    color:var(--military);
+    font-weight:600;
+    font-size:14px;
+}
+
+.business-list li::before{
+    content:"✓";
+
+    width:23px;
+    height:23px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:var(--light-green-soft);
+
+    color:var(--military);
+
+    border-radius:50%;
+
+    font-size:12px;
+}
+
+/* =========================================================
+   APPROACH
+   ========================================================= */
+
+.approach{
+    background:white;
+}
+
+.approach-header{
+    text-align:center;
+}
+
+.timeline{
+    width:min(1150px,90%);
+    margin:80px auto 0;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    position:relative;
+}
+
+.timeline::before{
+    content:"";
+
+    position:absolute;
+
+    left:12%;
+    right:12%;
+    top:55px;
+
+    height:2px;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        var(--gold),
+        var(--light-green),
+        var(--gold),
+        transparent
+    );
+}
+
+.timeline-item{
+    position:relative;
+    text-align:center;
+    z-index:2;
+}
+
+.timeline-circle{
+    width:110px;
+    height:110px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:white;
+
+    border:1px solid var(--gold);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:var(--military);
+
+    font-family:Georgia,serif;
+
+    font-size:27px;
+
+    box-shadow:
+    0 0 0 12px #f6f8f3;
+
+    transition:var(--transition);
+}
+
+.timeline-item:hover .timeline-circle{
+    background:var(--military);
+    color:var(--gold);
+
+    transform:
+    rotateY(180deg)
+    scale(1.08);
+
+    box-shadow:
+    0 0 0 12px #f6f8f3,
+    0 0 35px rgba(212,175,55,.3);
+}
+
+.timeline-item h3{
+    margin-top:25px;
+
+    font-family:Georgia,serif;
+
+    color:var(--military);
+
+    font-size:23px;
+}
+
+.timeline-item p{
+    max-width:200px;
+
+    margin:12px auto 0;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.7;
+}
+
+/* =========================================================
+   PHILOSOPHY
+   ========================================================= */
+
+.philosophy{
+    min-height:500px;
+
+    background:
+    linear-gradient(
+        rgba(5,21,13,.93),
+        rgba(5,21,13,.93)
+    ),
+    url("https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=2000&q=85");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    overflow:hidden;
+}
+
+.philosophy-content{
+    width:min(900px,90%);
+}
+
+.philosophy .section-label{
+    color:var(--gold-light);
+}
+
+.philosophy h2{
+    color:white;
+
+    font-family:Georgia,serif;
+
+    font-size:
+    clamp(40px,6vw,75px);
+
+    line-height:1.1;
+
+    font-weight:500;
+}
+
+.philosophy h2 span{
+    color:var(--gold);
+}
+
+.philosophy p{
+    color:#c4d0c7;
+
+    max-width:650px;
+
+    margin:25px auto;
+
+    line-height:1.9;
+}
+
+/* =========================================================
+   VIDEO
+   ========================================================= */
+
+.video-section{
+    background:#f6f8f3;
+}
+
+.video-box{
+    width:min(1100px,90%);
+    margin:60px auto 0;
+
+    position:relative;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    background:var(--military-dark);
+
+    box-shadow:var(--shadow);
+
+    border:1px solid rgba(212,175,55,.3);
+}
+
+.video-box video{
+    width:100%;
+    display:block;
+
+    min-height:450px;
+
+    object-fit:cover;
+}
+
+.video-overlay{
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    pointer-events:none;
+}
+
+.video-play{
+    width:80px;
+    height:80px;
+
+    border-radius:50%;
+
+    border:1px solid var(--gold);
+
+    background:rgba(7,28,17,.65);
+
+    backdrop-filter:blur(10px);
+
+    color:var(--gold);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:25px;
+
+    animation:videoPulse 2s infinite;
+}
+
+@keyframes videoPulse{
+    0%,100%{
+        box-shadow:0 0 0 rgba(212,175,55,0);
+    }
+
+    50%{
+        box-shadow:
+        0 0 0 18px rgba(212,175,55,.05),
+        0 0 40px rgba(212,175,55,.25);
+    }
+}
+
+.video-note{
+    text-align:center;
+    color:var(--muted);
+    font-size:12px;
+    margin-top:15px;
+}
+
+/* =========================================================
+   VISION
+   ========================================================= */
+
+.vision{
+    background:white;
+}
+
+.vision-grid{
+    width:min(1100px,90%);
+    margin:60px auto 0;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    gap:25px;
+}
+
+.vision-card{
+    padding:50px;
+
+    border-radius:15px;
+
+    background:#f6f8f3;
+
+    border:1px solid #e0e7dc;
+
+    transition:var(--transition);
+}
+
+.vision-card:hover{
+    transform:translateY(-8px);
+
+    border-color:var(--gold);
+
+    box-shadow:var(--shadow);
+}
+
+.vision-card.gold{
+    background:var(--military);
+    color:white;
+    border-color:var(--military);
+}
+
+.vision-icon{
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    border:1px solid var(--gold);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:var(--gold);
+
+    font-size:23px;
+
+    margin-bottom:25px;
+}
+
+.vision-card h3{
+    font-family:Georgia,serif;
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.vision-card p{
+    line-height:1.8;
+    color:var(--muted);
+}
+
+.vision-card.gold p{
+    color:#c5d0c8;
+}
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.cta{
+    padding:100px 6%;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--military-dark),
+        #1d4d2b
+    );
+
+    color:white;
+
+    text-align:center;
+
+    overflow:hidden;
+}
+
+.cta::before,
+.cta::after{
+    content:"";
+
+    position:absolute;
+
+    border-radius:50%;
+
+    border:1px solid rgba(212,175,55,.15);
+}
+
+.cta::before{
+    width:500px;
+    height:500px;
+    left:-250px;
+    top:-250px;
+}
+
+.cta::after{
+    width:700px;
+    height:700px;
+    right:-350px;
+    bottom:-500px;
+}
+
+.cta h2{
+    position:relative;
+    z-index:2;
+
+    font-family:Georgia,serif;
+
+    font-size:clamp(38px,5vw,65px);
+
+    font-weight:500;
+}
+
+.cta h2 span{
+    color:var(--gold);
+}
+
+.cta p{
+    position:relative;
+    z-index:2;
+
+    max-width:650px;
+
+    margin:20px auto 30px;
+
+    color:#c7d4ca;
+
+    line-height:1.8;
+}
+
+.cta-buttons{
+    position:relative;
+    z-index:2;
+
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer{
+    background:#06170d;
+    color:white;
+    padding:70px 6% 25px;
+}
+
+.footer-grid{
+    width:min(1200px,90%);
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    1.5fr
+    1fr
+    1fr
+    1fr;
+
+    gap:50px;
+}
+
+.footer-brand p{
+    max-width:330px;
+
+    color:#94a69a;
+
+    line-height:1.8;
+
+    margin:20px 0;
+}
+
+.footer-title{
+    color:var(--gold);
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+.footer-links{
+    list-style:none;
+}
+
+.footer-links li{
+    margin:12px 0;
+}
+
+.footer-links a{
+    color:#a9b8ae;
+    font-size:13px;
+
+    transition:var(--transition);
+}
+
+.footer-links a:hover{
+    color:var(--gold);
+    padding-left:5px;
+}
+
+.footer-bottom{
+    width:min(1200px,90%);
+    margin:50px auto 0;
+
+    padding-top:25px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    display:flex;
+    justify-content:space-between;
+
+    color:#718177;
+
+    font-size:11px;
+}
+
+/* =========================================================
+   REVEAL ANIMATIONS
+   ========================================================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(45px);
+
+    transition:
+    opacity .9s ease,
+    transform .9s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.reveal-left{
+    opacity:0;
+    transform:translateX(-50px);
+
+    transition:
+    opacity .9s ease,
+    transform .9s ease;
+}
+
+.reveal-left.active{
+    opacity:1;
+    transform:translateX(0);
+}
+
+.reveal-right{
+    opacity:0;
+    transform:translateX(50px);
+
+    transition:
+    opacity .9s ease,
+    transform .9s ease;
+}
+
+.reveal-right.active{
+    opacity:1;
+    transform:translateX(0);
+}
+
+/* =========================================================
+   FLOATING PARTICLES
+   ========================================================= */
+
+.particles{
+    position:absolute;
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+}
+
+.particle{
+    position:absolute;
+
+    width:3px;
+    height:3px;
+
+    background:var(--gold);
+
+    border-radius:50%;
+
+    opacity:.6;
+
+    animation:
+    floatParticle
+    var(--duration)
+    linear infinite;
+}
+
+@keyframes floatParticle{
+    0%{
+        transform:
+        translateY(100vh)
+        translateX(0);
+        opacity:0;
+    }
+
+    15%{
+        opacity:.7;
+    }
+
+    85%{
+        opacity:.7;
+    }
+
+    100%{
+        transform:
+        translateY(-20vh)
+        translateX(var(--move));
+        opacity:0;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:1000px){
+
+    .nav-links{
+        position:absolute;
+
+        top:80px;
+        left:5%;
+        right:5%;
+
+        display:none;
+
+        flex-direction:column;
+
+        background:rgba(5,21,13,.98);
+
+        padding:30px;
+
+        border:1px solid rgba(212,175,55,.2);
+
+        border-radius:12px;
+    }
+
+    .nav-links.show{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .hero-orbit{
+        opacity:.3;
+        right:-180px;
+    }
+
+    .stats-container{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .stat:nth-child(2){
+        border-right:none;
+    }
+
+    .stat:nth-child(-n+2){
+        border-bottom:1px solid #e2e7e1;
+        padding-bottom:25px;
+    }
+
+    .stat:nth-child(n+3){
+        padding-top:25px;
+    }
+
+    .two-column,
+    .business-card{
+        grid-template-columns:1fr;
+    }
+
+    .responsibility-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .timeline{
+        grid-template-columns:repeat(2,1fr);
+        gap:60px;
+    }
+
+    .timeline::before{
+        display:none;
+    }
+
+    .vision-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:650px){
+
+    .navbar{
+        padding:14px 5%;
+    }
+
+    .brand-text strong{
+        font-size:14px;
+    }
+
+    .brand-symbol{
+        width:38px;
+        height:38px;
+    }
+
+    .hero{
+        min-height:850px;
+    }
+
+    .hero-content{
+        padding-top:100px;
+    }
+
+    .hero h1{
+        font-size:48px;
+        letter-spacing:-2px;
+    }
+
+    .hero-description{
+        font-size:15px;
+    }
+
+    .hero-bottom{
+        display:none;
+    }
+
+    .stats{
+        margin-top:-30px;
+    }
+
+    .stats-container{
+        grid-template-columns:1fr 1fr;
+        padding:20px 10px;
+    }
+
+    .stat{
+        padding:20px 5px;
+    }
+
+    .stat-number{
+        font-size:30px;
+    }
+
+    .section{
+        padding:75px 5%;
+    }
+
+    .two-column{
+        width:100%;
+        gap:40px;
+    }
+
+    .image-frame{
+        min-height:400px;
+    }
+
+    .responsibility-grid{
+        grid-template-columns:1fr;
+        width:100%;
+    }
+
+    .business-card{
+        width:100%;
+    }
+
+    .business-image{
+        min-height:350px;
+    }
+
+    .business-content{
+        padding:35px 25px;
+    }
+
+    .business-content h3{
+        font-size:34px;
+    }
+
+    .timeline{
+        width:100%;
+        grid-template-columns:1fr;
+        gap:45px;
+    }
+
+    .video-box{
+        width:100%;
+    }
+
+    .video-box video{
+        min-height:300px;
+    }
+
+    .footer-grid{
+        width:100%;
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+    .footer-bottom{
+        width:100%;
+        flex-direction:column;
+        gap:10px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- ======================================================
+     LOADER
+     ====================================================== -->
+
+<div class="loader" id="loader">
+
+    <div class="loader-content">
+
+        <div class="loader-logo">
+            CD
+        </div>
+
+        <h2>CEE-DOUG'S GROUP HOLDINGS LTD</h2>
+
+        <div class="loader-line"></div>
+
+    </div>
+
+</div>
+
+
+<!-- ======================================================
+     NAVIGATION
+     ====================================================== -->
+
+<header class="navbar" id="navbar">
+
+    <a href="#home" class="brand">
+
+        <div class="brand-symbol">
+            CD
+        </div>
+
+        <div class="brand-text">
+
+            <strong>CEE-DOUG'S</strong>
+
+            <span>GROUP HOLDINGS LTD</span>
+
+        </div>
+
+    </a>
+
+
+    <nav class="nav-links" id="navLinks">
+
+        <a href="#home">Home</a>
+
+        <a href="#about">Who We Are</a>
+
+        <a href="#business">Our Business</a>
+
+        <a href="#approach">Our Approach</a>
+
+        <a href="#vision">Vision & Mission</a>
+
+        <a href="#food&commodities">Shop</a>
+
+        <a href="#vision">Delivery</a>
+
+        <a href="#contact" class="nav-cta">
+            Contact Us
+        </a>
+
+    </nav>
+
+
+    <button class="menu-btn" id="menuBtn">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+</header>
+
+
+<!-- ======================================================
+     WHO WE ARE
+     ====================================================== -->
+
+<section class="section who" id="about">
+
+    <div class="two-column">
+
+        <div class="image-frame reveal-left">
+
+            <img
+            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1400&q=85"
+            alt="Cee-Dougs business and strategic partnership">
+
+            <div class="image-badge">
+
+                <strong>CEE-DOUG'S</strong>
+
+                <span>
+                    Building More Than Businesses
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="content-text reveal-right">
+
+            <div class="section-label">
+                WHO WE ARE
+            </div>
+
+            <h2 class="section-title">
+                Building More Than <span>Businesses.</span>
+            </h2>
+
+            <div class="gold-line"></div>
+
+            <p>
+               <b>Cee-Dougs Group Holdings Ltd</b>
+
+               <br><em>Building Businesses, Creating Value, Shaping Tomorrow.
+
+               Cee-Dougs Group Holdings Ltd is a Nigerian parent company established to build, own, oversee and grow a diversified portfolio of businesses across strategic sectors.
+
+               We identify opportunities, develop businesses, provide strategic direction and create the structures required for sustainable growth.</em></br>
+            </p>
+
+            <p>
+                What Cee-Dougs Group Holdings Does:
+
+                <br> We Build! We Own! We Grow! </br>
+
+                <em><p><b>Cee-Dougs Group Holdings focuses on four core responsibilities:</b></p>
+
+                <br>1. Build: Developing businesses from promising opportunities into structured, sustainable enterprises.</br>
+
+                <br>2. Own: Holding strategic interests in businesses and ventures with long-term growth potential.</br>
+
+                <br>3. Oversee: Providing corporate governance, financial discipline, strategic leadership and operational direction.</br>
+                <br>4. Grow: Expanding successful businesses through investment, partnerships, innovation and market development.</br></em>
+
+                Cee-Dougs Foods & Commodities
+
+                Quality Nigerian Food, 
+                Trusted Commodities, Better Value.
+            </p>
+
+            <p>
+                Our group identifies opportunities, develops businesses,
+                provides strategic direction and creates the structures
+                required for sustainable growth.
+            </p>
+
+            <a href="#business" class="btn btn-primary">
+                Explore Our Business →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     RESPONSIBILITIES
+     ====================================================== -->
+
+<section class="section responsibilities">
+
+    <div style="text-align:center;max-width:800px;margin:auto;">
+
+        <div class="section-label">
+            WHAT WE DO
+        </div>
+
+        <h2 class="section-title">
+            We <span>Build.</span>
+            We Own.
+            We Grow.
+        </h2>
+
+        <p class="section-intro">
+            Cee-Dougs Group Holdings focuses on four core responsibilities
+            that create the foundation for sustainable enterprise growth.
+        </p>
+
+    </div>
+
+
+    <div class="responsibility-grid">
+
+        <div class="responsibility-card reveal">
+
+            <div class="card-number">01 / BUILD</div>
+
+            <h3>Build</h3>
+
+            <p>
+                Developing businesses from promising opportunities
+                into structured, sustainable enterprises with strong
+                foundations for long-term growth.
+            </p>
+
+        </div>
+
+
+        <div class="responsibility-card reveal">
+
+            <div class="card-number">02 / OWN</div>
+
+            <h3>Own</h3>
+
+            <p>
+                Holding strategic interests in businesses and ventures
+                with long-term growth potential and meaningful economic
+                value.
+            </p>
+
+        </div>
+
+
+        <div class="responsibility-card reveal">
+
+            <div class="card-number">03 / OVERSEE</div>
+
+            <h3>Oversee</h3>
+
+            <p>
+                Providing corporate governance, financial discipline,
+                strategic leadership and operational direction.
+            </p>
+
+        </div>
+
+
+        <div class="responsibility-card reveal">
+
+            <div class="card-number">04 / GROW</div>
+
+            <h3>Grow</h3>
+
+            <p>
+                Expanding successful businesses through investment,
+                partnerships, innovation and responsible market
+                development.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ======================================================
+     FOOTER
+     ====================================================== -->
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div class="footer-brand">
+
+            <div class="brand">
+
+                <div class="brand-symbol">
+                    CD
+                </div>
+
+                <div class="brand-text">
+
+                    <strong>CEE-DOUG'S</strong>
+
+                    <span>GROUP HOLDINGS LTD</span>
+
+                </div>
+
+            </div>
+
+
+            <p>
+                Building businesses. Creating value. Shaping tomorrow.
+
+                A growing Nigerian business group developing credible
+                enterprises across strategic sectors.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <div class="footer-title">
+                Company
+            </div>
+
+            <ul class="footer-links">
+
+                <li>
+                    <a href="#about">
+                        About Us
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#business">
+                        Our Business
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#approach">
+                        Our Approach
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#vision">
+                        Vision
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div>
+
+            <div class="footer-title">
+                Businesses
+            </div>
+
+            <ul class="footer-links">
+
+                <li>
+                    <a href="foods.html">
+                        Foods & Commodities
+                    </a>
+                </li>
+
+                <li>
+                    <a href="businesses.html">
+                        Our Businesses
+                    </a>
+                </li>
+
+                <li>
+                    <a href="partnerships.html">
+                        Partnerships
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        Business Enquiries
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div>
+
+            <div class="footer-title">
+                Connect
+            </div>
+
+            <ul class="footer-links">
+
+                <li>
+                    <a href="mailto:info@ceedougs.com">
+                        Gmail / Email
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://wa.me/2347001234567"
+                       target="_blank">
+                        WhatsApp
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        Contact Us
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 Cee-Dougs Group Holdings Ltd.
+            All Rights Reserved.
+        </span>
+
+        <span>
+            Building Businesses • Creating Value • Shaping Tomorrow
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- ======================================================
+     JAVASCRIPT
+     ====================================================== -->
+
+<script>
+
+/* =========================================================
+   PAGE LOADER
+   ========================================================= */
+
+window.addEventListener("load", function(){
+
+    setTimeout(function(){
+
+        document
+        .getElementById("loader")
+        .classList
+        .add("hide");
+
+    }, 900);
+
+});
+
+
+/* =========================================================
+   NAVBAR SCROLL EFFECT
+   ========================================================= */
+
+const navbar =
+document.getElementById("navbar");
+
+window.addEventListener("scroll", function(){
+
+    if(window.scrollY > 50){
+
+        navbar.classList.add("scrolled");
+
+    }else{
+
+        navbar.classList.remove("scrolled");
+
+    }
+
+});
+
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+const menuBtn =
+document.getElementById("menuBtn");
+
+const navLinks =
+document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", function(){
+
+    navLinks.classList.toggle("show");
+
+});
+
+
+document.querySelectorAll(".nav-links a")
+.forEach(function(link){
+
+    link.addEventListener("click", function(){
+
+        navLinks.classList.remove("show");
+
+    });
+
+});
+
+
+/* =========================================================
+   SCROLL REVEAL
+   ========================================================= */
+
+const revealElements =
+document.querySelectorAll(
+    ".reveal, .reveal-left, .reveal-right"
+);
+
+const revealObserver =
+new IntersectionObserver(
+
+    function(entries){
+
+        entries.forEach(function(entry){
+
+            if(entry.isIntersecting){
+
+                entry.target.classList.add("active");
+
+                revealObserver
+                .unobserve(entry.target);
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold:0.12
+    }
+
+);
+
+
+revealElements.forEach(function(element){
+
+    revealObserver.observe(element);
+
+});
+
+
+/* =========================================================
+   ANIMATED STATISTICS
+   ========================================================= */
+
+const counters =
+document.querySelectorAll("[data-target]");
+
+const counterObserver =
+new IntersectionObserver(
+
+    function(entries){
+
+        entries.forEach(function(entry){
+
+            if(!entry.isIntersecting){
+                return;
+            }
+
+            const counter =
+            entry.target;
+
+            const target =
+            counter.getAttribute("data-target");
+
+            if(target === "∞"){
+                return;
+            }
+
+            const targetNumber =
+            parseInt(target);
+
+            let current = 0;
+
+            const increment =
+            Math.max(
+                1,
+                Math.ceil(targetNumber / 40)
+            );
+
+            const timer =
+            setInterval(function(){
+
+                current += increment;
+
+                if(current >= targetNumber){
+
+                    current = targetNumber;
+
+                    clearInterval(timer);
+
+                }
+
+                counter.textContent = current;
+
+            }, 35);
+
+            counterObserver
+            .unobserve(counter);
+
+        });
+
+    },
+
+    {
+        threshold:.8
+    }
+
+);
+
+
+counters.forEach(function(counter){
+
+    counterObserver.observe(counter);
+
+});
+
+
+/* =========================================================
+   PARTICLE SYSTEM
+   ========================================================= */
+
+const particleContainer =
+document.getElementById("particles");
+
+
+for(let i = 0; i < 35; i++){
+
+    const particle =
+    document.createElement("div");
+
+    particle.className = "particle";
+
+    particle.style.left =
+    Math.random() * 100 + "%";
+
+    particle.style.setProperty(
+        "--duration",
+        (8 + Math.random() * 12) + "s"
+    );
+
+    particle.style.setProperty(
+        "--move",
+        (-100 + Math.random() * 200) + "px"
+    );
+
+    particle.style.animationDelay =
+    Math.random() * 10 + "s";
+
+    particleContainer.appendChild(particle);
+
+}
+
+
+/* =========================================================
+   3D CARD MOVEMENT
+   ========================================================= */
+
+document
+.querySelectorAll(".responsibility-card")
+.forEach(function(card){
+
+    card.addEventListener("mousemove", function(e){
+
+        const rect =
+        card.getBoundingClientRect();
+
+        const x =
+        e.clientX - rect.left;
+
+        const y =
+        e.clientY - rect.top;
+
+        const centerX =
+        rect.width / 2;
+
+        const centerY =
+        rect.height / 2;
+
+        const rotateX =
+        ((y - centerY) / centerY) * -3;
+
+        const rotateY =
+        ((x - centerX) / centerX) * 3;
+
+        card.style.transform =
+        `perspective(700px)
+         rotateX(${rotateX}deg)
+         rotateY(${rotateY}deg)
+         translateY(-8px)`;
+
+    });
+
+
+    card.addEventListener("mouseleave", function(){
+
+        card.style.transform = "";
+
+    });
+
+});
+
+
+/* =========================================================
+   VIDEO OVERLAY
+   ========================================================= */
+
+const video =
+document.querySelector(".video-box video");
+
+const videoOverlay =
+document.querySelector(".video-overlay");
+
+if(video && videoOverlay){
+
+    video.addEventListener("play", function(){
+
+        videoOverlay.style.opacity = "0";
+
+    });
+
+    video.addEventListener("pause", function(){
+
+        videoOverlay.style.opacity = "1";
+
+    });
+
+}
+
+
+/* =========================================================
+   DYNAMIC YEAR
+   ========================================================= */
+
+const yearText =
+document.querySelector(".footer-bottom span");
+
+if(yearText){
+
+    yearText.innerHTML =
+    yearText.innerHTML.replace(
+        "2026",
+        new Date().getFullYear()
+    );
+
+}
+
+
+/* =========================================================
+   SMOOTH INTERNAL LINKS
+   ========================================================= */
+
+document.querySelectorAll('a[href^="#"]')
+.forEach(function(anchor){
+
+    anchor.addEventListener("click", function(e){
+
+        const target =
+        document.querySelector(
+            this.getAttribute("href")
+        );
+
+        if(target){
+
+            e.preventDefault();
+
+            target.scrollIntoView({
+                behavior:"smooth",
+                block:"start"
+            });
+
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
+</html> 

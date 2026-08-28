@@ -1,0 +1,2294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cee-Dougs | Admin Portal</title>
+
+<style>
+
+/* =====================================================
+   ROOT
+===================================================== */
+
+:root{
+    --green:#173d2a;
+    --dark:#081a11;
+    --dark2:#10291c;
+    --gold:#d5ad38;
+    --orange:#e98a25;
+    --white:#ffffff;
+    --light:#f4f7f4;
+    --gray:#68736b;
+    --border:#e0e6e0;
+    --red:#c0392b;
+    --blue:#2878c8;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+    background:var(--light);
+    color:#172219;
+}
+
+
+/* =====================================================
+   LOGIN PAGE
+===================================================== */
+
+.login-page{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:30px;
+
+    background:
+
+    linear-gradient(
+        120deg,
+        rgba(8,26,17,.97),
+        rgba(23,61,42,.9)
+    ),
+
+    url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1800&q=85");
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+
+.login-card{
+
+    width:100%;
+
+    max-width:450px;
+
+    background:white;
+
+    padding:42px;
+
+    border-radius:18px;
+
+    box-shadow:
+    0 35px 80px rgba(0,0,0,.35);
+
+}
+
+.admin-logo{
+
+    text-align:center;
+
+    font-size:28px;
+
+    font-weight:900;
+
+    color:var(--green);
+
+}
+
+.admin-logo span{
+
+    color:var(--gold);
+
+}
+
+.admin-label{
+
+    text-align:center;
+
+    margin-top:8px;
+
+    color:var(--orange);
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+
+}
+
+.login-card h2{
+
+    text-align:center;
+
+    margin-top:28px;
+
+    color:var(--dark);
+
+}
+
+.login-description{
+
+    text-align:center;
+
+    color:var(--gray);
+
+    margin:10px 0 28px;
+
+    line-height:1.6;
+
+}
+
+.form-group{
+
+    margin-bottom:18px;
+
+}
+
+.form-group label{
+
+    display:block;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    margin-bottom:7px;
+
+}
+
+.form-group input{
+
+    width:100%;
+
+    padding:14px;
+
+    border:
+
+    1px solid var(--border);
+
+    border-radius:8px;
+
+    outline:none;
+
+}
+
+.form-group input:focus{
+
+    border-color:var(--green);
+
+}
+
+.login-button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:var(--green);
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.login-button:hover{
+
+    background:var(--gold);
+
+    color:var(--dark);
+
+}
+
+.security-note{
+
+    margin-top:20px;
+
+    padding:13px;
+
+    background:#f5f7f4;
+
+    border-radius:8px;
+
+    color:var(--gray);
+
+    font-size:12px;
+
+    line-height:1.5;
+
+}
+
+
+/* =====================================================
+   ADMIN DASHBOARD
+===================================================== */
+
+.admin-dashboard{
+
+    display:none;
+
+    min-height:100vh;
+
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.sidebar{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    bottom:0;
+
+    width:270px;
+
+    background:var(--dark);
+
+    color:white;
+
+    z-index:1000;
+
+    overflow-y:auto;
+
+    padding:22px 14px;
+
+}
+
+.sidebar-logo{
+
+    font-size:22px;
+
+    font-weight:900;
+
+    padding:10px 15px 4px;
+
+}
+
+.sidebar-logo span{
+
+    color:var(--gold);
+
+}
+
+.portal-title{
+
+    padding:0 15px 25px;
+
+    color:#7f9186;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+}
+
+.menu-heading{
+
+    color:#718077;
+
+    font-size:10px;
+
+    letter-spacing:1.5px;
+
+    padding:17px 15px 8px;
+
+}
+
+.sidebar-link{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:12px 14px;
+
+    border-radius:8px;
+
+    color:#d7e0d9;
+
+    text-decoration:none;
+
+    cursor:pointer;
+
+    margin-bottom:4px;
+
+    font-size:14px;
+
+    transition:.25s;
+
+}
+
+.sidebar-link:hover{
+
+    background:rgba(213,173,56,.12);
+
+    color:var(--gold);
+
+}
+
+.sidebar-link.active{
+
+    background:var(--green);
+
+    color:var(--gold);
+
+}
+
+.sidebar-link .icon{
+
+    width:22px;
+
+    text-align:center;
+
+}
+
+.logout-link{
+
+    margin-top:20px;
+
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.main{
+
+    margin-left:270px;
+
+}
+
+
+/* =====================================================
+   TOPBAR
+===================================================== */
+
+.topbar{
+
+    height:75px;
+
+    background:white;
+
+    border-bottom:
+    1px solid var(--border);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 30px;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:500;
+
+}
+
+.topbar-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.menu-button{
+
+    display:none;
+
+    border:none;
+
+    background:none;
+
+    font-size:25px;
+
+    cursor:pointer;
+
+}
+
+.topbar h2{
+
+    color:var(--green);
+
+}
+
+.admin-profile{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.admin-avatar{
+
+    width:42px;
+
+    height:42px;
+
+    background:var(--gold);
+
+    color:var(--dark);
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-weight:bold;
+
+}
+
+.admin-profile small{
+
+    display:block;
+
+    color:var(--gray);
+
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.content{
+
+    padding:30px;
+
+}
+
+
+/* =====================================================
+   WELCOME
+===================================================== */
+
+.welcome{
+
+    background:
+
+    linear-gradient(
+        100deg,
+        var(--green),
+        #27583d
+    );
+
+    padding:30px;
+
+    color:white;
+
+    border-radius:15px;
+
+    margin-bottom:25px;
+
+}
+
+.welcome h1{
+
+    margin-bottom:8px;
+
+    font-size:28px;
+
+}
+
+.welcome p{
+
+    color:#dbe6de;
+
+}
+
+
+/* =====================================================
+   STAT CARDS
+===================================================== */
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:18px;
+
+    margin-bottom:25px;
+
+}
+
+.stat-card{
+
+    background:white;
+
+    padding:22px;
+
+    border:
+    1px solid var(--border);
+
+    border-radius:12px;
+
+    transition:.3s;
+
+}
+
+.stat-card:hover{
+
+    transform:
+    translateY(-4px);
+
+    box-shadow:
+    0 15px 30px rgba(0,0,0,.08);
+
+}
+
+.stat-icon{
+
+    font-size:25px;
+
+    margin-bottom:10px;
+
+}
+
+.stat-card small{
+
+    color:var(--gray);
+
+}
+
+.stat-card h2{
+
+    color:var(--green);
+
+    margin-top:7px;
+
+}
+
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.dashboard-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    2fr 1fr;
+
+    gap:20px;
+
+}
+
+
+/* =====================================================
+   PANEL
+===================================================== */
+
+.panel{
+
+    background:white;
+
+    border:
+    1px solid var(--border);
+
+    border-radius:13px;
+
+    overflow:hidden;
+
+    margin-bottom:20px;
+
+}
+
+.panel-header{
+
+    padding:20px;
+
+    border-bottom:
+    1px solid var(--border);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+.panel-header h3{
+
+    color:var(--green);
+
+}
+
+.panel-header button{
+
+    border:none;
+
+    background:none;
+
+    color:var(--green);
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+.panel-body{
+
+    padding:20px;
+
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.table-wrapper{
+
+    overflow-x:auto;
+
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+th,
+td{
+
+    padding:15px;
+
+    text-align:left;
+
+    border-bottom:
+    1px solid var(--border);
+
+    font-size:13px;
+
+}
+
+th{
+
+    background:#fafbf9;
+
+    color:var(--gray);
+
+}
+
+.status{
+
+    display:inline-block;
+
+    padding:6px 10px;
+
+    border-radius:20px;
+
+    font-size:10px;
+
+    font-weight:bold;
+
+}
+
+.status.paid{
+
+    background:#dff2e4;
+
+    color:#18702e;
+
+}
+
+.status.pending{
+
+    background:#fff0d7;
+
+    color:#986000;
+
+}
+
+.status.shipped{
+
+    background:#dfebf8;
+
+    color:#28628d;
+
+}
+
+
+/* =====================================================
+   QUICK ACTIONS
+===================================================== */
+
+.quick-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:12px;
+
+}
+
+.quick-card{
+
+    border:
+    1px solid var(--border);
+
+    padding:18px;
+
+    border-radius:9px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.quick-card:hover{
+
+    border-color:var(--gold);
+
+    transform:
+    translateY(-3px);
+
+}
+
+.quick-card strong{
+
+    display:block;
+
+    color:var(--green);
+
+    margin-bottom:6px;
+
+}
+
+.quick-card small{
+
+    color:var(--gray);
+
+}
+
+
+/* =====================================================
+   ACTIVITY
+===================================================== */
+
+.activity{
+
+    display:flex;
+
+    gap:13px;
+
+    padding:14px 0;
+
+    border-bottom:
+    1px solid var(--border);
+
+}
+
+.activity-icon{
+
+    width:35px;
+
+    height:35px;
+
+    border-radius:50%;
+
+    background:var(--light);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.activity p{
+
+    font-size:13px;
+
+}
+
+.activity small{
+
+    color:var(--gray);
+
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.modal{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.65);
+
+    z-index:5000;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+
+}
+
+.modal.active{
+
+    display:flex;
+
+}
+
+.modal-box{
+
+    width:100%;
+
+    max-width:550px;
+
+    background:white;
+
+    border-radius:14px;
+
+    padding:30px;
+
+    animation:popup .3s ease;
+
+}
+
+@keyframes popup{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(20px)
+        scale(.97);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0)
+        scale(1);
+
+    }
+
+}
+
+.modal-box h2{
+
+    color:var(--green);
+
+    margin-bottom:20px;
+
+}
+
+.close-modal{
+
+    float:right;
+
+    border:none;
+
+    background:none;
+
+    font-size:25px;
+
+    cursor:pointer;
+
+}
+
+.save-button{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    background:var(--green);
+
+    color:white;
+
+    border-radius:7px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1100px){
+
+    .stats{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
+    .dashboard-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:750px){
+
+    .sidebar{
+
+        transform:
+        translateX(-100%);
+
+        transition:.3s;
+
+    }
+
+    .sidebar.open{
+
+        transform:
+        translateX(0);
+
+    }
+
+    .main{
+
+        margin-left:0;
+
+    }
+
+    .menu-button{
+
+        display:block;
+
+    }
+
+    .content{
+
+        padding:18px;
+
+    }
+
+    .stats{
+
+        grid-template-columns:
+        1fr 1fr;
+
+    }
+
+}
+
+@media(max-width:500px){
+
+    .stats{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .quick-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     ADMIN LOGIN
+=================================================== -->
+
+<section
+    class="login-page"
+    id="loginPage"
+>
+
+    <div class="login-card">
+
+        <div class="admin-logo">
+            CEE<span>-DOUGS</span>
+        </div>
+
+        <div class="admin-label">
+            ADMINISTRATOR PORTAL
+        </div>
+
+        <h2>
+            Secure Admin Login
+        </h2>
+
+        <p class="login-description">
+
+            Access the central management
+            system for Cee-Dougs Group Holdings Ltd.
+
+        </p>
+
+
+        <form
+            onsubmit="adminLogin(event)"
+        >
+
+            <div class="form-group">
+
+                <label>
+                    Admin Email
+                </label>
+
+                <input
+                    type="email"
+                    id="adminEmail"
+                    placeholder="admin@ceedougs.com"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="adminPassword"
+                    placeholder="Enter password"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                class="login-button"
+            >
+                Enter Admin Portal
+            </button>
+
+        </form>
+
+
+        <div class="security-note">
+
+            🔐 <strong>Security:</strong>
+            In production, administrator authentication
+            must be handled by a secure backend with
+            encrypted passwords, sessions and
+            role-based permissions.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     ADMIN DASHBOARD
+=================================================== -->
+
+<section
+    class="admin-dashboard"
+    id="adminDashboard"
+>
+
+
+<!-- ==================================================
+     SIDEBAR
+=================================================== -->
+
+<aside
+    class="sidebar"
+    id="sidebar"
+>
+
+    <div class="sidebar-logo">
+
+        CEE<span>-DOUGS</span>
+
+    </div>
+
+    <div class="portal-title">
+
+        GROUP ADMINISTRATION
+
+    </div>
+
+
+    <div class="menu-heading">
+        OVERVIEW
+    </div>
+
+    <a
+        class="sidebar-link active"
+        onclick="setPage('Dashboard')"
+    >
+        <span class="icon">📊</span>
+        Dashboard
+    </a>
+
+
+    <div class="menu-heading">
+        COMMERCE
+    </div>
+
+    <a
+        class="sidebar-link"
+        onclick="setPage('Products')"
+    >
+        <span class="icon">🛍️</span>
+        Products
+    </a>
+
+    <a
+        class="sidebar-link"
+        onclick="setPage('Orders')"
+    >
+        <span class="icon">📦</span>
+        Orders
+    </a>
+
+    <a
+        class="sidebar-link"
+        onclick="setPage('Customers')"
+    >
+        <span class="icon">👥</span>
+        Customers
+    </a>
+
+    <a
+        class="sidebar-link"
+        onclick="setPage('Payments')"
+    >
+        <span class="icon">💳</span>
+        Payments
+    </a>
+
+    <a
+        class="sidebar-link"
+        onclick="setPage('Delivery')"
+    >
+        <span class="icon">🚚</span>
+        Delivery
+    </a>
+
+
+    <div class="menu-heading">
+        BUSINESS
+    </div>
+
+    <a
+        class="sidebar-link"
+        onclick="setPage('Businesses')"
+    >
+        <span class="icon">🏢</span>
+        Group Businesses
+    </a>
+
+    <a
+        class="sidebar-link"
+        onclick="setPage('Suppliers')"
+    >
+        <span class="icon">🤝</span>
+        Suppliers
+    </a>
+
+    <a
+        class="sidebar-link"
+        onclick="setPage('Wholesale')"
+    >
+        <span class="icon">📦</span>
+        Wholesale & Bulk
+    </a>
+
+
+    <div class="menu-heading">
+        WEBSITE
+    </div>
+
+    <a
+        class="sidebar-link"
+        onclick="setPage('Pages')"
+    >
+        <span class="icon">🌐</span>
+        Website Pages
+    </a>
+
+    <a
+        class="sidebar-link"
+        onclick="setPage('Content')"
+    >
+        <span class="icon">📝</span>
+        Content Manager
+    </a>
+
+    <a
+        class="sidebar-link"
+        onclick="setPage('Media')"
+    >
+        <span class="icon">🖼️</span>
+        Media Library
+    </a>
+
+
+    <div class="menu-heading">
+        MANAGEMENT
+    </div>
+
+    <a
+        class="sidebar-link"
+        onclick="setPage('Analytics')"
+    >
+        <span class="icon">📈</span>
+        Analytics
+    </a>
+
+    <a
+        class="sidebar-link"
+        onclick="setPage('Admins')"
+    >
+        <span class="icon">👤</span>
+        Admin Users
+    </a>
+
+    <a
+        class="sidebar-link"
+        onclick="setPage('Settings')"
+    >
+        <span class="icon">⚙️</span>
+        Settings
+    </a>
+
+
+    <a
+        class="sidebar-link logout-link"
+        onclick="adminLogout()"
+    >
+        <span class="icon">🚪</span>
+        Logout
+    </a>
+
+</aside>
+
+
+
+<!-- ==================================================
+     MAIN
+=================================================== -->
+
+<main class="main">
+
+
+<!-- TOPBAR -->
+
+<div class="topbar">
+
+    <div class="topbar-left">
+
+        <button
+            class="menu-button"
+            onclick="toggleSidebar()"
+        >
+            ☰
+        </button>
+
+        <h2 id="pageTitle">
+            Admin Dashboard
+        </h2>
+
+    </div>
+
+
+    <div class="admin-profile">
+
+        <div>
+
+            <strong>
+                Cee-Dougs Admin
+            </strong>
+
+            <small>
+                Super Administrator
+            </small>
+
+        </div>
+
+        <div class="admin-avatar">
+            A
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- CONTENT -->
+
+<div class="content">
+
+
+<!-- WELCOME -->
+
+<div class="welcome">
+
+    <h1>
+        Welcome to Cee-Dougs Control Center
+    </h1>
+
+    <p>
+        Manage your products, customers, orders,
+        payments, deliveries and the entire website
+        from one central administration portal.
+    </p>
+
+</div>
+
+
+
+<!-- STATISTICS -->
+
+<div class="stats">
+
+
+<div class="stat-card">
+
+    <div class="stat-icon">
+        💰
+    </div>
+
+    <small>
+        Total Sales
+    </small>
+
+    <h2>
+        ₦4,850,000
+    </h2>
+
+</div>
+
+
+<div class="stat-card">
+
+    <div class="stat-icon">
+        📦
+    </div>
+
+    <small>
+        Total Orders
+    </small>
+
+    <h2>
+        248
+    </h2>
+
+</div>
+
+
+<div class="stat-card">
+
+    <div class="stat-icon">
+        👥
+    </div>
+
+    <small>
+        Customers
+    </small>
+
+    <h2>
+        1,284
+    </h2>
+
+</div>
+
+
+<div class="stat-card">
+
+    <div class="stat-icon">
+        🚚
+    </div>
+
+    <small>
+        Active Deliveries
+    </small>
+
+    <h2>
+        37
+    </h2>
+
+</div>
+
+</div>
+
+
+
+<!-- GRID -->
+
+<div class="dashboard-grid">
+
+
+<!-- LEFT -->
+
+<div>
+
+
+<!-- RECENT ORDERS -->
+
+<div class="panel">
+
+<div class="panel-header">
+
+<h3>
+Recent Orders
+</h3>
+
+<button
+onclick="openModal('orderModal')"
+>
+Manage Orders →
+</button>
+
+</div>
+
+
+<div class="table-wrapper">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>
+Order
+</th>
+
+<th>
+Customer
+</th>
+
+<th>
+Amount
+</th>
+
+<th>
+Payment
+</th>
+
+<th>
+Status
+</th>
+
+</tr>
+
+</thead>
+
+
+<tbody>
+
+<tr>
+
+<td>
+#CD-10245
+</td>
+
+<td>
+John Customer
+</td>
+
+<td>
+₦65,000
+</td>
+
+<td>
+<span class="status paid">
+Paid
+</span>
+</td>
+
+<td>
+<span class="status shipped">
+Shipped
+</span>
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+#CD-10244
+</td>
+
+<td>
+Mary Johnson
+</td>
+
+<td>
+₦120,500
+</td>
+
+<td>
+<span class="status paid">
+Paid
+</span>
+</td>
+
+<td>
+<span class="status pending">
+Processing
+</span>
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+#CD-10243
+</td>
+
+<td>
+David Peter
+</td>
+
+<td>
+₦48,000
+</td>
+
+<td>
+<span class="status pending">
+Pending
+</span>
+</td>
+
+<td>
+<span class="status pending">
+Pending
+</span>
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+
+
+<!-- QUICK MANAGEMENT -->
+
+<div class="panel">
+
+<div class="panel-header">
+
+<h3>
+Quick Management
+</h3>
+
+</div>
+
+
+<div class="panel-body">
+
+<div class="quick-grid">
+
+
+<div
+class="quick-card"
+onclick="openModal('productModal')"
+>
+
+<strong>
+➕ Add Product
+</strong>
+
+<small>
+Create a new product listing
+</small>
+
+</div>
+
+
+<div
+class="quick-card"
+onclick="setPage('Orders')"
+>
+
+<strong>
+📦 Manage Orders
+</strong>
+
+<small>
+Process and update customer orders
+</small>
+
+</div>
+
+
+<div
+class="quick-card"
+onclick="setPage('Customers')"
+>
+
+<strong>
+👥 Customers
+</strong>
+
+<small>
+View registered customers
+</small>
+
+</div>
+
+
+<div
+class="quick-card"
+onclick="setPage('Pages')"
+>
+
+<strong>
+🌐 Website Pages
+</strong>
+
+<small>
+Manage Cee-Dougs webpages
+</small>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- RIGHT -->
+
+<div>
+
+
+<!-- BUSINESS STATUS -->
+
+<div class="panel">
+
+<div class="panel-header">
+
+<h3>
+Business Status
+</h3>
+
+</div>
+
+
+<div class="panel-body">
+
+<div class="activity">
+
+<div class="activity-icon">
+🟢
+</div>
+
+<div>
+
+<p>
+Online Store
+</p>
+
+<small>
+Operating normally
+</small>
+
+</div>
+
+</div>
+
+
+<div class="activity">
+
+<div class="activity-icon">
+💳
+</div>
+
+<div>
+
+<p>
+Payment Gateway
+</p>
+
+<small>
+Flutterwave connected
+</small>
+
+</div>
+
+</div>
+
+
+<div class="activity">
+
+<div class="activity-icon">
+🚚
+</div>
+
+<div>
+
+<p>
+Delivery System
+</p>
+
+<small>
+Operational
+</small>
+
+</div>
+
+</div>
+
+
+<div class="activity">
+
+<div class="activity-icon">
+🌐
+</div>
+
+<div>
+
+<p>
+Website
+</p>
+
+<small>
+Cee-Dougs.com online
+</small>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- ACTIVITY -->
+
+<div class="panel">
+
+<div class="panel-header">
+
+<h3>
+Recent Activity
+</h3>
+
+</div>
+
+
+<div class="panel-body">
+
+
+<div class="activity">
+
+<div class="activity-icon">
+📦
+</div>
+
+<div>
+
+<p>
+New order #CD-10245
+</p>
+
+<small>
+5 minutes ago
+</small>
+
+</div>
+
+</div>
+
+
+<div class="activity">
+
+<div class="activity-icon">
+👤
+</div>
+
+<div>
+
+<p>
+New customer registered
+</p>
+
+<small>
+18 minutes ago
+</small>
+
+</div>
+
+</div>
+
+
+<div class="activity">
+
+<div class="activity-icon">
+💳
+</div>
+
+<div>
+
+<p>
+Payment received
+</p>
+
+<small>
+31 minutes ago
+</small>
+
+</div>
+
+</div>
+
+
+<div class="activity">
+
+<div class="activity-icon">
+🚚
+</div>
+
+<div>
+
+<p>
+Order shipped
+</p>
+
+<small>
+1 hour ago
+</small>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</main>
+
+</section>
+
+
+
+<!-- ==================================================
+     ADD PRODUCT MODAL
+=================================================== -->
+
+<div
+class="modal"
+id="productModal"
+>
+
+<div class="modal-box">
+
+<button
+class="close-modal"
+onclick="closeModal('productModal')"
+>
+×
+</button>
+
+<h2>
+Add New Product
+</h2>
+
+
+<div class="form-group">
+
+<label>
+Product Name
+</label>
+
+<input
+type="text"
+placeholder="Enter product name"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Category
+</label>
+
+<input
+type="text"
+placeholder="Rice, Beans, Flour..."
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Price
+</label>
+
+<input
+type="number"
+placeholder="₦0"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Stock Quantity
+</label>
+
+<input
+type="number"
+placeholder="0"
+>
+
+</div>
+
+
+<button
+class="save-button"
+onclick="saveProduct()"
+>
+Save Product
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- ==================================================
+     ORDERS MODAL
+=================================================== -->
+
+<div
+class="modal"
+id="orderModal"
+>
+
+<div class="modal-box">
+
+<button
+class="close-modal"
+onclick="closeModal('orderModal')"
+>
+×
+</button>
+
+<h2>
+Order Management
+</h2>
+
+<p style="color:#68736b;line-height:1.6">
+
+Use the Orders section of the admin portal
+to review orders, verify payment status,
+update order status and assign deliveries.
+
+</p>
+
+<br>
+
+<button
+class="save-button"
+onclick="closeModal('orderModal')"
+>
+Open Orders
+</button>
+
+</div>
+
+</div>
+
+
+
+<script>
+
+/* =====================================================
+   ADMIN LOGIN
+===================================================== */
+
+function adminLogin(event){
+
+    event.preventDefault();
+
+    const email =
+        document
+        .getElementById("adminEmail")
+        .value;
+
+    const password =
+        document
+        .getElementById("adminPassword")
+        .value;
+
+
+    if(!email || !password){
+
+        alert(
+            "Please enter your administrator credentials."
+        );
+
+        return;
+
+    }
+
+
+    /*
+    DEMO ONLY.
+
+    This DOES NOT provide real security.
+
+    A production system must authenticate
+    against a backend/database.
+    */
+
+
+    document
+    .getElementById("loginPage")
+    .style.display="none";
+
+
+    document
+    .getElementById("adminDashboard")
+    .style.display="block";
+
+}
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+function adminLogout(){
+
+    document
+    .getElementById("adminDashboard")
+    .style.display="none";
+
+
+    document
+    .getElementById("loginPage")
+    .style.display="flex";
+
+
+    document
+    .getElementById("adminEmail")
+    .value="";
+
+
+    document
+    .getElementById("adminPassword")
+    .value="";
+
+}
+
+
+/* =====================================================
+   MOBILE SIDEBAR
+===================================================== */
+
+function toggleSidebar(){
+
+    document
+    .getElementById("sidebar")
+    .classList
+    .toggle("open");
+
+}
+
+
+/* =====================================================
+   CHANGE ADMIN PAGE
+===================================================== */
+
+function setPage(page){
+
+    document
+    .getElementById("pageTitle")
+    .textContent = page;
+
+
+    document
+    .querySelectorAll(".sidebar-link")
+    .forEach(
+        link =>
+        link.classList.remove("active")
+    );
+
+
+    /*
+    Demo notification.
+
+    These sections can later become
+    full separate management modules.
+    */
+
+
+    if(page !== "Dashboard"){
+
+        alert(
+            page +
+            " Management module selected."
+        );
+
+    }
+
+
+    document
+    .getElementById("sidebar")
+    .classList
+    .remove("open");
+
+}
+
+
+/* =====================================================
+   MODALS
+===================================================== */
+
+function openModal(id){
+
+    document
+    .getElementById(id)
+    .classList
+    .add("active");
+
+}
+
+
+function closeModal(id){
+
+    document
+    .getElementById(id)
+    .classList
+    .remove("active");
+
+}
+
+
+/* =====================================================
+   SAVE PRODUCT
+===================================================== */
+
+function saveProduct(){
+
+    alert(
+        "Product saved successfully in demo mode."
+    );
+
+    closeModal("productModal");
+
+}
+
+</script>
+
+</body>
+</html>
